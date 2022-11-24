@@ -1,6 +1,6 @@
 {
     "name": "eta",
-    "version": "0.0.0",
+    "version": "1.2.5",
     "description": "ETA nnn",
     "main": "dist/electron/electron/electron-main.js",
     "author": "Jane Doe",
@@ -40,7 +40,7 @@
         "build-win": "ng build --c=production --base-href ./ && electron-packager . --overwrite  --platform=win32 --arch=x64  --prune=true --out=./dist/electron-build",
         "ng": "ng",
         "start": "ng serve",
-        "build": "ng build  --c=production --base-href ./ ",
+        "build1": "ng build  --c=production --base-href ./ ",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "electron-test": "ng build --base-href ./  && tsc --p electron && electron .  --c=production",
@@ -50,7 +50,10 @@
         "electron-rebuild": "electron-rebuild",
         "electron-builder": "electron-builder build --win portable",
         "postinstall-builder": "electron-builder install-app-deps",
-        "qq": "electron-builder node-gyp-rebuild "
+        "qq": "electron-builder node-gyp-rebuild ",	"postinstall": "electron-builder install-app-deps",
+		"build": "electron-builder --mac --windows --linux",
+		"release": "electron-builder --mac --windows --linux --publish always"
+	
     },
     "private": true,
     "dependencies": {
