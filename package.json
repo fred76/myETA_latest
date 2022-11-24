@@ -1,6 +1,6 @@
 {
     "name": "eta",
-    "version": "1.2.5",
+    "version": "1.2.6",
     "description": "ETA nnn",
     "main": "dist/electron/electron/electron-main.js",
     "author": "Jane Doe",
@@ -50,8 +50,9 @@
         "electron-rebuild": "electron-rebuild",
         "electron-builder": "electron-builder build --win portable",
         "postinstall-builder": "electron-builder install-app-deps",
-        "qq": "electron-builder node-gyp-rebuild ",	"postinstall": "electron-builder install-app-deps",
-		"build": "electron-builder --mac --windows --linux",
+        "qq": "electron-builder node-gyp-rebuild ",
+        "postinstall": "electron-builder install-app-deps",
+		"build": "ng build  --c=production --base-href ./ electron-builder --mac --windows --linux",
 		"release": "electron-builder --mac --windows --linux --publish always"
 	
     },
