@@ -1,0 +1,224 @@
+<mat-card [formGroup]="form">
+
+    <mat-card-title>
+
+        <span>Main Engine Consumption</span>
+
+    </mat-card-title> 
+    <mat-divider></mat-divider>
+    <div fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="12px"> 
+        <!-- ME CRUISE SPEED -->
+
+        <div fxLayout="row" fxLayoutAlign="space-between stretch" flex="grow">
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">Cruise speed</h3>
+
+                <mat-form-field>
+                    <mat-label>Cruise speed in Kts</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 12Kts" [formControl]="speedCruise">
+                    <span matSuffix>Kts</span>
+                </mat-form-field>
+            </div>
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">Ballast</h3>
+
+                <mat-form-field>
+                    <mat-label>FO Tons/Daily</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 12MT" [formControl]="ballastCruise">
+                    <span matSuffix>MT</span>
+                </mat-form-field>
+            </div>
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">Ladden</h3>
+
+                <mat-form-field>
+                    <mat-label>DO Tons/Daily</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 14MT" [formControl]="laddenCruise">
+                    <span matSuffix>MT</span>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <!-- ME 80% SPEED -->
+
+        <div fxLayout="row" fxLayoutAlign="space-between stretch" flex="grow">
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">80% of Cruise Speed in Kts</h3>
+
+                <mat-form-field>
+                    <mat-label>Speed in Kts</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 10Kts" [formControl]="speed80">
+                    <span matSuffix>Kts</span>
+                </mat-form-field>
+            </div>
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">Ballast</h3>
+
+                <mat-form-field>
+                    <mat-label>FO Tons/Daily</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 11MT" [formControl]="ballast80">
+                    <span matSuffix>MT</span>
+                </mat-form-field>
+            </div>
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">Ladden</h3>
+
+                <mat-form-field>
+                    <mat-label>DO Tons/Daily</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 13MT" [formControl]="ladden80">
+                    <span matSuffix>MT</span>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <!-- ME 60% SPEED -->
+
+        <div fxLayout="row" fxLayoutAlign="space-between stretch" flex="grow">
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">60% of Cruise Speed in Kts</h3>
+
+                <mat-form-field>
+                    <mat-label>Speed in Kts</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 8Kts" [formControl]="speed60">
+                    <span matSuffix>Kts</span>
+                </mat-form-field>
+            </div>
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">Ballast</h3>
+
+                <mat-form-field>
+                    <mat-label>FO Tons/Daily</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 9MT" [formControl]="ballast60">
+                    <span matSuffix>MT</span>
+                </mat-form-field>
+            </div>
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">Ladden</h3>
+
+                <mat-form-field>
+                    <mat-label>DO Tons/Daily</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 10MT" [formControl]="ladden60">
+                    <span matSuffix>MT</span>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <!-- ME 40% SPEED -->
+
+        <div fxLayout="row" fxLayoutAlign="space-between stretch" flex="grow">
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">40% of Cruise Speed in Kts</h3>
+
+                <mat-form-field>
+                    <mat-label>Speed in Kts</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 7Kts" [formControl]="speed40">
+                    <span matSuffix>Kts</span>
+                </mat-form-field>
+            </div>
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">Ballast</h3>
+
+                <mat-form-field>
+                    <mat-label>FO Tons/Daily</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 7MT" [formControl]="ballast40">
+                    <span matSuffix>MT</span>
+                </mat-form-field>
+            </div>
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">Ladden</h3>
+
+                <mat-form-field>
+                    <mat-label>DO Tons/Daily</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 9MT" [formControl]="ladden40">
+                    <span matSuffix>MT</span>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <!-- DDGG - BOILERS -->
+
+        <mat-card-title>
+
+            <span>Auxiliary system Consumption</span>
+
+        </mat-card-title>
+
+
+
+        <div fxLayout="row" fxLayoutAlign="space-between stretch" flex="grow">
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">DDGG Max Consumption</h3>
+
+                <mat-form-field>
+                    <mat-label>Tons/dalily</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 2.5MT" [formControl]="ddggDailyConsumption">
+                    <span matSuffix>MT</span>
+                </mat-form-field>
+            </div>
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">Boiler Min Consumption</h3>
+
+                <mat-form-field>
+                    <mat-label>Tons/Daily</mat-label>
+                    <input matInput type="number" placeholder="Eg. 1MT" [formControl]="boilerMinConsumption">
+                    <span matSuffix>MT</span>
+                </mat-form-field>
+            </div>
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">Boiler Max Consumption</h3>
+
+                <mat-form-field>
+                    <mat-label>Tons/Daily</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 2MT" [formControl]="boilerMaxConsumption">
+                    <span matSuffix>MT</span>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <!-- DDGG - BOILERS -->
+
+        <mat-card-title>
+
+            <span>FO & DO Tanks Capacity</span>
+
+        </mat-card-title>
+
+
+
+        <div fxLayout="row" fxLayoutAlign="space-between stretch" flex="grow">
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">FO Storable MT</h3>
+
+                <mat-form-field>
+                    <mat-label>Tons/dalily</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 300MT" [formControl]="foMaxStorage">
+                    <span matSuffix>MT</span>
+                </mat-form-field>
+            </div>
+            <div div fxLayout="column" fxLayoutAlign="space-between center">
+                <h3 style="font-weight: bold">D0 Storable MT</h3>
+
+                <mat-form-field>
+                    <mat-label>Tons/Daily</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 100MT" [formControl]="doMaxStorage">
+                    <span matSuffix>MT</span>
+                </mat-form-field>
+            </div>
+           
+        </div>
+        
+
+        <button mat-button color="primary" [disabled]="!form.valid" (click)="onSubmit()" cdkFocusInitial>Save</button>  
+    </div>
+
+</mat-card>

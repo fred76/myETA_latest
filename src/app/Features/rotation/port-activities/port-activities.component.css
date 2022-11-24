@@ -1,0 +1,16 @@
+.main-card {
+    color: white;
+}
+
+.main-card-background {
+    background-color: #004a9f;
+    ;
+}
+
+.not-empty-select.mat-selected {
+    color: white !important;
+  }
+  
+  :host /deep/ .mat-select-value-text {
+    color: white !important;
+  }

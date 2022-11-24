@@ -1,12 +1,16 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
+
   "compileOnSave": false,
   "compilerOptions": {
+    "strictPropertyInitialization": false,
+    "emitDecoratorMetadata": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
+    "allowJs": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
@@ -21,9 +25,16 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ] ,
+     
+    "skipLibCheck": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    
   },
-  "angularCompilerOptions": {
+  "angularCompilerOptions": { 
+    "strictPropertyInitialization": false,
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,

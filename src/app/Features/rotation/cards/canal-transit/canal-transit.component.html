@@ -1,0 +1,61 @@
+<mat-card [formGroup]="form">
+    <mat-card-title>
+
+        <span>Canal Transit</span>
+        <mat-icon class="padding">compare_arrows</mat-icon>
+
+    </mat-card-title>
+    <div fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="12px">
+        <div fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="8px">
+
+            <div fxLayout="row" fxLayoutAlign="space-around stretch" flex="grow" fxLayoutGap="12px">
+                <mat-form-field fxFlex="grow">
+                    <mat-label>Transit in Hrs</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 12Hrs" [formControl]="duration">
+                    <span matSuffix>Hrs</span>
+                </mat-form-field>
+                <mat-form-field fxFlex="grow">
+                    <mat-label>Cargo on Board</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 6000MT" [formControl]="cargoOnBoardMT">
+                    <span matSuffix>MT</span>
+                </mat-form-field>
+                <mat-form-field fxFlex="grow">
+                    <mat-label>Ladden percentage</mat-label>
+                    <input matInput type="number" placeholder="Ladden Percentage 0% - 100%" [formControl]="laddenPercentage" step="10" min="0" max="100">
+                    <span matSuffix>%</span>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+
+        <!-- TRANSIT CONSUMPTION -->
+        <div fxLayout="row" fxLayoutAlign="space-between stretch" flex="grow">
+            <div div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="8px">
+                <h3 style="font-weight: bold">Extimated FO Consumption</h3>
+                <mat-form-field>
+                    <mat-label>FO MT</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 6MT" [formControl]="foExtimatecConsumption">
+                    <span matSuffix>MT</span>
+                </mat-form-field>
+
+            </div>
+            <div div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="8px">
+                <h3 style="font-weight: bold">Extimated DO Consumption 2</h3>
+                <mat-form-field>
+                    <mat-label>DO MT</mat-label>
+                    <input matInput type="number" placeholder="Eg.: 6MT" [formControl]="doExtimatecConsumption">
+                    <span matSuffix>MT</span>
+                </mat-form-field>
+            </div> 
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div div fxLayout="row" fxLayoutAlign="end center" flex="grow" style="padding-top: 8px"> 
+        <button mat-button color="primary" mat-dialog-close >Close</button> 
+        <button mat-button color="primary"  [mat-dialog-close]="form.value"  [disabled]="!form.valid" cdkFocusInitial>Save</button> 
+    </div>
+
+</mat-card>

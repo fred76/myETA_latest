@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "myETA_latest": {
+    "ETA": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -11,9 +11,10 @@
       "prefix": "app",
       "architect": {
         "build": {
+         
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/my-eta-latest",
+            "outputPath": "dist/eta-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,17 +24,19 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/roboto-fontface/css/roboto/roboto-fontface.css",
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [] 
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "5000kb",
+                  "maximumError": "110mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -64,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "myETA_latest:build:production"
+              "browserTarget": "ETA:build:production"
             },
             "development": {
-              "browserTarget": "myETA_latest:build:development"
+              "browserTarget": "ETA:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "myETA_latest:build"
+            "browserTarget": "ETA:build"
           }
         },
         "test": {
@@ -90,6 +93,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
             "scripts": []

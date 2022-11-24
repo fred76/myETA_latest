@@ -1,0 +1,119 @@
+<mat-card class="main-card-background" [formGroup]="form">
+ 
+    <!-- LEG PORT GLOBAL INFO -->
+
+    <ng-container *ngIf="!(isNewLoc$ | async);else elseTemplate">
+        <mat-card-subtitle class="main-card" fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="12px">
+            <mat-form-field fxFlex="grow">
+                <mat-label class="main-card">PLT Station</mat-label>
+                <mat-select [formControl]="pltStation" name="pltStation">
+                    <mat-option class="not-empty-select" *ngFor="let pltStation of pltStationsa" [value]="pltStation">
+                        {{ pltStation.pltStationName }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <mat-form-field fxFlex="grow">
+                <mat-label class="main-card">Port</mat-label>
+                <mat-select formControlName="port" [(value)]="selectedPort">
+                    <mat-option *ngFor="let port of portsByCountry" [value]="port">
+                        {{ port.portName }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <mat-form-field fxFlex="grow">
+                <mat-label class="main-card">Berth</mat-label>
+                <mat-select [formControl]="berth" name="berth">
+                    <mat-option *ngFor="let berth of berthsa" [value]="berth">
+                        {{ berth.berthName }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label class="main-card">UTC Time</mat-label>
+                <input matInput type="number" placeholder="Ex. 5 Hrs" [formControl]="utcTime" step="0.5" min="-12"
+                    max="12">
+                <span matSuffix>Hrs</span>
+            </mat-form-field>
+
+        </mat-card-subtitle>
+    </ng-container>
+
+    <ng-template #elseTemplate>
+
+        <mat-card-subtitle>
+            <div class="main-card" fxLayout="row" fxLayoutAlign="space-around stretch" flex="grow" fxLayoutGap="24px">
+                <h2> {{activityPerLocationModel.port}}</h2>
+                <h2>></h2>
+                <h2> {{activityPerLocationModel.pltStation}}</h2>
+                <h2>></h2>
+                <h2> {{activityPerLocationModel.berth}}</h2>
+                <h2>-</h2>
+                <h2> UTC {{activityPerLocationModel.utcTime}} Hrs</h2>
+                <div>
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" style="margin-right: 24px">
+                    <mat-icon>sailing</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" >
+                    <button mat-menu-item (click)="openDialogSeaPassage('0ms', '0ms')">
+                        <mat-icon>sailing</mat-icon>
+                        <span>Sea Passage</span>
+                    </button>
+                    <button mat-menu-item (click)="openDialogCanalTransit('0ms', '0ms')">
+                        <mat-icon>compare_arrows</mat-icon>
+                        <span>Canal Transit</span>
+                    </button>
+                    <button mat-menu-item (click)="openDialogPiloting('0ms', '0ms')">
+                        <mat-icon>alt_route</mat-icon>
+                        <span>Piloting</span>
+                    </button>
+                    <button mat-menu-item (click)="openDialogOperation('0ms', '0ms')">
+                        <mat-icon>file_download</mat-icon>
+                        <span>Operation</span>
+                    </button>
+
+                    <button mat-menu-item (click)="openDialogShifting('0ms', '0ms')">
+                        <mat-icon>repeat</mat-icon>
+                        <span>shifting</span>
+                    </button>
+                    <button mat-menu-item (click)="openDialogLayby('0ms', '0ms')">
+                        <mat-icon>hourglass_empty</mat-icon>
+                        <span>layby</span>
+                    </button>
+                    <button mat-menu-item (click)="openDialogRestock('0ms', '0ms')">
+                        <mat-icon>local_gas_station</mat-icon>
+                        <span>Bunkering</span>
+                    </button>
+                    <button mat-menu-item (click)="openDialogWaitingAtSea('0ms', '0ms')">
+                        <mat-icon>anchor</mat-icon>
+                        <span>Anchor / Drifting</span>
+                    </button>
+                </mat-menu> 
+               
+                <button mat-icon-button color="default" (click)="moveUPLocationActivitey()">
+                    <mat-icon>keyboard_arrow_up</mat-icon>
+                </button>
+                <button mat-icon-button color="default" (click)="editLoc()">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="default" (click)="deleteLocationActivitey()">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-icon-button color="default" (click)="moveDownLocationActivitey()">
+                    <mat-icon>keyboard_arrow_down</mat-icon>
+                </button>
+            </div>
+</div>
+        </mat-card-subtitle>
+    </ng-template>
+
+    <!-- LEG ACTIVITIES DETAILS -->
+
+    <div *ngFor="let act of activityPerLocationModel.activities let i = index">
+        <app-activity [indexActivity]='i' [indexLocationActivityActivity]="indexLocation" [activity]="act"
+            style="margin: 1px"></app-activity>
+    </div>
+
+
+</mat-card>

@@ -1,0 +1,62 @@
+.div-card {
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.main-card-background {
+    background-color: #004a9f;
+    ;
+}
+
+.text {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    
+}
+
+.main-card {
+    color: white;
+}
+.divider_blue{
+    background-color: #004a9f;
+    height:  2px;
+}
+
+.padding{ 
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.tris {
+    margin: auto;
+}
+
+
+.img {
+    height: 50px;
+}
+
+
+
+.indicator {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #222;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-left: 10px;
+}
+ 
+.example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
