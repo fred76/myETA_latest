@@ -1,6 +1,6 @@
 {
     "name": "eta",
-    "version": "1.2.6",
+    "version": "1.2.7",
     "description": "ETA nnn",
     "main": "dist/electron/electron/electron-main.js",
     "author": "Jane Doe",
@@ -52,7 +52,7 @@
         "postinstall-builder": "electron-builder install-app-deps",
         "qq": "electron-builder node-gyp-rebuild ",
         "postinstall": "electron-builder install-app-deps",
-		"build": "ng build  --c=production --base-href ./ electron-builder --mac --windows --linux",
+		"build": "ng build --base-href ./  && tsc --p electron && electron .  --c=production electron-builder --mac --windows --linux",
 		"release": "electron-builder --mac --windows --linux --publish always"
 	
     },
