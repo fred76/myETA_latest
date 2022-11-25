@@ -1,6 +1,6 @@
 {
     "name": "eta",
-    "version": "1.2.8",
+    "version": "1.2.9",
     "description": "ETA nnn",
     "main": "dist/electron/electron/electron-main.js",
     "author": "Jane Doe",
@@ -48,7 +48,8 @@
         "builder-win": "electron-builder build --x64 --windows portable",
         "builder-win-portable": "electron-builder build --x64 --windows portable",
         "postinstall": "electron-builder install-app-deps",
-        "b": "electron-builder"
+        "b": "electron-builder",
+        "mygit": "git push && git push --tags"
     },
     "private": true,
     "dependencies": {
