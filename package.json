@@ -37,7 +37,7 @@
     },
     "scripts": {
         "build-mac": "ng build --c=production --base-href ./ && electron-packager . --overwrite  --platform=darwin --arch=arm64  --prune=true --out=./dist/electron-build",
-        "build-win": " electron-packager . --overwrite  --platform=win32 --arch=x64  --prune=true --out=./dist/electron-build",
+        "build-win": " electron-packager  . --overwrite  --platform=win32 --arch=x64  --prune=true --out=./dist/electron-build",
         "ng": "ng",
         "start": "ng serve",
         "build1": "ng build  --c=production --base-href ./ ",
@@ -47,10 +47,10 @@
         "build:prod": "npm run build --base-href -- -c production",
         "electron:mac": "npm run build:prod && npx electron-builder build --mac",
         "electron:win": "yarn build:prod && npx electron-builder build -w ",
-        "electron-rebuild": "electron-rebuild",
+        "electron-rebuildf": "electron-rebuild" ,
         "electron-builder": "electron-builder build --win portable",
         "postinstall-builder": "electron-builder install-app-deps",
-        "qq": "electron-builder --x64 --windows node-gyp-rebuild ",
+        "qq": "electron-builder --x64 --windows ",
         "postinstall": "electron-builder install-app-deps",
         "build": "electron-builder --x64 --windows",
         "release": "electron-builder --windows --publish always"
