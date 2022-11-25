@@ -1,6 +1,6 @@
 {
     "name": "eta",
-    "version": "1.2.7",
+    "version": "1.2.8",
     "description": "ETA nnn",
     "main": "dist/electron/electron/electron-main.js",
     "author": "Jane Doe",
@@ -24,7 +24,7 @@
             "hardenedRuntime": true,
             "provisioningProfile": "embeddedprovisionprofile.provisionprofile",
             "target": [
-                "dmg"
+                "zip"
             ]
         },
         "win": {
