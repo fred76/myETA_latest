@@ -14,3 +14,7 @@
   :host /deep/ .mat-select-value-text {
     color: white !important;
   }
+
+  .marginTop {
+    margin-top: 3px
+  }

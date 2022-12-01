@@ -1,8 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { RotationService } from 'src/app/Core/Services/rotation.service';
-import { ActivityModel } from 'src/shared/entity/rotation-model';
+import { RotationService } from 'src/app/Core/Services/rotation.service'; 
 import { PortActivitiesComponent } from '../../port-activities/port-activities.component';
 
 @Component({
@@ -78,7 +77,8 @@ export class WaitingAtSeaComponent implements OnInit {
       activityType: this.activityType,
       ETX: this.ETX,
     })
-
+    
+  
 
   }
 

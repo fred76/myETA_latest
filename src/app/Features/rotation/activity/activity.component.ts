@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { RotationService } from 'src/app/Core/Services/rotation.service';
-import { Activity } from 'src/shared/schema/rotation.schema';
-  import { ActivityModel } from 'src/shared/entity/rotation-model';
+import { Activity } from 'src/shared/schema/rotation.schema'; 
 import { CanalTransitComponent } from '../cards/canal-transit/canal-transit.component';
 import { LaybyBerthComponent } from '../cards/layby-berth/layby-berth.component';
 import { OperationComponent } from '../cards/operation/operation.component';
@@ -11,6 +10,7 @@ import { RestockBunkerComponent } from '../cards/restock-bunker/restock-bunker.c
 import { SeaPassageComponent } from '../cards/sea-passage/sea-passage.component';
 import { ShiftingComponent } from '../cards/shifting/shifting.component';
 import { WaitingAtSeaComponent } from '../cards/waiting-at-sea/waiting-at-sea.component';
+import { MyElectronService } from 'src/app/Core/Services/electron.service';
 
 @Component({
   selector: 'app-activity',
@@ -20,17 +20,16 @@ import { WaitingAtSeaComponent } from '../cards/waiting-at-sea/waiting-at-sea.co
 export class ActivityComponent implements OnInit {
 
   constructor(private rotationService: RotationService,
-    public dialog: MatDialog,) { }
+    public dialog: MatDialog, private appservice: MyElectronService) { }
 
 
   @Input() indexActivity: number
   @Input() indexLocationActivityActivity: number
   @Input() activity: Activity
 
-  ngOnInit(): void {
+  berths: string[] = []
 
-
-
+  ngOnInit(): void {  
   }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
@@ -45,7 +44,7 @@ export class ActivityComponent implements OnInit {
         data: this.activity
       });
       dialogRef.afterClosed().subscribe((result: Activity) => {
-        if (result) { 
+        if (result) {  
           const duration = result.distance! / result.speed!
           result.duration = duration
           result.id = this.indexActivity  
@@ -79,8 +78,9 @@ export class ActivityComponent implements OnInit {
         disableClose: true,
         data: this.activity
       });
-      dialogRef.afterClosed().subscribe((result: Activity) => {
+      dialogRef.afterClosed().subscribe((result: Activity) => { 
         if (result) { 
+          result.activityType === 'Pilotage Inbound' ? result.ETX = 'ETB' : result.ETX = 'SoSP'
           result.id = this.indexActivity
           this.rotationService.editActivity(this.indexLocationActivityActivity,this.indexActivity,result)
 
@@ -106,25 +106,26 @@ export class ActivityComponent implements OnInit {
       });
     }
     if (this.activity.activityType === 'Shifting') {
+      this.appservice.getBerthByActivityID(this.activity).then(b => { 
+        this.berths = b
+    
       const dialogRef = this.dialog.open(ShiftingComponent, {
         width: '1100px',
         enterAnimationDuration,
         exitAnimationDuration,
         disableClose: true,
-        data: this.activity
+        data: {activity: this.activity, berths: this.berths }
       });
-
+  
       dialogRef.afterClosed().subscribe((result: Activity) => {
-        if (result) {
-
-          result.id = this.indexActivity
-           
-          
+        if (result) { 
+          result.id = this.indexActivity 
           this.rotationService.editActivity(this.indexLocationActivityActivity,this.indexActivity,result)
 
         }
 
       });
+    })
     }
     if (this.activity.activityType === 'Layby Berth') {
       const dialogRef = this.dialog.open(LaybyBerthComponent, {

@@ -14,20 +14,34 @@
     <p class="designation">Test</p>
 
     <mat-divider></mat-divider>
-    <div fxLayoutGap="18px"> 
-    <button mat-button class="menu-button" routerLink="/location">
-      <mat-icon>add_location_add</mat-icon>
-      <span>Ports</span>
-    </button>
-    <button mat-button class="menu-button" routerLink="/home">
-      <mat-icon>public</mat-icon>
-      <span>Rotation</span>
-    </button> 
-    <button mat-button class="menu-button" routerLink="/bunker">
-      <mat-icon>local_gas_station</mat-icon>
-      <span>Engine & Auxiliares</span>
-    </button> 
-  </div>
+    <div fxLayoutGap="18px">
+      <button mat-button class="menu-button" routerLink="/location">
+        <mat-icon>add_location_add</mat-icon>
+        <span>Ports</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/home">
+        <mat-icon>public</mat-icon>
+        <span>Rotation</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/bunker">
+        <mat-icon>local_gas_station</mat-icon>
+        <span>Engine & Auxiliares</span>
+      </button> 
+      <mat-divider></mat-divider>
+      <button mat-button class="menu-button"  (click)="exportFullRotation()">
+        <mat-icon>picture_as_pdf</mat-icon>
+        <span>Full Rotation</span>
+      </button>
+      <button mat-button class="menu-button"  (click)="exportShortRotation()">
+        <mat-icon>picture_as_pdf</mat-icon>
+        <span>Short Rotation</span>
+      </button>
+      <button mat-button class="menu-button"  (click)="compactRotation()">
+        <mat-icon *ngIf="(rotationService.isShort$ | async) === false">unfold_less</mat-icon>
+        <mat-icon *ngIf="(rotationService.isShort$ | async) === true">unfold_more</mat-icon>
+        <span>Short Rotation</span>
+      </button> 
+    </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="content mat-elevation-z8">

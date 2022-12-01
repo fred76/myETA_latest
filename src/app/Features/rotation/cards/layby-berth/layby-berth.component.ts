@@ -1,7 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ActivityModel } from 'src/shared/entity/rotation-model';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'; 
 import { PortActivitiesComponent } from '../../port-activities/port-activities.component';
 
 @Component({
@@ -74,7 +73,7 @@ export class LaybyBerthComponent implements OnInit {
       activityType: this.activityType
     })
 
-
+   
   }
 
 

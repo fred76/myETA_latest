@@ -22,6 +22,8 @@ export interface ActivityPerLocationModel {
 
 export interface ActivityModel { 
     date?: string
+    ECA?:  'true' | 'false',
+    EoSP?:  'true' | 'false',
     ETX?: 'ETA' | 'ETB' | 'ETC' | 'ETS' | 'SoSP'
     speed?: number
     distance?: number

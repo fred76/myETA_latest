@@ -1,7 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ActivityModel } from 'src/shared/entity/rotation-model';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'; 
 import { PortActivitiesComponent } from '../../port-activities/port-activities.component';
 
 @Component({
@@ -32,8 +31,9 @@ export class PilotingComponent implements OnInit {
 
 
   constructor(public dialogRef: MatDialogRef<PortActivitiesComponent>,
-    @Inject(MAT_DIALOG_DATA)  public data: any,
+    @Inject(MAT_DIALOG_DATA)  public data: any 
   ) {
+ 
 
     this.duration = new FormControl(data.duration, Validators.required)
     this.cargoOnBoardMT = new FormControl(data.cargoOnBoardMT, Validators.required)
@@ -66,8 +66,8 @@ export class PilotingComponent implements OnInit {
       Validators.required
     ]) 
     this.activityType = new FormControl(data.activityType, Validators.required);
-
-    this.activityType.value === 'Pilotage Inbound' ? this.ETX = new FormControl('ETB') : this.ETX = new FormControl('SoSP');
+    
+    this.ETX = new FormControl('');
 
     this.form = new FormGroup({
       duration: this.duration,
@@ -87,6 +87,8 @@ export class PilotingComponent implements OnInit {
       activityType: this.activityType,
       ETX: this.ETX
     }) 
+
+  
   }
 
 

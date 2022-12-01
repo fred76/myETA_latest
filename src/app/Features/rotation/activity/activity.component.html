@@ -1,18 +1,24 @@
-<div fxLayout="row" fxLayoutAlign="space-around stretch"> 
+<div fxLayout="row" fxLayoutAlign="space-around stretch">
     <div fxLayout="column" fxLayoutAlign="space-around stretch" fxFlex="grow" fxLayoutGap="12px">
         <mat-card>
 
-            <div class="div-card" fxLayout="row" fxLayoutAlign="start center" >
-            <h2 >{{ activity.activityType}} </h2>
-            <div *ngIf="activity.activityType === 'Shifting'">
-                <h2 > to: {{ activity.berthOfActivity}}</h2> 
-            </div>
+            <div class="div-card" fxLayout="row" fxLayoutAlign="start center">
+                <h2>{{ activity.activityType}} </h2>
+                <div *ngIf="activity.activityType === 'Shifting'">
+                    <h2 style="margin-left: 6px"> to: {{ activity.berthOfActivity}}</h2>
+                </div>
+                <div *ngIf="activity.activityType === 'Sea Passage' && activity.ECA === 'isECA'">
+                    <h4 style="margin-left: 6px"> (ECA Area)</h4>
+                </div>
+                <div *ngIf="activity.EoSP === 'isEoSP'P">
+                    <h4 style="margin-left: 6px"> (EoSP)</h4>
+                </div>
             </div>
             <div class="div-card" fxLayout="row" fxLayoutAlign="space-between center">
-            <h2 class="text">{{activity.ETX}}</h2>
+                <h2 class="text">{{activity.ETX}}</h2>
                 <h2 class="text">{{activity.date}}</h2>
-            
-            <mat-divider [vertical]="true" [inset]="true"></mat-divider> 
+
+                <mat-divider [vertical]="true" [inset]="true"></mat-divider>
 
                 <h3 class="text">△ Time {{activity.duration |number : '1.1-1'}} Hrs</h3>
                 <mat-divider [vertical]="true" [inset]="true"></mat-divider>
@@ -25,14 +31,14 @@
 
             <div class="div-card" fxLayout="row" fxLayoutAlign="space-between center">
                 <div class="text" fxLayout="row" fxLayoutAlign="space-around center">
-                    <h2 class="tris">△</h2> 
+                    <h2 class="tris">△</h2>
                     <div fxLayout="column" fxLayoutAlign="space-around center">
                         <h3 class="tris">FO {{activity.deltaFO |number : '1.1-1'}} MT</h3>
                         <h3 class="tris">DO {{activity.deltaDO |number : '1.1-1'}} MT</h3>
                     </div>
                 </div>
                 <div class="text" fxLayout="row" fxLayoutAlign="space-around center">
-                    <h2 class="tris">ROB</h2> 
+                    <h2 class="tris">ROB</h2>
                     <div fxLayout="column" fxLayoutAlign="space-around center">
                         <h3 class="tris"> FO {{activity.robFO |number : '1.1-1'}} MT</h3>
                         <h3 class="tris">DO {{activity.robDO|number : '1.1-1'}} MT</h3>
@@ -40,26 +46,26 @@
                 </div>
                 <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="90px">
                     <div fxLayout="row" fxLayoutAlign="space-around end">
-                        <img class="indicator" class="img" src="assets/icon/propeller_black.png" alt="image"> 
+                        <img class="indicator" class="img" src="assets/icon/propeller_black.png" alt="image">
                         <div fxLayout="column" fxLayoutAlign="end start" style="margin-left: 8px">
-                            <h4 style="margin: auto;">{{activity.mainEngineFuel  | uppercase}}</h4>
-                            <h4 class="indicator" style="margin: auto">{{activity.mainEngine}}</h4> 
-                        </div> 
+                            <h4 style="margin: auto;">{{activity.mainEngineFuel | uppercase}}</h4>
+                            <h4 class="indicator" style="margin: auto">{{activity.mainEngine}}</h4>
+                        </div>
                     </div>
                     <div fxLayout="row" fxLayoutAlign="space-around end">
                         <img class="indicator" class="img" src="assets/icon/ddgg_black.png" alt="image">
                         <div fxLayout="column" fxLayoutAlign="end start" style="margin-left: 8px">
-                            <h4 style="margin: auto;">{{activity.ddGGBunker  | uppercase}}</h4>
-                            <h4 class="indicator" style="margin: auto">{{activity.ddGG}}</h4> 
-                        </div> 
+                            <h4 style="margin: auto;">{{activity.ddGGBunker | uppercase}}</h4>
+                            <h4 class="indicator" style="margin: auto">{{activity.ddGG}}</h4>
+                        </div>
                     </div>
-                    <div fxLayout="row" fxLayoutAlign="space-around center" >
+                    <div fxLayout="row" fxLayoutAlign="space-around center">
                         <img class="indicator" class="img" src="assets/icon/boiler_black.png" alt="image">
                         <div fxLayout="column" fxLayoutAlign="end start" style="margin-left: 8px">
                             <h4 style="margin: auto;"> FO: {{activity.boilerFO}}</h4>
-                            <h4 style="margin: auto">DO: {{activity.boilerDO}}</h4> 
+                            <h4 style="margin: auto">DO: {{activity.boilerDO}}</h4>
                         </div>
-                    </div> 
+                    </div>
                 </div>
 
             </div>

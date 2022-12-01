@@ -23,7 +23,11 @@ import { RestockBunkerComponent } from './Features/rotation/cards/restock-bunker
 import { BunkerOptionComponent } from './Features/bunker-option/bunker-option.component';
 import { RotationComponent } from './Features/rotation/rotation.component';
 import { PortActivitiesComponent } from './Features/rotation/port-activities/port-activities.component';
-import { RotationService } from './Core/Services/rotation.service'; 
+import { RotationService } from './Core/Services/rotation.service';
+import { ActivityShortComponent } from './Features/rotation/activity/activity-short/activity-short.component';
+import { CountryDetailsComponent } from './Features/loctation/country-details/country-details.component';
+import { BerthDetailsComponent } from './Features/loctation/berth-details/berth-details.component';
+import { PortDetailsComponent } from './Features/loctation/port-details/port-details.component'; 
  
 // const dbConfig: DBConfig = {
 //   name: 'MyDb',
@@ -53,7 +57,11 @@ import { RotationService } from './Core/Services/rotation.service';
     ShiftingComponent,
     CanalTransitComponent,
     RestockBunkerComponent,
-    BunkerOptionComponent
+    BunkerOptionComponent,
+    ActivityShortComponent,
+    CountryDetailsComponent,
+    BerthDetailsComponent,
+    PortDetailsComponent
   ],
   imports: [
     BrowserModule,

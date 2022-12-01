@@ -77,8 +77,7 @@ export class RestockBunkerComponent implements OnInit {
       ETX: this.ETX,
       activityType: this.activityType
     })
-
-
+ 
   }
 
 

@@ -1,6 +1,5 @@
 <div fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="12px">
-    <button mat-raised-button color="primary" style="width: 100%" (click)="rot()">Add
-        Rotation</button>
+  
     <!-- GLOBAL INPUT -->
     <mat-card>
 
@@ -34,13 +33,16 @@
                     <input matInput type="number" placeholder="ROB in Metric Tons" [formControl]="robDo">
                     <span matSuffix>MT</span>
                 </mat-form-field>
+                
+                
+                 
             </form>
         </ng-template>
     </mat-card>
 
     <div *ngIf="rotation">
         <div *ngFor="let actXloc of rotation.activityPerLocations let i = index">
-            <app-port-activities [indexLocation]='i' [activityPerLocationModel]="actXloc" style="margin: 6px"></app-port-activities>
+            <app-port-activities  [indexLocation]='i' [activityPerLocationModel]="actXloc" style="margin: 6px"></app-port-activities>
         </div>
     </div>
 

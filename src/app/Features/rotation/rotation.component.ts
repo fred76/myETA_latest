@@ -4,7 +4,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MyElectronService } from 'src/app/Core/Services/electron.service';
 import { RotationService } from 'src/app/Core/Services/rotation.service';
 import { Rotation } from 'src/shared/schema/rotation.schema';
-  import { RotationModel } from 'src/shared/entity/rotation-model';
 @Component({
   selector: 'app-home',
   templateUrl: './rotation.component.html',
@@ -24,8 +23,10 @@ export class RotationComponent implements OnInit {
 
   rotation: Rotation
 
-  rot(){ 
-  this.appservice.addRotation(this.rotation)
+ 
+
+  rot() {
+    this.appservice.addRotation(this.rotation)
   }
 
   constructor(
@@ -34,22 +35,23 @@ export class RotationComponent implements OnInit {
 
     this.rotationService.rotation$.subscribe(r => {
 
-      if (r) { 
-        this.rotation = r 
-        this.rotationService.rotation=r
-        this.isRotation = true 
-        if (r.dateTime && r.robDO && r.robFO && r.utc){
-        this.isShowAddRotationButton = true}
+      if (r) {
+        this.rotation = r
+        this.rotationService.rotation$.getValue() != r
+        this.isRotation = true
+        if (r.dateTime && r.robDO && r.robFO && r.utc) {
+          this.isShowAddRotationButton = true
+        }
       }
     })
-  
+
     let newDate = new Date()
     const format = 'yyyy-MM-dd HH:mm';
     const locale = 'en-UK';
- 
+
     const formattedDate = formatDate(newDate, format, locale);
 
-    // this.getRotation()
+
 
     this.dateTime = new FormControl(formattedDate, Validators.required)
     this.utcTime = new FormControl(null,
@@ -72,6 +74,7 @@ export class RotationComponent implements OnInit {
 
   }
 
+   
   getFormatedDate(date: Date, format: string) {
     const datePipe = new DatePipe('en-US');
     return datePipe.transform(date, format);
@@ -97,15 +100,20 @@ export class RotationComponent implements OnInit {
           this.robFo.value,
           this.robDo.value
         )
-      } 
+      }
     })
 
     if (this.rotation !== undefined) {
+      const format = 'yyyy-MM-dd HH:mm';
+      const locale = 'en-UK';
+
+      const formattedDate = formatDate(this.rotation.dateTime, format, locale);
+
       this.form.setValue({
         utcTime: this.rotation.utc,
-      dateTime: this.rotation.dateTime,
-      robFo: this.rotation.robFO,
-      robDo: this.rotation.robDO
+        dateTime: formattedDate,
+        robFo: this.rotation.robFO,
+        robDo: this.rotation.robDO
       })
     }
 
@@ -115,12 +123,12 @@ export class RotationComponent implements OnInit {
   isShowRotationInitial() {
     this.isRotation = !this.isRotation
   }
- 
+
   addEmptyActivityPerLocation() {
     this.rotationService.addEmptyActivityPerLocation()
   }
 
 
+ 
 
-
-}
+} 

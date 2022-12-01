@@ -80,7 +80,7 @@ export class BunkerOptionComponent implements OnInit, OnDestroy {
       speedCruise: this.speedCruise,
     })
  
-
+  
   }
 
   onSubmit() { 

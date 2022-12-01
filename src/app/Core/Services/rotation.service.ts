@@ -1,37 +1,32 @@
 import { Injectable } from '@angular/core';
-// import { ActivityModel, ActivityPerLocationModel, RotationModel } from 'src/shared/entity/rotation-model';
 import { formatDate } from '@angular/common';
 import { MyElectronService } from './electron.service';
 import { BunkerOption } from 'src/shared/schema/bunker.schema';
 import { BehaviorSubject } from 'rxjs';
 import { Rotation, ActivityPerLocation, Activity } from 'src/shared/schema/rotation.schema';
 
+
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
+
 @Injectable({
   providedIn: 'root'
 })
 export class RotationService {
 
-  rotation: Rotation 
   toMilliSecond: number = 3600000
 
-  constructor(private appservice: MyElectronService) {
-
-    this.getBunker()
-
-  }
-
-  bunker: BunkerOption
+  constructor(private appservice: MyElectronService) { }
 
   bunkerOption$ = new BehaviorSubject<BunkerOption | null>(null);
   rotation$ = new BehaviorSubject<Rotation | null>(null);
+  isShort$ = new BehaviorSubject<boolean>(false);
 
-  getBunker() {
-    this.appservice.getBunker().then(bunker => {
-      this.bunker = bunker
-      this.bunkerOption$.next(bunker)
-    })
+  compactRotation() {
+    let i = this.isShort$.getValue()
+    i = !i
+    this.isShort$.next(i)
   }
-
 
   addRotation(
     dateTime: Date,
@@ -39,25 +34,36 @@ export class RotationService {
     robFO: number,
     robDO: number) {
 
+    const rotation = this.rotation$.getValue()!
+    if (rotation) {
 
-    if (this.rotation.activityPerLocations?.length! > 0) {
-      this.rotation.dateTime = dateTime
-      this.rotation.utc = utc
-      this.rotation.robFO = robFO
-      this.rotation.robDO = robDO
-      this.rotation.activityPerLocations = this.rotation.activityPerLocations
-       this.saveCalculateNext(this.rotation)
-
-
-    } else {
-      this.rotation.dateTime = dateTime
-      this.rotation.utc = utc
-      this.rotation.robFO = robFO
-      this.rotation.robDO = robDO
-      this.rotation.activityPerLocations = []
-      this.rotation$.next(this.rotation)
-
+      rotation.dateTime = dateTime
+      rotation.utc = utc
+      rotation.robFO = robFO
+      rotation.robDO = robDO
+      rotation.activityPerLocations = rotation.activityPerLocations
+      this.saveCalculateNext(rotation)
+      return
     }
+
+    if (!rotation) {
+
+      const t: Rotation = new Rotation()
+
+
+      t.dateTime = dateTime
+      t.utc = utc
+      t.robFO = robFO
+      t.robDO = robDO
+      t.activityPerLocations = []
+      this.rotation$.next(t)
+
+
+      return
+    }
+
+
+
 
 
 
@@ -66,16 +72,16 @@ export class RotationService {
 
   addEmptyActivityPerLocation() {
 
-    let id = this.rotation.activityPerLocations?.length!
+    const rotation = this.rotation$.getValue()!
+
+    let id = rotation.activityPerLocations?.length!
 
     let locAtc: ActivityPerLocation = new ActivityPerLocation()
 
-    this.rotation.activityPerLocations?.push(locAtc)
+    rotation.activityPerLocations?.push(locAtc)
 
-    this.rotation$.next(this.rotation)
+    this.rotation$.next(rotation)
   }
-
-
 
   AddActivityPerLocation(
     id: number,
@@ -84,7 +90,9 @@ export class RotationService {
     berth: string,
     utcTime: number) {
 
-    const r = this.rotation
+    const rotation = this.rotation$.getValue()!
+
+    const r = rotation
 
     const t = r.activityPerLocations![id]
     t.port = port
@@ -104,40 +112,52 @@ export class RotationService {
   addActivity(
     id: number,
     act: Activity) {
-    const r = this.rotation
 
-    const t = r.activityPerLocations![id] 
-    
+    const r = this.rotation$.getValue()!
+
+    const t = r.activityPerLocations![id]
+
     t.activities?.push(act)
     this.saveCalculateNext(r)
   }
+
   editActivity(
     id: number,
     idAct: number,
     act: Activity) {
+    const r = this.rotation$.getValue()!
 
-    this.rotation!.activityPerLocations![id].activities![idAct] = act
-    this.saveCalculateNext(this.rotation)
+    r.activityPerLocations![id].activities![idAct] = act
+    this.saveCalculateNext(r)
+    // this.laddenCargo = null
+    // this.laddenPercentage = null
 
   }
 
   deleteActivitey(index: number,
     idAct: number) {
-    this.rotation!.activityPerLocations![index].activities!.splice(idAct, 1)
-    this.saveCalculateNext(this.rotation)
+
+    const r = this.rotation$.getValue()!
+    r.activityPerLocations![index].activities!.splice(idAct, 1)
+    this.saveCalculateNext(r)
   }
+
   deleteLocationActivitey(id: number) {
-    this.rotation!.activityPerLocations!.splice(id, 1)
-   
-    this.saveCalculateNext(this.rotation)
+    const r = this.rotation$.getValue()!
+    r.activityPerLocations!.splice(id, 1)
+
+    this.saveCalculateNext(r)
   }
+
   moveDownLocationActivitey(index: number) {
 
-    if (this.rotation!.activityPerLocations!.length - 1 === index) { return }
+    const r = this.rotation$.getValue()!
+
+    if (r.activityPerLocations!.length - 1 === index) { return }
 
     let swap1 = index
     let swap2 = index + 1
-    const rot = this.rotation
+    const rot = r
     let arra = rot.activityPerLocations!
     var temp = arra[swap1];
     arra[swap1] = arra[swap2]
@@ -145,12 +165,14 @@ export class RotationService {
 
     this.saveCalculateNext(rot)
   }
+
   moveUPLocationActivitey(index: number) {
+    const r = this.rotation$.getValue()!
 
     if (index === 0) { return }
     let swap1 = index
     let swap2 = index - 1
-    const rot = this.rotation
+    const rot = r
     let arra = rot.activityPerLocations!
     var temp = arra[swap1];
     arra[swap1] = arra[swap2]
@@ -160,12 +182,13 @@ export class RotationService {
   }
 
   moveDownActivitey(index: number, indexLoc: number) {
+    const r = this.rotation$.getValue()!
 
-    if (this.rotation!.activityPerLocations!.length - 1 === index) { return }
+    if (r.activityPerLocations!.length - 1 === index) { return }
 
     let swap1 = index
     let swap2 = index + 1
-    const rot = this.rotation
+    const rot = r
     let arra = rot.activityPerLocations![indexLoc].activities!
     var temp = arra[swap1];
     arra[swap1] = arra[swap2]
@@ -173,12 +196,14 @@ export class RotationService {
 
     this.saveCalculateNext(rot)
   }
+
   moveUpActivitey(index: number, indexLoc: number) {
+    const r = this.rotation$.getValue()!
 
     if (index === 0) { return }
     let swap1 = index
     let swap2 = index - 1
-    const rot = this.rotation
+    const rot = r
     let arra = rot.activityPerLocations![indexLoc].activities!
     var temp = arra[swap1];
     arra[swap1] = arra[swap2]
@@ -187,8 +212,7 @@ export class RotationService {
     this.saveCalculateNext(rot)
   }
 
-
-  saveCalculateNext(rotation: Rotation){
+  saveCalculateNext(rotation: Rotation) {
 
     this.timeCalculation()
     this.bunkerCalculation()
@@ -197,11 +221,9 @@ export class RotationService {
 
   }
 
- 
-
   timeCalculation() {
 
-    let t = this.rotation
+    const t = this.rotation$.getValue()!
 
     const startDate = t.dateTime!
 
@@ -209,7 +231,7 @@ export class RotationService {
 
     const newDate = new Date(startDate);
 
-    let startDateMilleseconds = 0 
+    let startDateMilleseconds = 0
 
     const activityPerLoca = t.activityPerLocations!
 
@@ -222,7 +244,7 @@ export class RotationService {
       let activity = p.activities
 
       const UTCMilliSecond = p.utcTime! * this.toMilliSecond
- 
+
       activity?.map((act, i) => {
 
         i === 0 ? startDateMilleseconds = newDate.getTime() - startUTCinMillisecods : newDate.getTime()
@@ -235,25 +257,24 @@ export class RotationService {
 
         deltaTime += durationMilliSecond
 
-        let newEtaMillisecond: number = startDateMilleseconds + deltaTime + UTCMilliSecond 
+        let newEtaMillisecond: number = startDateMilleseconds + deltaTime + UTCMilliSecond
+  
+        act.date = this.dateConversionFromUnix(newEtaMillisecond) 
 
-        act.date = this.dateConversionFromUnix(newEtaMillisecond)
-     
       })
     })
 
     this.rotation$.next(t)
 
   }
- 
-  bunkerCalculation() {
 
-    let t = this.rotation
-    const startFO = this.rotation.robFO!
-    const startDO = this.rotation.robDO!
+  bunkerCalculation() {
+    let t = this.rotation$.getValue()!
+    const startFO = t.robFO!
+    const startDO = t.robDO!
 
     const activityPerLoca = t.activityPerLocations!
-    const bunker = this.bunker
+    const bunker = this.bunkerOption$.getValue()!
 
     let robFORot: number = 0
     let robDORot: number = 0
@@ -270,7 +291,7 @@ export class RotationService {
 
       act?.map((a, i) => {
 
-        if (i === 0) { 
+        if (i === 0) {
 
           let b = this.bunkerCalculationPerActivity(a, bunker)
 
@@ -282,7 +303,7 @@ export class RotationService {
 
           i === p.activities?.length! - 1 ? (robFORot = robFOAct, robDORot = robDOAct) : null
         }
-        else { 
+        else {
           let b = this.bunkerCalculationPerActivity(a, bunker)
 
           a.robFO! = robFOAct - b.deltaFO
@@ -418,7 +439,7 @@ export class RotationService {
     return { ddGG: 0, deltaFO: 0, deltaDO: 0 }
   }
 
-  boilerCalculation(activity: Activity, bunker: BunkerOption): { deltaFO: number, deltaDO: number, boilersNumberFO: number , boilersNumberDO: number} {
+  boilerCalculation(activity: Activity, bunker: BunkerOption): { deltaFO: number, deltaDO: number, boilersNumberFO: number, boilersNumberDO: number } {
 
     const boilerMax = bunker.boilerMaxConsumption
 
@@ -589,6 +610,145 @@ export class RotationService {
     const format = 'dd-MM-yyyy HH:mm';
     const locale = 'en-UK';
     return formatDate(date, format, locale);
+  }
+
+  fullRotation() {
+    const doc = new jsPDF({
+      orientation: "landscape"
+    });
+    const img = new Image();
+    let t = this.rotation$.getValue()!
+    const format = 'dd-MM-yyyy HH:mm';
+    const locale = 'en-UK';
+
+    const formattedDate = formatDate(t.dateTime, format, locale);
+    doc.text('Start ETA Calculation @ ' + formattedDate + ' LT', 10, 10);
+    doc.text('UTC: ' + t.utc.toString(), 140, 10);
+    doc.text('ROB FO: ' + t.robFO.toString(), 170, 10);
+    doc.text('ROB DO: ' + t.robDO.toString(), 210, 10);
+    t.activityPerLocations.map((a, i) => {
+      let heads: any = []
+      let headerTop = [
+        {
+          content: ['Port of: ' + a.port + ' -  Berth: ' + a.berth + ' -  UTC: ' + a.utcTime + ' HRS'],
+          colSpan: 10,
+          styles: { fillColor: [22, 160, 133] },
+        },
+      ]
+      let headerBottom = ['Activityd', ' - ', 'Date & Time', 'Expected Time', 'Ladden @ %', 'Cargo in MT', 'ROB DO', 'ROB FO', 'Restock DO', 'Resotck FO']
+
+      heads.push(headerTop)
+      heads.push(headerBottom)
+      let arrayOfArrayValueActivity: any[] = []
+
+      a.activities.map((p, i) => {
+        let arrayOfValueActivity: any[] = []
+
+        let body = [
+          {
+            content: ['Activityd', ' - ', 'Date & Time', 'Expected Time', 'Ladden @ %', 'Cargo in MT', 'ROB DO', 'ROB FO', 'Restock DO', 'Resotck FO'],
+            colSpan: 10,
+            styles: { fillColor: [22, 160, 133] },
+          },
+        ]
+        arrayOfValueActivity.push(p.activityType)
+        arrayOfValueActivity.push(p.ETX)
+        arrayOfValueActivity.push(p.date + ' LT')
+        arrayOfValueActivity.push((Math.round(p.duration * 100) / 100).toFixed(1) + ' HRS')
+        arrayOfValueActivity.push(p.laddenPercentage)
+        arrayOfValueActivity.push(p.cargoOnBoardMT)
+        arrayOfValueActivity.push((Math.round(p.robFO * 100) / 100).toFixed(1) + ' MT')
+        arrayOfValueActivity.push((Math.round(p.robDO * 100) / 100).toFixed(1) + ' MT')
+        arrayOfValueActivity.push(p.restockFo + ' MT')
+        arrayOfValueActivity.push(p.restockDo + ' MT')
+
+        arrayOfArrayValueActivity.push(arrayOfValueActivity)
+
+      })
+
+      let body: any = [
+        {
+          content: arrayOfArrayValueActivity,
+          row: 10,
+        },
+      ]
+
+      autoTable(doc, {
+        head: heads,
+        body: arrayOfArrayValueActivity,
+        theme: 'striped',
+      })
+
+    });
+    doc.save('FullRotation.pdf')
+    // doc.save('Instruction.pdf');
+  }
+
+  shortRotation() {
+    const doc = new jsPDF({
+      orientation: "landscape"
+    });
+    const img = new Image();
+
+    let t = this.rotation$.getValue()!
+
+    t.activityPerLocations.map((a, i) => {
+      doc.addPage()
+
+      const format = 'dd-MM-yyyy HH:mm';
+      const locale = 'en-UK';
+
+      const formattedDate = formatDate(t.dateTime, format, locale);
+      doc.text('Start ETA Calculation @ ' + formattedDate + ' LT', 10, 10);
+      doc.text('UTC: ' + t.utc.toString(), 140, 10);
+      doc.text('ROB FO: ' + t.robFO.toString(), 170, 10);
+      doc.text('ROB DO: ' + t.robDO.toString(), 210, 10);
+      let heads: any = []
+      let headerTop = [
+        {
+          content: ['Port of: ' + a.port + ' -  Berth: ' + a.berth + ' -  UTC: ' + a.utcTime + ' HRS'],
+          colSpan: 10,
+          styles: { fillColor: [22, 160, 133] },
+        },
+      ]
+      let headerBottom = ['Activityd', ' - ', 'Date & Time', 'Expected Time']
+
+      heads.push(headerTop)
+      heads.push(headerBottom)
+      let arrayOfArrayValueActivity: any[] = []
+
+      a.activities.map((p, i) => {
+        let arrayOfValueActivity: any[] = []
+
+
+
+        if (p.activityType === 'Sea Passage' && p.EoSP === 'isEoSP' || p.activityType === 'Pilotage Inbound' || p.activityType === 'Loading' || p.activityType === 'Discharging' || p.activityType === 'Pilotage Outbound') {
+          arrayOfValueActivity.push(p.activityType)
+          arrayOfValueActivity.push(p.ETX)
+          arrayOfValueActivity.push(p.date + ' LT')
+          arrayOfValueActivity.push((Math.round(p.duration * 100) / 100).toFixed(1) + ' HRS')
+
+          arrayOfArrayValueActivity.push(arrayOfValueActivity)
+        }
+
+      })
+
+      let body: any = [
+        {
+          content: arrayOfArrayValueActivity,
+          row: 10,
+        },
+      ]
+
+      autoTable(doc, {
+        head: heads,
+        body: arrayOfArrayValueActivity,
+        theme: 'striped',
+      })
+
+    });
+    doc.save('ShortRotation.pdf')
+    // doc.save('Instruction.pdf');
   }
 
 }

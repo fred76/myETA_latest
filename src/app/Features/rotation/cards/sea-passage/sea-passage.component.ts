@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ActivityModel } from 'src/shared/entity/rotation-model'; 
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'; 
+import { Activity } from 'src/shared/schema/rotation.schema';
 import { PortActivitiesComponent } from '../../port-activities/port-activities.component';
 
 @Component({
@@ -28,11 +28,13 @@ export class SeaPassageComponent implements OnInit {
   boilerTwoPercentage: FormControl
   boilerThreePercentage: FormControl
   activityType: FormControl 
+  ECA: FormControl 
+  EoSP: FormControl 
   ETX: FormControl
   
 
   constructor(public dialogRef: MatDialogRef<PortActivitiesComponent>,
-    @Inject(MAT_DIALOG_DATA)  public data: ActivityModel,
+    @Inject(MAT_DIALOG_DATA)  public data: Activity,
   ) {
 
   this.distance = new FormControl(data.distance, Validators.required)
@@ -67,6 +69,8 @@ export class SeaPassageComponent implements OnInit {
       Validators.required
     ]);
   this.activityType = new FormControl('Sea Passage');
+  this.ECA = new FormControl(data.ECA, Validators.required);
+  this.EoSP = new FormControl(data.EoSP, Validators.required);
   this.ETX = new FormControl('ETA');
 
   this.form = new FormGroup({
@@ -86,9 +90,22 @@ export class SeaPassageComponent implements OnInit {
     boilerTwoPercentage: this.boilerTwoPercentage,
     boilerThreePercentage: this.boilerThreePercentage,
     ETX: this.ETX,
+    ECA: this.ECA,
+    EoSP: this.EoSP,
     activityType: this.activityType
     
   })
+
+ 
+  this.form.valueChanges.subscribe(p => {
+    console.log(this.EoSP);
+    console.log(this.ECA);
+    console.log(p);
+    
+  })
+ 
+
+ 
 }
 
 onNoClick(): void {

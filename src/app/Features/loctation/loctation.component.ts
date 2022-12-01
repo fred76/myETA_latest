@@ -236,4 +236,6 @@ export class LoctationComponent implements OnInit {
     })
   }
 
+  
+
 }

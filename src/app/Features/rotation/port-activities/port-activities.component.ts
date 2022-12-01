@@ -2,8 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MyElectronService } from 'src/app/Core/Services/electron.service';
-import { Berth, PltStation, Port } from 'src/shared/schema/location.schema';
-  import { ActivityModel, ActivityPerLocationModel, RotationModel } from 'src/shared/entity/rotation-model';
+import { Berth, PltStation, Port } from 'src/shared/schema/location.schema'; 
 import { SeaPassageComponent } from '../cards/sea-passage/sea-passage.component';
 import { CanalTransitComponent } from '../cards/canal-transit/canal-transit.component';
 import { PilotingComponent } from '../cards/piloting/piloting.component';
@@ -46,10 +45,12 @@ export class PortActivitiesComponent implements OnInit {
 
   @Input() activityPerLocationModel: ActivityPerLocation
 
+  @Input() isShortActivity: boolean = true
+
   constructor(
     public dialog: MatDialog,
     private appservice: MyElectronService,
-    private rotationService: RotationService) {
+    public rotationService: RotationService) {
 
     this.getPltStation()
 
@@ -61,7 +62,11 @@ export class PortActivitiesComponent implements OnInit {
 
   isNewLoaction: boolean = true
 
-  ngOnInit(): void { ;
+  berths: string[] = []
+
+
+  ngOnInit(): void {
+
 
     if (this.activityPerLocationModel.port === undefined &&
       this.activityPerLocationModel.pltStation === undefined &&
@@ -71,7 +76,7 @@ export class PortActivitiesComponent implements OnInit {
     }
 
 
-    let utc: number = 0 
+    let utc: number = 0
     this.port = new FormControl(null, Validators.required)
     this.pltStation = new FormControl(null, Validators.required)
     this.berth = new FormControl(null, Validators.required)
@@ -89,19 +94,19 @@ export class PortActivitiesComponent implements OnInit {
       berth: this.berth
     })
 
- 
+
     this.pltStation.valueChanges
       .subscribe((pltStation) => {
         this.port.reset();
         this.port.disable();
         if (pltStation) {
-          this.selectedPltStation = pltStation 
+          this.selectedPltStation = pltStation
           this.getPort(pltStation)
           this.port.enable();
         }
       })
 
-      this.port.valueChanges
+    this.port.valueChanges
       .subscribe((port) => {
         this.berth.reset();
         this.berth.disable();
@@ -124,10 +129,10 @@ export class PortActivitiesComponent implements OnInit {
 
     this.utcTime.valueChanges
       .pipe(
-        debounceTime(2000),
+        debounceTime(1000),
         distinctUntilChanged()
-      ).subscribe(utc => { 
-        if (utc || utc === 0) { 
+      ).subscribe(utc => {
+        if (utc || utc === 0) {
           this.isNewLoc$.next(true)
           this.selectedUTC = utc
           this.rotationService.AddActivityPerLocation(
@@ -141,34 +146,34 @@ export class PortActivitiesComponent implements OnInit {
       })
   }
 
-  editLoc(){
+  editLoc() {
     this.form.patchValue({
       port: null,
       pltStation: null,
       berth: null,
-      utcTime: null 
+      utcTime: null
     })
     this.isNewLoc$.next(false)
   }
 
 
- getPltStation() {
+  getPltStation() {
 
-    this.appservice.getPltStationAll( ).then(pltStations => {
+    this.appservice.getPltStationAll().then(pltStations => {
       this.pltStationsa = pltStations
     })
   }
 
   getPort(pltStation: PltStation) {
-    this.appservice.getPort(pltStation).then(ports => { 
+    this.appservice.getPort(pltStation).then(ports => {
       this.portsByCountry = ports
     })
   }
 
 
-   
 
-  
+
+
 
   getBerth(port: Port) {
     this.appservice.getBerth(port).then(berths => {
@@ -189,9 +194,11 @@ export class PortActivitiesComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: Activity) => {
 
       if (result) {
+        console.log(result); 
+        
         const duration = result.distance! / result.speed!
         result.duration = duration
-        this.rotationService.addActivity(this.indexLocation, result) 
+        this.rotationService.addActivity(this.indexLocation, result)
       }
     });
   }
@@ -217,7 +224,8 @@ export class PortActivitiesComponent implements OnInit {
       disableClose: true,
       data: this.indexLocation
     });
-    dialogRef.afterClosed().subscribe((result: Activity) => {
+    dialogRef.afterClosed().subscribe((result: Activity) => {  
+      result.activityType === 'Pilotage Inbound' ? result.ETX = 'ETB' : result.ETX = 'SoSP'
       if (result) {
         this.rotationService.addActivity(this.indexLocation, result)
       }
@@ -240,19 +248,26 @@ export class PortActivitiesComponent implements OnInit {
     });
   }
   openDialogShifting(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    const dialogRef = this.dialog.open(ShiftingComponent, {
-      width: '1100px',
-      enterAnimationDuration,
-      exitAnimationDuration,
-      disableClose: true,
-      data: this.berthsa
-    });
 
-    dialogRef.afterClosed().subscribe((result: Activity) => {
-      if (result) {  
-        this.rotationService.addActivity(this.indexLocation, result)
-      }
-    });
+    this.appservice.getBerthByPort(this.activityPerLocationModel.port).then(b => {
+
+      this.berths = b
+
+
+      const dialogRef = this.dialog.open(ShiftingComponent, {
+        width: '1100px',
+        enterAnimationDuration,
+        exitAnimationDuration,
+        disableClose: true,
+        data: { indexLocation: this.indexLocation, berths: this.berths }
+      });
+
+      dialogRef.afterClosed().subscribe((result: Activity) => {
+        if (result) {
+          this.rotationService.addActivity(this.indexLocation, result)
+        }
+      });
+    })
   }
   openDialogLayby(enterAnimationDuration: string, exitAnimationDuration: string): void {
     const dialogRef = this.dialog.open(LaybyBerthComponent, {
@@ -302,15 +317,15 @@ export class PortActivitiesComponent implements OnInit {
     });
   }
 
-  deleteLocationActivitey(){
+  deleteLocationActivitey() {
     this.rotationService.deleteLocationActivitey(this.indexLocation)
   }
-  moveDownLocationActivitey(){
+  moveDownLocationActivitey() {
     this.rotationService.moveDownLocationActivitey(this.indexLocation)
   }
-  moveUPLocationActivitey(){
+  moveUPLocationActivitey() {
     this.rotationService.moveUPLocationActivitey(this.indexLocation)
   }
 
- 
+
 }

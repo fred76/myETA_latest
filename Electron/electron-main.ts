@@ -4,9 +4,9 @@ import { Berth, Country, PltStation, Port } from '../src/shared/schema/location.
 import { BunkerOption } from '../src/shared/schema/bunker.schema';
 import { Activity, ActivityPerLocation, Rotation } from '../src/shared/schema/rotation.schema';
 // import { electron } from 'process';
-import path = require('path'); 
+import path = require('path');
 import * as url from 'url';
- 
+
 let win: BrowserWindow
 const args = process.argv.slice(1),
 	serve = args.some(val => val === '--serve');
@@ -29,9 +29,6 @@ function createWindow(): BrowserWindow {
 		entities: [Country, Port, PltStation, Berth, BunkerOption, Rotation, ActivityPerLocation, Activity],
 	});
 
-	console.log('userDataPath');
-	console.log(userDataPath);
-	console.log('userDataPath');
 
 	connection.initialize()
 		.then(() => {
@@ -61,20 +58,18 @@ function createWindow(): BrowserWindow {
 			contextIsolation: false,
 		},
 	});
-//
+	//
 
 
-if (serve) {  
-	console.log('serve');
-	
-    win.loadFile('dist/eta-angular/index.html'); 
-    win.show();
-    win.webContents.openDevTools();
-  } else { 
-	console.log('NO serve');
-     win.loadFile('dist/eta-angular/index.html'); 
-    
-  }
+	if (serve) {
+		win.loadFile('dist/eta-angular/index.html');
+		win.show();
+		win.webContents.openDevTools();
+	} else {
+		win.webContents.openDevTools();
+		win.loadFile('dist/eta-angular/index.html');
+
+	}
 
 
 
@@ -82,9 +77,10 @@ if (serve) {
 		win.destroy();
 	});
 
+
+
 	ipcMain.handle('get-rotation', async (rotation: any, ...args: any[]) => {
 		try {
-
 			rotation = await rotationrRepo.findOne({
 				where: {
 					id: 1
@@ -93,6 +89,9 @@ if (serve) {
 					'activityPerLocations', 'activityPerLocations.activities'],
 
 			})
+
+
+
 			return rotation
 		} catch (err) {
 			throw ('get-Rotation error: ' + err);
@@ -103,15 +102,17 @@ if (serve) {
 
 
 	ipcMain.handle('add-rotation', async (event: any, rotation: Rotation) => {
+
 		try {
-			const newRotation = await rotationrRepo.create(rotation);
+			let newRotation = rotation
+			newRotation.id = 1
 			await rotationrRepo.save(newRotation);
 			return newRotation
 		} catch (err) {
 			throw err;
 		}
 	});
- 
+
 	ipcMain.handle('add-country', async (event: any, country: Country) => {
 		try {
 			const newCountry = await countryRepo.create(country);
@@ -267,6 +268,62 @@ if (serve) {
 		}
 	});
 
+
+	ipcMain.handle('get-berth-by-port', async (event: any, portName: string, ...args: any[]) => {
+		try {
+			let port = await portRepo.findOne({
+				where: {
+					portName: portName
+				},
+				relations: {
+					berths: true
+				} 
+			})
+
+			let portList = []
+
+			port.berths.map(p => {
+				portList.push(p.berthName)
+			})
+  
+			return portList
+		} catch (err) {
+			throw ('get-country error: ' + err);
+		}
+	});
+
+	ipcMain.handle('get-berth-by-activityID', async (event: any, activity: Activity, ...args: any[]) => {
+		try {
+			let act : Activity = await activityRepo.findOne({
+				where: {
+					id: activity.id
+				},
+				relations: {
+					activityPerLocation: true
+				} 
+			})
+
+			let port = await portRepo.findOne({
+				where: {
+					portName: act.activityPerLocation.port
+				},
+				relations: {
+					berths: true
+				} 
+			}) 
+			let portList = []
+
+			port.berths.map(p => {
+				portList.push(p.berthName)
+			})
+   
+			
+			return portList
+		} catch (err) {
+			throw ('get-country error: ' + err);
+		}
+	});
+
 	ipcMain.handle('delete-country', async (event: any, country: Country) => {
 		try {
 			await countryRepo
@@ -344,7 +401,7 @@ if (serve) {
 			throw ('get-bunker error: ' + err);
 		}
 	});
- 
+
 	return win;
 }
 

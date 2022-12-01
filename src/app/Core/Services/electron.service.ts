@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { ElectronService } from 'ngx-electronify/node_modules/ngx-electronyzer'; 
 import { BunkerOption } from 'src/shared/schema/bunker.schema';
 import { Berth, Country, PltStation, Port } from 'src/shared/schema/location.schema';
-import { Rotation } from 'src/shared/schema/rotation.schema';
+import { Activity, Rotation } from 'src/shared/schema/rotation.schema';
 
 
 
@@ -63,7 +63,13 @@ export class MyElectronService {
     return this._electronService.ipcRenderer.invoke('get-berth', port) 
   }
 
-
+  getBerthByPort(portName: string): Promise<string[]> {
+    return this._electronService.ipcRenderer.invoke('get-berth-by-port', portName) 
+  }
+  getBerthByActivityID(activity: Activity): Promise<string[]> {
+    return this._electronService.ipcRenderer.invoke('get-berth-by-activityID', activity) 
+  }
+ 
   deleteCountry(country: Country): Promise<Country[]> {
     return this._electronService.ipcRenderer.invoke('delete-country',country) 
   }

@@ -3,6 +3,19 @@
         <span>Sea Passage</span>
         <mat-icon class="padding">sailing</mat-icon>
     </mat-card-title>
+ 
+  <mat-radio-group [formControl]="ECA"> 
+    <label>ECA area</label>
+    <mat-radio-button class="padding" value="isECA">Yes</mat-radio-button>
+    <mat-radio-button   value="notECA">No</mat-radio-button>
+    </mat-radio-group> 
+    <label class="margin">-</label>
+  <mat-radio-group class="padding" [formControl]="EoSP"> 
+    <label>EoSP</label>
+    <mat-radio-button class="padding" value="isEoSP">Yes</mat-radio-button>
+    <mat-radio-button   value="notEoSP">No</mat-radio-button>
+    </mat-radio-group> 
+    
     <div fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="12px">
         <div fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="8px">
 

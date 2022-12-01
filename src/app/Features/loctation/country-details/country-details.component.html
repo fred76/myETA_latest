@@ -1,0 +1,36 @@
+<p>country-details works!</p>
+
+<button mat-mini-fab color="primary" (click)="addNotes('','')">
+    <mat-icon>add</mat-icon>
+</button>
+
+<div fxLayout="column" fxLayoutAlign="space-around stretch" [formGroup]="forma"
+    *ngFor="let note of countryNotes, let i = index">
+    <mat-form-field>
+        <input style="font-weight:bold" matInput type="text" placeholder="Title" [formControl]="countryTitle">
+        <span matSuffix>MT</span>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Autosize textarea</mat-label>
+        <textarea matInput [formControl]="countryNote" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1" cdkAutosizeMaxRows="20"></textarea>
+    </mat-form-field>
+
+    <button (click)="saveNote(i)" mat-raised-button>Save</button>
+
+</div>
+
+
+<form [formGroup]="form" fxLayout="column" fxLayoutAlign="space-around stretch">
+    <div formArrayName="items" *ngFor="let item of getControls(); let i = index">
+        <div [formGroupName]="i">
+
+            <input style="font-weight:bold" matInput type="text" placeholder="Title" formControlName="countryTitle">
+
+            <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="20" formControlName='countryNote'></textarea>
+        </div>
+    </div>
+    <button type="button" (click)="addNext()">Add Next</button>
+    <button type="submit" (click)="formValue()">Submit</button>
+</form>
