@@ -62,10 +62,10 @@ export class LoctationComponent implements OnInit {
   pltStations: PltStation[] = []
   berths: Berth[] = []
 
-  selectedCountry: Country;
-  selectedPort: Port;
-  selectedPltStation: PltStation;
-  selectedBerth: Berth;
+  selectedCountry: Country | null
+  selectedPort: Port | null
+  selectedPltStation: PltStation | null
+  selectedBerth: Berth | null
  
   newCountryName: string
   newPortyName: string
@@ -77,6 +77,10 @@ export class LoctationComponent implements OnInit {
     this.country.valueChanges.subscribe((country) => {  
       this.pltStationPort.reset();
       this.pltStationPort.disable(); 
+      this.selectedCountry = null
+      this.selectedPltStation = null
+      this.selectedPort = null
+      this.selectedBerth = null
       if (country) { 
         this.selectedCountry = country 
         this.getPltStation(country)
@@ -88,6 +92,9 @@ export class LoctationComponent implements OnInit {
     .subscribe((pltStation) => {
       this.portsCountry.reset();
       this.portsCountry.disable();
+      this.selectedPltStation = null
+      this.selectedPort = null
+      this.selectedBerth = null
       if (pltStation) {
         this.selectedPltStation = pltStation 
         this.getPort(pltStation)
@@ -99,6 +106,8 @@ export class LoctationComponent implements OnInit {
       .subscribe((port) => {
         this.berthPltStation.reset();
         this.berthPltStation.disable();
+        this.selectedPort = null
+        this.selectedBerth = null
         if (port) {
           this.selectedPort = port 
           this.getBerth(port)
@@ -107,7 +116,8 @@ export class LoctationComponent implements OnInit {
       })
    
     this.berthPltStation.valueChanges
-      .subscribe((berth) => { 
+      .subscribe((berth) => {  
+        this.selectedBerth = null
         if (berth) {
           this.selectedBerth = berth 
          

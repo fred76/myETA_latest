@@ -1,0 +1,12 @@
+
+
+.cont {
+    height: 300px;
+    line-height: 100px;
+    text-align: center; 
+  }
+  .center {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+  } 

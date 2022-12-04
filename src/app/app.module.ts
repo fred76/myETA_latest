@@ -27,7 +27,8 @@ import { RotationService } from './Core/Services/rotation.service';
 import { ActivityShortComponent } from './Features/rotation/activity/activity-short/activity-short.component';
 import { CountryDetailsComponent } from './Features/loctation/country-details/country-details.component';
 import { BerthDetailsComponent } from './Features/loctation/berth-details/berth-details.component';
-import { PortDetailsComponent } from './Features/loctation/port-details/port-details.component'; 
+import { PortDetailsComponent } from './Features/loctation/port-details/port-details.component';
+import { AgencyComponent } from './Features/loctation/agency/agency.component'; 
  
 // const dbConfig: DBConfig = {
 //   name: 'MyDb',
@@ -61,7 +62,8 @@ import { PortDetailsComponent } from './Features/loctation/port-details/port-det
     ActivityShortComponent,
     CountryDetailsComponent,
     BerthDetailsComponent,
-    PortDetailsComponent
+    PortDetailsComponent,
+    AgencyComponent
   ],
   imports: [
     BrowserModule,

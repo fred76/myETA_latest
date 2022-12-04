@@ -1,21 +1,23 @@
 <mat-card class="div-card" fxLayout="row" fxLayoutAlign="space-between stretch">
-    <div fxLayout="row" fxLayoutAlign="space-around center" flex="grow">
-        <div fxLayout="column" fxLayoutAlign="center center">
+    <div fxLayout="row" fxLayoutAlign="start center" fxFlex>
+        <div fxLayout="column" fxLayoutAlign="center start">
             <h2 class="text">{{ activity.activityType}} </h2>
-            <div fxLayout="row" fxLayoutAlign="center cente"r>
+            <div fxLayout="row" fxLayoutAlign="start center"r>
                 <div *ngIf="activity.activityType === 'Sea Passage' && activity.ECA === 'isECA'">
-                    <h4 style="margin-left: 6px"> (ECA Area)</h4>
+                    <h4> (ECA Area)</h4>
                 </div>
                 <div *ngIf="activity.EoSP === 'isEoSP'P">
                     <h4 style="margin-left: 6px"> (EoSP)</h4>
                 </div>
             </div>
         </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center" fxFlex="45">
         <h2 style="margin-left: 12px" class="text">{{activity.ETX}} </h2>
         <h2 style="margin-left: 12px" class="text">{{activity.date}}</h2>
         <h2 style="margin-left: 12px" class="text">(△ Time {{activity.duration |number : '1.1-1'}} Hrs)</h2>
     </div>
-    <div fxLayout="row" fxLayoutAlign="space-around center" flex="grow">
+    <div fxLayout="row" fxLayoutAlign="start center" fxFlex="35">
         <h2 class="text">ROB</h2>
         <h2 style="margin-left: 12px" class="text"> FO {{activity.robFO |number : '1.1-1'}} MT</h2>
         <h2 style="margin-left: 12px" class="text">DO {{activity.robDO|number : '1.1-1'}} MT</h2>

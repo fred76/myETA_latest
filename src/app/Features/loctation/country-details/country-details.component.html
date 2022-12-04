@@ -1,36 +1,38 @@
-<p>country-details works!</p>
+<div>
+    <button style="margin-top: 12px;margin-left: 8px" mat-mini-fab color="primary" (click)="addNext()">
+        <mat-icon>add</mat-icon>
+    </button>
 
-<button mat-mini-fab color="primary" (click)="addNotes('','')">
-    <mat-icon>add</mat-icon>
-</button>
+    <form [formGroup]="form" style="margin-top: 12px; padding-bottom: 8px;">
+        <div formArrayName="items" *ngFor="let item of getControls(); let i = index" fxLayout="row"
+            fxLayoutAlign="space-around stretch" style="margin-left: 8px; margin-top: 3px">
+            <mat-card fxFlex="grow">
+                <div [formGroupName]="i">
+                    <mat-form-field style=" width: 100%;">
+                        <input style="font-weight:bold " matInput type="text" placeholder="Title"
+                            formControlName="countryTitle">
+                    </mat-form-field>
+                    <mat-form-field style="width: 100%;">
+                        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="20" formControlName='countryNote'></textarea>
+                    </mat-form-field>
+                </div>
+            </mat-card>
+            <div class="padding" fxLayout="column" fxLayoutAlign="start stretch">
+                <button mat-icon-button color="default" [disabled]="items.controls[i].get('countryNote')!.untouched"
+                    (click)="saveNote(i)">
+                    <mat-icon *ngIf="items.controls[i].get('countryNote')!.dirty ===true" style="color: #004a9f">save
+                    </mat-icon>
+                    <mat-icon *ngIf="items.controls[i].get('countryNote')!.pristine === true" style="color: #989797">
+                        save</mat-icon>
 
-<div fxLayout="column" fxLayoutAlign="space-around stretch" [formGroup]="forma"
-    *ngFor="let note of countryNotes, let i = index">
-    <mat-form-field>
-        <input style="font-weight:bold" matInput type="text" placeholder="Title" [formControl]="countryTitle">
-        <span matSuffix>MT</span>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Autosize textarea</mat-label>
-        <textarea matInput [formControl]="countryNote" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
-            cdkAutosizeMinRows="1" cdkAutosizeMaxRows="20"></textarea>
-    </mat-form-field>
+                </button>
 
-    <button (click)="saveNote(i)" mat-raised-button>Save</button>
+                <button mat-icon-button color="default" style="color: #004a9f" (click)="remove(i)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
+    </form>
 
 </div>
-
-
-<form [formGroup]="form" fxLayout="column" fxLayoutAlign="space-around stretch">
-    <div formArrayName="items" *ngFor="let item of getControls(); let i = index">
-        <div [formGroupName]="i">
-
-            <input style="font-weight:bold" matInput type="text" placeholder="Title" formControlName="countryTitle">
-
-            <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
-                cdkAutosizeMaxRows="20" formControlName='countryNote'></textarea>
-        </div>
-    </div>
-    <button type="button" (click)="addNext()">Add Next</button>
-    <button type="submit" (click)="formValue()">Submit</button>
-</form>

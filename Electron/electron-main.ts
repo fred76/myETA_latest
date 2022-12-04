@@ -1,6 +1,6 @@
 import { app, BrowserWindow, ipcMain, screen } from 'electron';
 import { DataSource } from 'typeorm';
-import { Berth, Country, PltStation, Port } from '../src/shared/schema/location.schema';
+import { Berth, BerthNotes, Country, CountryNotes, PltStation, Port, PortNotes } from '../src/shared/schema/location.schema';
 import { BunkerOption } from '../src/shared/schema/bunker.schema';
 import { Activity, ActivityPerLocation, Rotation } from '../src/shared/schema/rotation.schema';
 // import { electron } from 'process';
@@ -26,7 +26,7 @@ function createWindow(): BrowserWindow {
 		logger: 'simple-console',
 		database: path.join(userDataPath) + '/db.sqlite',
 		//database: './src/shared/db.sqlite',
-		entities: [Country, Port, PltStation, Berth, BunkerOption, Rotation, ActivityPerLocation, Activity],
+		entities: [Country, Port, PltStation, Berth, BunkerOption, Rotation, ActivityPerLocation, Activity, CountryNotes, PortNotes, BerthNotes],
 	});
 
 
@@ -43,8 +43,10 @@ function createWindow(): BrowserWindow {
 	const berthRepo = connection.getRepository(Berth);
 	const bunkerRepo = connection.getRepository(BunkerOption);
 	const rotationrRepo = connection.getRepository(Rotation);
-	const activityPerLocationRepo = connection.getRepository(ActivityPerLocation);
 	const activityRepo = connection.getRepository(Activity);
+	const countryNotesRepo = connection.getRepository(CountryNotes);
+	const portNotesRepo = connection.getRepository(PortNotes);
+	const berthNotesRepo = connection.getRepository(BerthNotes);
 
 
 	win = new BrowserWindow({
@@ -77,8 +79,218 @@ function createWindow(): BrowserWindow {
 		win.destroy();
 	});
 
+	ipcMain.handle('get-country-notes', async (event: any, country: Country, ...args: any[]) => {
+		try {
+
+			country = await countryRepo.findOne({
+				where: {
+					id: country.id
+				},
+				relations: {
+					notes: true
+				}
+
+			})
+
+			return country.notes
+		} catch (err) {
+			throw ('get-country error: ' + err);
+		}
+	});
+
+	ipcMain.handle('add-country-notes', async (event: any, countryNote: CountryNotes, country: Country) => {
+		try {
+
+			let c = await countryRepo.findOne({
+				where: {
+					id: country.id
+				},
+				relations: {
+					notes: true,
+				},
+
+			})
+			if (c.notes === null || undefined) {
+				c.notes = new Array<CountryNotes>
+			}
+			c.notes.push(countryNote)
+			await countryRepo.save(c)
+			return c.notes
+		} catch (err) {
+			throw err;
+		}
+	});
+
+	ipcMain.handle('edit-country-notes', async (event: any, countryNote: CountryNotes) => {
+		try { 
+			let c = await countryNotesRepo
+				.createQueryBuilder()
+				.update(CountryNotes)
+				.set({ countryNote: countryNote.countryNote, countryTitle: countryNote.countryTitle })
+				.where("id = :id", { id: countryNote.id })
+				.execute() 
+			return countryNotesRepo.find()
+		} catch (err) {
+			throw err;
+		}
+	});
+
+	ipcMain.handle('delete-country-notes', async (event: any, countryNote: CountryNotes) => {
+		try {
+			await countryNotesRepo
+				.createQueryBuilder()
+				.delete()
+				.from(CountryNotes)
+				.where("id = :id", { id: countryNote.id })
+				.execute()
+			return countryNotesRepo.find()
+		} catch (err) {
+			throw ('error countryNotesRepo ' + err);
+		}
+	});
+
+	ipcMain.handle('get-port-notes', async (event: any, port: Port, ...args: any[]) => {
+		try {
+
+			port = await portRepo.findOne({
+				where: {
+					id: port.id
+				},
+				relations: {
+					notes: true
+				}
+
+			})
+
+			return port.notes
+		} catch (err) {
+			throw ('get-port error: ' + err);
+		}
+	});
+
+	ipcMain.handle('add-port-notes', async (event: any, portNote: PortNotes, port: Port) => {
+		try {
+
+			let c = await portRepo.findOne({
+				where: {
+					id: port.id
+				},
+				relations: {
+					notes: true,
+				},
+
+			})
+			if (c.notes === null || undefined) {
+				c.notes = new Array<PortNotes>
+			}
+			c.notes.push(portNote)
+			await portRepo.save(c)
+			return c.notes
+		} catch (err) {
+			throw err;
+		}
+	});
+
+	ipcMain.handle('edit-port-notes', async (event: any, portNote: PortNotes) => {
+		try { 
+			let c = await portNotesRepo
+				.createQueryBuilder()
+				.update(PortNotes)
+				.set({ portTitle: portNote.portNote, portNote: portNote.portNote })
+				.where("id = :id", { id: portNote.id })
+				.execute() 
+			return portNotesRepo.find()
+		} catch (err) {
+			throw err;
+		}
+	});
+
+	ipcMain.handle('delete-port-notes', async (event: any, portNote: PortNotes) => {
+		try {
+			const t = await portNotesRepo
+				.createQueryBuilder()
+				.delete()
+				.from(PortNotes)
+				.where("id = :id", { id: portNote.id })
+				.execute()
 
 
+			return portNotesRepo.find()
+		} catch (err) {
+			throw ('error countryNotesRepo ' + err);
+		}
+	});
+
+	ipcMain.handle('get-berth-notes', async (event: any, berth: Berth, ...args: any[]) => {
+		try {
+
+			berth = await berthRepo.findOne({
+				where: {
+					id: berth.id
+				},
+				relations: {
+					notes: true
+				}
+
+			})
+
+			return berth.notes
+		} catch (err) {
+			throw ('get-berth error: ' + err);
+		}
+	});
+
+	ipcMain.handle('add-berth-notes', async (event: any, berthNote: BerthNotes, berth: Berth) => {
+		try {
+
+			let c = await berthRepo.findOne({
+				where: {
+					id: berth.id
+				},
+				relations: {
+					notes: true,
+				},
+
+			})
+			if (c.notes === null || undefined) {
+				c.notes = new Array<BerthNotes>
+			}
+			c.notes.push(berthNote)
+			await berthRepo.save(c)
+			return c.notes
+		} catch (err) {
+			throw err;
+		}
+	});
+
+	ipcMain.handle('edit-berth-notes', async (event: any, berthNote: BerthNotes) => {
+		try { 
+			let c = await berthNotesRepo
+				.createQueryBuilder()
+				.update(BerthNotes)
+				.set({ berthNote: berthNote.berthNote, berthTitle: berthNote.berthTitle })
+				.where("id = :id", { id: berthNote.id })
+				.execute() 
+			return berthNotesRepo.find()
+		} catch (err) {
+			throw err;
+		}
+	});
+
+	ipcMain.handle('delete-berth-notes', async (event: any, berthNote: BerthNotes) => {
+		try {
+			await berthNotesRepo
+				.createQueryBuilder()
+				.delete()
+				.from(BerthNotes)
+				.where("id = :id", { id: berthNote.id })
+				.execute()
+			return berthNotesRepo.find()
+		} catch (err) {
+			throw ('error countryNotesRepo ' + err);
+		}
+	});
+ 
 	ipcMain.handle('get-rotation', async (rotation: any, ...args: any[]) => {
 		try {
 			rotation = await rotationrRepo.findOne({
@@ -90,16 +302,11 @@ function createWindow(): BrowserWindow {
 
 			})
 
-
-
 			return rotation
 		} catch (err) {
 			throw ('get-Rotation error: ' + err);
 		}
 	});
-
-
-
 
 	ipcMain.handle('add-rotation', async (event: any, rotation: Rotation) => {
 
@@ -277,7 +484,7 @@ function createWindow(): BrowserWindow {
 				},
 				relations: {
 					berths: true
-				} 
+				}
 			})
 
 			let portList = []
@@ -285,7 +492,7 @@ function createWindow(): BrowserWindow {
 			port.berths.map(p => {
 				portList.push(p.berthName)
 			})
-  
+
 			return portList
 		} catch (err) {
 			throw ('get-country error: ' + err);
@@ -294,13 +501,13 @@ function createWindow(): BrowserWindow {
 
 	ipcMain.handle('get-berth-by-activityID', async (event: any, activity: Activity, ...args: any[]) => {
 		try {
-			let act : Activity = await activityRepo.findOne({
+			let act: Activity = await activityRepo.findOne({
 				where: {
 					id: activity.id
 				},
 				relations: {
 					activityPerLocation: true
-				} 
+				}
 			})
 
 			let port = await portRepo.findOne({
@@ -309,15 +516,15 @@ function createWindow(): BrowserWindow {
 				},
 				relations: {
 					berths: true
-				} 
-			}) 
+				}
+			})
 			let portList = []
 
 			port.berths.map(p => {
 				portList.push(p.berthName)
 			})
-   
-			
+
+
 			return portList
 		} catch (err) {
 			throw ('get-country error: ' + err);
@@ -407,6 +614,7 @@ function createWindow(): BrowserWindow {
 
 
 try {
+
 	app.on('ready', () => setTimeout(createWindow, 400),
 	)
 	app.on('window-all-closed', () => {

@@ -1,95 +1,114 @@
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
-import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, NgZone, OnChanges, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { take } from 'rxjs';
+import { MyElectronService } from 'src/app/Core/Services/electron.service';
+import { Country, CountryNotes } from 'src/shared/schema/location.schema';
 
 @Component({
   selector: 'app-country-details',
   templateUrl: './country-details.component.html',
-  styleUrls: ['./country-details.component.css']
+  styleUrls: ['../details.component.css']
 })
-export class CountryDetailsComponent implements OnInit {
-
-  forma: FormGroup;
-  form: FormGroup;
-  createItem() {
-    return this.fb.group({
-      countryNote: [''],
-      countryTitle: ['']
-    })
-  }
-  addNext() {
-    (this.form.get('items') as FormArray).push(this.createItem())
-  }
-
-  getControls() {
-    return (this.form.get('items') as FormArray).controls;
-  }
-
-  countryNotes: { title: string, text: string }[] = []
-
-  ngOnInit(): void {
-    this.form = this.fb.group({
-      items: this.fb.array([this.createItem()])
-    })
-  }
-
-  constructor(private _ngZone: NgZone, private fb: FormBuilder) {
-    
-
-
-    this.forma = new FormGroup({
-      countryNote: this.countryNote,
-      countryTitle: this.countryTitle
-    });
-  }
-  formValue(): void {
-    console.log(this.form.value);
-  }
-
-
-  addNotes(title: string, text: string) {
-    this.countryTitle = new FormControl<string | null>(title,
-      { nonNullable: true });
-    this.countryNote = new FormControl<string | null>(text,
-      { nonNullable: true });
-
-    this.countryNotes.push({ title, text })
-  }
-
-  get getFc() {
-    return this.forma.controls;
-  }
-
-  saveNote(i: number) {
-
-    const title = this.getFc['countryNote']!.value
-    const text = this.getFc['countryTitle']!.value
-
-    const p = { title: title, text: text }
-
-
-    this.countryNotes.splice(i, 0)
-
-    this.countryNotes[i] = p
-    console.log('this.countryNotes');
-    console.log(this.countryNotes);
-
-
-  }
-
-
-  countryTitle: FormControl = new FormControl<string | null>(null,
-    { nonNullable: true });
-  countryNote: FormControl = new FormControl<string | null>(null,
-    { nonNullable: true });
+export class CountryDetailsComponent implements OnInit, OnChanges {
 
 
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
 
+  constructor(private _ngZone: NgZone, private fb: FormBuilder, private appService: MyElectronService) { }
+
+  form: FormGroup;
+  formNote: FormGroup;
+
+
+
+  countryNote: FormControl
+  countryTitle: FormControl
+
+
+
+
+  @Input() country: Country
+  notes: CountryNotes[] = []
+
+
+
+  ngOnChanges() {
+    this.form = this.fb.group({
+      items: this.fb.array([])
+    })
+    this.appService.getCountryNotes(this.country).then(p => {
+      p.map(o => {
+        (this.form.get('items') as FormArray).push(this.createItem(o.countryTitle, o.countryNote))
+      }) 
+      this.notes = p
+    })
+
+
+  }
+
+  ngOnInit(): void { }
+
+  createItem(countryTitle: string, countryNote: string) {
+    return this.fb.group({
+      countryTitle: [countryTitle],
+      countryNote: [countryNote]
+    })
+  }
+
+
+  get items(): FormArray {
+    return (this.form.get('items') as FormArray)
+  }
+
+
+  addNext() {
+    (this.form.get('items') as FormArray).push(this.createItem('', ''))
+  }
+
+  remove(i: number) {  
+    if (this.notes.length>0 && this.notes[i].id !== undefined) { 
+      this.appService.deleteCountryNotes(this.notes[i]).then(n => {
+        this.notes = n
+        console.log(n);
+        
+      })
+    }
+    const o = this.form.get('items') as FormArray
+    o.removeAt(i); 
+  }
+
+  getControls() {
+    return (this.form.get('items') as FormArray).controls
+  }
+ 
+  saveNote(i: number) {
+    if (this.notes[i] === undefined) {  
+    const note = (this.form.get('items') as FormArray).at(i)
+    note.get('countryNote')?.markAsPristine()
+    note.get('countryNote')?.markAsUntouched()
+    let newCountryNote = new CountryNotes();
+    newCountryNote.countryTitle = note.get('countryTitle')?.value
+    newCountryNote.countryNote = note.get('countryNote')?.value
+    this.appService.addCountryNotes(newCountryNote, this.country).then(p => {
+      this.notes = p
+    })
+  } else { 
+
+    const noteForm = (this.form.get('items') as FormArray).at(i)
+    noteForm.get('countryNote')?.markAsPristine()
+    noteForm.get('countryNote')?.markAsUntouched() 
+    let n = this.notes[i] 
+    n.countryTitle = noteForm.get('countryTitle')?.value
+    n.countryNote = noteForm.get('countryNote')?.value 
+    this.appService.editCountryNotes(n).then(p=> {
+      this.notes = p  
+    }) 
+  }
+  } 
   triggerResize() {
     this._ngZone.onStable.pipe(take(1)).subscribe(() => this.autosize.resizeToFitContent(true));
   }
 
 
-}
+} 
