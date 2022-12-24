@@ -1,9 +1,10 @@
 import { DatePipe, formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms'; 
 import { MyElectronService } from 'src/app/Core/Services/electron.service';
-import { RotationService } from 'src/app/Core/Services/rotation.service';
-import { Rotation } from 'src/shared/schema/rotation.schema';
+import { RotationService } from 'src/app/Core/Services/rotation.service'; 
+import { ActivityPerLocation } from 'src/shared/schema/rotation.schema';
+
 @Component({
   selector: 'app-home',
   templateUrl: './rotation.component.html',
@@ -13,122 +14,122 @@ export class RotationComponent implements OnInit {
 
   form: FormGroup
 
-  utcTime: FormControl
+  utc: FormControl
   dateTime: FormControl
-  robFo: FormControl
-  robDo: FormControl
+  robFO: FormControl
+  robDO: FormControl
 
-  isRotation = false
   isShowAddRotationButton = false
 
-  rotation: Rotation
-
+ location: ActivityPerLocation[] = []
  
-
-  rot() {
-    this.appservice.addRotation(this.rotation)
-  }
-
   constructor(
     private appservice: MyElectronService, private rotationService: RotationService) {
 
-
-    this.rotationService.rotation$.subscribe(r => {
-
-      if (r) {
-        this.rotation = r
-        this.rotationService.rotation$.getValue() != r
-        this.isRotation = true
-        if (r.dateTime && r.robDO && r.robFO && r.utc) {
-          this.isShowAddRotationButton = true
-        }
-      }
-    })
-
-    let newDate = new Date()
-    const format = 'yyyy-MM-dd HH:mm';
-    const locale = 'en-UK';
-
-    const formattedDate = formatDate(newDate, format, locale);
-
-
-
-    this.dateTime = new FormControl(formattedDate, Validators.required)
-    this.utcTime = new FormControl(null,
-      Validators.compose([
-        Validators.min(-12),
-        Validators.max(12),
-        Validators.required
-      ])
-    )
-
-    this.robFo = new FormControl(null, Validators.required)
-    this.robDo = new FormControl(null, Validators.required)
-
-    this.form = new FormGroup({
-      utcTime: this.utcTime,
-      dateTime: this.dateTime,
-      robFo: this.robFo,
-      robDo: this.robDo,
-    })
-
+ 
   }
 
-   
+  rotation$ = this.rotationService.rotation$.asObservable()
+ 
   getFormatedDate(date: Date, format: string) {
     const datePipe = new DatePipe('en-US');
     return datePipe.transform(date, format);
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    
+    const rotation = this.rotationService.rotation$.getValue()
+
+this.rotation$.subscribe(l => {
+if (l){
+ this.location = l?.activityPerLocations.sort((a,b) => a.idOrder - b.idOrder)}
+} )
+
+    if (rotation) { 
+      
+      let newDate = rotation.dateTime
+      const format = 'yyyy-MM-dd HH:mm';
+      const locale = 'en-UK';
+
+      // const formattedDate = formatDate(rotation!.dateTime, format, locale);
+      const formattedDate = formatDate(newDate, format, locale);
+
+      this.dateTime = new FormControl(formattedDate, Validators.required)
+      this.utc = new FormControl(rotation.utc,
+        Validators.compose([
+          Validators.min(-12),
+          Validators.max(12),
+          Validators.required
+        ])
+      )
+
+      this.robFO = new FormControl(rotation.robFO, Validators.required)
+      this.robDO = new FormControl(rotation.robDO, Validators.required)
+    } else {
+      let newDate = new Date()
+      const format = 'yyyy-MM-dd HH:mm';
+      const locale = 'en-UK';
+ 
+      const formattedDate = formatDate(newDate, format, locale);
+
+      this.dateTime = new FormControl(formattedDate, Validators.required)
+      this.utc = new FormControl(null,
+        Validators.compose([
+          Validators.min(-12),
+          Validators.max(12),
+          Validators.required
+        ])
+      )
+
+      this.robFO = new FormControl(null, Validators.required)
+      this.robDO = new FormControl(null, Validators.required)
+
+    }
 
 
-    this.form.valueChanges.subscribe(v => {
+    this.form = new FormGroup({
+      utc: this.utc,
+      dateTime: this.dateTime,
+      robFO: this.robFO,
+      robDO: this.robDO,
+    })
+
+    this.form.valueChanges.subscribe(v => { 
       if (
-        this.utcTime.dirty &&
+        this.utc.dirty &&
         this.dateTime.dirty &&
-        this.robFo.dirty &&
-        this.robDo.dirty) {
+        this.robFO.dirty &&
+        this.robDO.dirty) {
         this.isShowAddRotationButton = true
 
       }
-      if (v) {
+      if (v) { 
 
         this.rotationService.addRotation(
           this.dateTime.value,
-          this.utcTime.value,
-          this.robFo.value,
-          this.robDo.value
+          this.utc.value,
+          this.robFO.value,
+          this.robDO.value
         )
       }
     })
 
-    if (this.rotation !== undefined) {
-      const format = 'yyyy-MM-dd HH:mm';
-      const locale = 'en-UK';
 
-      const formattedDate = formatDate(this.rotation.dateTime, format, locale);
 
-      this.form.setValue({
-        utcTime: this.rotation.utc,
-        dateTime: formattedDate,
-        robFo: this.rotation.robFO,
-        robDo: this.rotation.robDO
-      })
-    }
+
+
+
 
 
   }
 
-  isShowRotationInitial() {
-    this.isRotation = !this.isRotation
-  }
+
 
   addEmptyActivityPerLocation() {
     this.rotationService.addEmptyActivityPerLocation()
   }
 
 
- 
+
 
 } 

@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MyElectronService } from 'src/app/Core/Services/electron.service';
-import { Berth, PltStation, Port } from 'src/shared/schema/location.schema'; 
+import { Agency, Berth, PltStation, Port } from 'src/shared/schema/location.schema';
 import { SeaPassageComponent } from '../cards/sea-passage/sea-passage.component';
 import { CanalTransitComponent } from '../cards/canal-transit/canal-transit.component';
 import { PilotingComponent } from '../cards/piloting/piloting.component';
@@ -24,17 +24,8 @@ export class PortActivitiesComponent implements OnInit {
 
   form: FormGroup
 
-
-  pltStation: FormControl
-  port: FormControl
-  berth: FormControl
   utcTime: FormControl
 
-  portsByCountry: Port[] = []
-  pltStationsa: PltStation[] = []
-  berthsa: Berth[] = []
-
-  selectedPort: Port = new Port()
   selectedPltStation: PltStation
   selectedBerth: Berth
   selectedUTC: number
@@ -47,12 +38,13 @@ export class PortActivitiesComponent implements OnInit {
 
   @Input() isShortActivity: boolean = true
 
+  activities : Activity[]=[]
+
   constructor(
     public dialog: MatDialog,
     private appservice: MyElectronService,
     public rotationService: RotationService) {
 
-    this.getPltStation()
 
   }
 
@@ -63,69 +55,45 @@ export class PortActivitiesComponent implements OnInit {
   isNewLoaction: boolean = true
 
   berths: string[] = []
+  agenciesPerLocation: Agency[] = []
+  selectedPltStationName: string
+  selectedPortName: string
+  selectedBerthName: string
 
+  selectedAgency: Agency
 
-  ngOnInit(): void {
+  reciveLocation(event: {
+    selectedPortName: string,
+    selectedPltStationName: string,
+    selectedBerthName: string,
+    close: boolean
+  }) {
 
+    this.selectedPltStationName = event.selectedPltStationName
+    this.selectedPortName = event.selectedPortName
+    this.selectedBerthName = event.selectedBerthName
+    this.isNewLoc$.next(event.close)
+  }
 
-    if (this.activityPerLocationModel.port === undefined &&
-      this.activityPerLocationModel.pltStation === undefined &&
-      this.activityPerLocationModel.berth === undefined &&
-      this.activityPerLocationModel.utcTime === undefined) {
-      this.isNewLoc$.next(false)
-    }
+  ngOnInit(): void { 
 
+    let newarra = this.activityPerLocationModel.activities
+ 
+ 
+   this.activities =   newarra.sort((a,b) => a.idOrder - b.idOrder) 
 
-    let utc: number = 0
-    this.port = new FormControl(null, Validators.required)
-    this.pltStation = new FormControl(null, Validators.required)
-    this.berth = new FormControl(null, Validators.required)
-    this.utcTime = new FormControl(null,
+    this.utcTime = new FormControl(this.activityPerLocationModel.utcTime,
       Validators.compose([
         Validators.min(-12),
         Validators.max(12),
         Validators.required
       ])
     )
+
+
     this.form = new FormGroup({
-      utcTime: this.utcTime,
-      pltStation: this.pltStation,
-      port: this.port,
-      berth: this.berth
+      utcTime: this.utcTime
     })
-
-
-    this.pltStation.valueChanges
-      .subscribe((pltStation) => {
-        this.port.reset();
-        this.port.disable();
-        if (pltStation) {
-          this.selectedPltStation = pltStation
-          this.getPort(pltStation)
-          this.port.enable();
-        }
-      })
-
-    this.port.valueChanges
-      .subscribe((port) => {
-        this.berth.reset();
-        this.berth.disable();
-        if (port) {
-          this.selectedPort = port
-          this.getBerth(port)
-          this.berth.enable();
-        }
-      })
-
-    this.berth.valueChanges
-      .subscribe((berth) => {
-        if (berth) {
-          this.selectedBerth = berth;
-          this.utcTime.enable()
-
-        }
-      })
-
 
     this.utcTime.valueChanges
       .pipe(
@@ -133,17 +101,35 @@ export class PortActivitiesComponent implements OnInit {
         distinctUntilChanged()
       ).subscribe(utc => {
         if (utc || utc === 0) {
-          this.isNewLoc$.next(true)
           this.selectedUTC = utc
           this.rotationService.AddActivityPerLocation(
             this.indexLocation,
-            this.selectedPort.portName,
-            this.selectedPltStation.pltStationName,
-            this.selectedBerth.berthName,
+            this.selectedPortName,
+            this.selectedPltStationName,
+            this.selectedBerthName,
             utc
           )
         }
       })
+
+
+
+    if (this.activityPerLocationModel.port === undefined &&
+      this.activityPerLocationModel.pltStation === undefined &&
+      this.activityPerLocationModel.berth === undefined &&
+      this.activityPerLocationModel.utcTime === undefined) {
+      this.isNewLoc$.next(false)
+    } else {
+      this.selectedPortName = this.activityPerLocationModel.port
+      this.selectedPltStationName = this.activityPerLocationModel.pltStation
+      this.selectedBerthName = this.activityPerLocationModel.berth
+      this.utcTime.markAsDirty()
+
+
+    }
+
+  
+
   }
 
   editLoc() {
@@ -157,45 +143,21 @@ export class PortActivitiesComponent implements OnInit {
   }
 
 
-  getPltStation() {
 
-    this.appservice.getPltStationAll().then(pltStations => {
-      this.pltStationsa = pltStations
-    })
-  }
-
-  getPort(pltStation: PltStation) {
-    this.appservice.getPort(pltStation).then(ports => {
-      this.portsByCountry = ports
-    })
-  }
-
-
-
-
-
-
-  getBerth(port: Port) {
-    this.appservice.getBerth(port).then(berths => {
-      this.berthsa = berths
-    })
-  }
 
   openDialogSeaPassage(enterAnimationDuration: string, exitAnimationDuration: string): void {
-
+ 
 
     const dialogRef = this.dialog.open(SeaPassageComponent, {
       width: '1100px',
       enterAnimationDuration,
       exitAnimationDuration,
       disableClose: true,
-      data: this.indexLocation
+      data: { indexLocation: this.indexLocation, portName: this.activityPerLocationModel.port }
     });
     dialogRef.afterClosed().subscribe((result: Activity) => {
 
       if (result) {
-        console.log(result); 
-        
         const duration = result.distance! / result.speed!
         result.duration = duration
         this.rotationService.addActivity(this.indexLocation, result)
@@ -208,7 +170,7 @@ export class PortActivitiesComponent implements OnInit {
       enterAnimationDuration,
       exitAnimationDuration,
       disableClose: true,
-      data: this.indexLocation
+      data: { indexLocation: this.indexLocation, portName: this.activityPerLocationModel.port }
     });
     dialogRef.afterClosed().subscribe((result: Activity) => {
       if (result) {
@@ -222,9 +184,9 @@ export class PortActivitiesComponent implements OnInit {
       enterAnimationDuration,
       exitAnimationDuration,
       disableClose: true,
-      data: this.indexLocation
+      data: { indexLocation: this.indexLocation, portName: this.activityPerLocationModel.port }
     });
-    dialogRef.afterClosed().subscribe((result: Activity) => {  
+    dialogRef.afterClosed().subscribe((result: Activity) => {
       result.activityType === 'Pilotage Inbound' ? result.ETX = 'ETB' : result.ETX = 'SoSP'
       if (result) {
         this.rotationService.addActivity(this.indexLocation, result)
@@ -237,7 +199,7 @@ export class PortActivitiesComponent implements OnInit {
       enterAnimationDuration,
       exitAnimationDuration,
       disableClose: true,
-      data: this.indexLocation
+      data: { indexLocation: this.indexLocation, portName: this.activityPerLocationModel.port }
     });
     dialogRef.afterClosed().subscribe((result: Activity) => {
       if (result) {
@@ -259,7 +221,7 @@ export class PortActivitiesComponent implements OnInit {
         enterAnimationDuration,
         exitAnimationDuration,
         disableClose: true,
-        data: { indexLocation: this.indexLocation, berths: this.berths }
+        data: { indexLocation: this.indexLocation, berths: this.berths, portName: this.activityPerLocationModel.port }
       });
 
       dialogRef.afterClosed().subscribe((result: Activity) => {
@@ -275,7 +237,7 @@ export class PortActivitiesComponent implements OnInit {
       enterAnimationDuration,
       exitAnimationDuration,
       disableClose: true,
-      data: this.indexLocation
+      data: { indexLocation: this.indexLocation, portName: this.activityPerLocationModel.port }
     });
     dialogRef.afterClosed().subscribe((result: Activity) => {
       if (result) {
@@ -290,7 +252,7 @@ export class PortActivitiesComponent implements OnInit {
       enterAnimationDuration,
       exitAnimationDuration,
       disableClose: true,
-      data: this.indexLocation
+      data: { indexLocation: this.indexLocation, portName: this.activityPerLocationModel.port }
     });
     dialogRef.afterClosed().subscribe((result: Activity) => {
       if (result) {
@@ -305,7 +267,7 @@ export class PortActivitiesComponent implements OnInit {
       enterAnimationDuration,
       exitAnimationDuration,
       disableClose: true,
-      data: this.indexLocation
+      data: { indexLocation: this.indexLocation, portName: this.activityPerLocationModel.port }
     });
     dialogRef.afterClosed().subscribe((result: Activity) => {
 
@@ -329,3 +291,4 @@ export class PortActivitiesComponent implements OnInit {
 
 
 }
+

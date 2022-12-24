@@ -3,49 +3,63 @@
     <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
     <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
   </button>
-  ETA & Bunker Calculator
+  ETA & ROB Calculator
 </mat-toolbar>
 
 <mat-sidenav-container>
   <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
-    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-
-    <h4 class="name">Alberto Lunardini</h4>
-    <p class="designation">Test</p>
+    <button mat-flat-button style="background-color: #004a9f;color: white" (click)="openAbout('7ms', '1ms')"> <img style="width: 54px;" src="assets/icon/icona.png" alt="image"> 
+      <h4 class="name">Alberto Lunardini</h4> 
+     </button> 
 
     <mat-divider></mat-divider>
     <div fxLayoutGap="18px">
-      <button mat-button class="menu-button" routerLink="/location">
-        <mat-icon>add_location_add</mat-icon>
-        <span>Ports</span>
-      </button>
       <button mat-button class="menu-button" routerLink="/home">
         <mat-icon>public</mat-icon>
         <span>Rotation</span>
       </button>
+      <button mat-button class="menu-button" routerLink="/location">
+        <mat-icon>add_location_add</mat-icon>
+        <span>Ports</span>
+      </button>
       <button mat-button class="menu-button" routerLink="/bunker">
         <mat-icon>local_gas_station</mat-icon>
         <span>Engine & Auxiliares</span>
-      </button> 
+      </button>
       <mat-divider></mat-divider>
-      <button mat-button class="menu-button"  (click)="exportFullRotation()">
+
+      <button mat-button class="menu-button" (click)="openPDFMask('7ms', '1ms')">
         <mat-icon>picture_as_pdf</mat-icon>
-        <span>Full Rotation</span>
+        <span>Export PDF Rotation</span>
       </button>
-      <button mat-button class="menu-button"  (click)="exportShortRotation()">
-        <mat-icon>picture_as_pdf</mat-icon>
-        <span>Short Rotation</span>
-      </button>
-      <button mat-button class="menu-button"  (click)="compactRotation()">
+      <button mat-button class="menu-button" (click)="compactRotation()">
         <mat-icon *ngIf="(rotationService.isShort$ | async) === false">unfold_less</mat-icon>
         <mat-icon *ngIf="(rotationService.isShort$ | async) === true">unfold_more</mat-icon>
         <span>Short Rotation</span>
-      </button> 
+      </button>
+      <button mat-button class="menu-button" (click)="exportRotation()">
+        <mat-icon>file_upload</mat-icon>
+        <span>Export</span>
+      </button>
+      <button mat-button class="menu-button" (click)="openImport('7ms', '1ms')">
+        <mat-icon>file_download </mat-icon>
+        <span>Import</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/instruction">
+        <mat-icon>info</mat-icon>
+        <span>Help</span>
+      </button>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="content mat-elevation-z8">
-      <router-outlet></router-outlet>
+      <ng-container *ngIf=" (this.rotationService.isLoading$ | async) === false;else app">
+        <app-loader></app-loader>
+      </ng-container>
+      <ng-template #app>
+        <router-outlet></router-outlet>
+      </ng-template>
+
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

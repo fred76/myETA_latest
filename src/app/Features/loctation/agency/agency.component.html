@@ -1,1 +1,42 @@
-<p>agency works!</p>
+<div>
+    <button style="margin-top: 12px;margin-left: 8px" mat-raised-button color="primary"
+        (click)="openDialogAgency('7ms', '1ms')">
+        <mat-icon>add</mat-icon>
+        Add Agency
+    </button>
+</div>
+
+<div>
+
+    <div *ngFor="let agency of agencies, ; let i = index" style="margin-top: 12px" fxLayout="row"
+        fxLayoutAlign="space-around stretch">
+
+        <mat-card fxFlex="grow" fxLayoutGap="12px">
+            <mat-card-title>{{agency.agencyName}}</mat-card-title>
+
+            <mat-card-subtitle fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="12px" style="margin-top: 8px">
+                <div class="icon-text" fxFlex="50">
+                    <mat-icon style="margin-right:8px;margin-top: -10px">phone</mat-icon>
+                    <span>: {{agency.agencyCell24Hrs}} - 24hrs</span>
+                </div>
+                <div class="icon-text" fxFlex="50">
+                    <mat-icon style="margin-right:8px; margin-top: -10px">email</mat-icon>
+                    <span>: {{agency.agencyGeneralEmail}}</span>
+                </div>
+            </mat-card-subtitle>
+        </mat-card>
+        <div style=" padding-left: 8px; padding-right: 8px;" fxLayout="column" fxLayoutAlign="space-around stretch"
+            style="color: white">
+
+            <button mat-icon-button color="primary" (click)="openDialogAgencyToEdit('7ms', '1ms', agency)">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" (click)="delete(agency)">
+                <mat-icon>delete</mat-icon>
+            </button>
+
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,91 @@
+ 
+
+<form [formGroup]="form" style="height: 100%;  width: 100%" fxLayout="column"
+    fxLayoutAlign="space-around stretch">
+
+    <mat-card style="height:300px; ">
+        <div fxLayout="column" fxLayoutAlign="space-around stretch" style="width: 100% " >
+            <mat-form-field>
+                <mat-label>Agency Name</mat-label>
+                <input matInput type="text" placeholder="Ex: AAA Agency" formControlName="agencyName" flex="grow">
+            </mat-form-field>
+            <div fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="12px">
+                <mat-form-field fxFlex="30">
+                    <mat-label>Agency Phone</mat-label>
+                    <input matInput type="text" placeholder="Ex: +39 xxxxxxxx" formControlName="agencyPhone">
+                </mat-form-field>
+                <mat-form-field fxFlex="30">
+                    <mat-label>Agency Phone 2</mat-label>
+                    <input matInput type="text" placeholder="Ex: +39 xxxxxxxx" formControlName="agencyPhone1">
+                </mat-form-field>
+                <mat-form-field fxFlex="30">
+                    <mat-label>Agency Mobile 24 HRS</mat-label>
+                    <input matInput type="text" placeholder="Ex: +39 xxxxxxxx" formControlName="agencyCell24Hrs">
+                </mat-form-field>
+            </div>
+            <mat-form-field>
+                <mat-label>Agency General Email</mat-label>
+                <input matInput type="text" placeholder="Ex: info@aaa.com" formControlName="agencyGeneralEmail">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Agency Address</mat-label>
+                <input matInput type="text" placeholder="Ex: City - street - postal code"
+                    formControlName="agencyAddress">
+            </mat-form-field> 
+        </div>
+
+        <button mat-raised-button color="primary" (click)="addOperator()">
+            <mat-icon>add</mat-icon>
+            Add Operator
+        </button>
+    </mat-card>
+
+    <div style="width: 100%; height: calc(100% - 300px); overflow-y:auto " >
+        <div formArrayName="operators" *ngFor="let item of getOperators(); let i = index">
+
+            <div class="border" [formGroupName]="i" style="margin-top: 6px" fxLayout="row" fxLayoutAlign="space-around stretch">
+                <mat-card fxLayout="column" fxLayoutAlign="space-around stretch" style="width: 100%">
+                    <div fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="12px">
+                        <mat-form-field fxFlex="48">
+                            <mat-label>Operator Name</mat-label>
+                            <input style="font-weight:bold " matInput type="text" formControlName="operatorName">
+                        </mat-form-field>
+                        <mat-form-field fxFlex="48">
+                            <mat-label>Operator Email</mat-label>
+                            <input style="font-weight:bold " matInput type="text" formControlName="operatorEmail">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="12px">
+                        <mat-form-field fxFlex="48">
+                            <mat-label>Operator Phone</mat-label>
+                            <input style="font-weight:bold " matInput type="text" formControlName="operatorPhone">
+                        </mat-form-field>
+                        <mat-form-field fxFlex="48">
+                            <mat-label>Operator Mobile</mat-label>
+                            <input style="font-weight:bold " matInput type="text" formControlName="operatorCell">
+                        </mat-form-field>
+                    </div>
+
+                </mat-card>
+                <button style="margin-top: auto; margin-bottom: auto;" mat-icon-button color="default" (click)="deleteOperator(i)" >
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+
+
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center">
+
+    <button mat-raised-button color="primary" [mat-dialog-close]="form.value" (click)="addOperator()" style="margin-top: 12px">
+        <mat-icon>save</mat-icon>
+        Save
+    </button>
+    
+    <button mat-raised-button mat-dialog-close color="primary" style="margin-left: 12px;margin-top: 12px">
+        <mat-icon>x</mat-icon>
+        Close
+    </button>
+</div>
+
+</form>

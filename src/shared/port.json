@@ -1,0 +1,7464 @@
+[
+    {
+        "countryName": "United Arab Emirates",
+        "ports": [
+            {
+                "portName": "Ajman",
+                "unlocs": "AEAJM"
+            },
+            {
+                "portName": "Abu Dhabi",
+                "unlocs": "AEAUH"
+            },
+            {
+                "portName": "Dubai",
+                "unlocs": "AEDXB"
+            },
+            {
+                "portName": "Al Fujayrah",
+                "unlocs": "AEFJR"
+            },
+            {
+                "portName": "Jebel Ali",
+                "unlocs": "AEJEA"
+            },
+            {
+                "portName": "Jebel Dhanna",
+                "unlocs": "AEJED"
+            },
+            {
+                "portName": "Khor al Fakkan",
+                "unlocs": "AEKLF"
+            },
+            {
+                "portName": "Port Rashid",
+                "unlocs": "AEPRA"
+            },
+            {
+                "portName": "Umm al Qaiwain",
+                "unlocs": "AEQIW"
+            },
+            {
+                "portName": "Ras al Khaimah",
+                "unlocs": "AERKT"
+            },
+            {
+                "portName": "Ar Ruways",
+                "unlocs": "AERUW"
+            },
+            {
+                "portName": "Sharjah",
+                "unlocs": "AESHJ"
+            }
+        ]
+    },
+    {
+        "countryName": "Antigua and Barbuda",
+        "ports": [
+            {
+                "portName": "Antigua",
+                "unlocs": "AGANU"
+            },
+            {
+                "portName": "Saint John's",
+                "unlocs": "AGSJO"
+            }
+        ]
+    },
+    {
+        "countryName": "Anguilla",
+        "ports": [
+            {
+                "portName": "Blowing Point",
+                "unlocs": "AIBLP"
+            },
+            {
+                "portName": "Road Bay",
+                "unlocs": "AIRBY"
+            }
+        ]
+    },
+    {
+        "countryName": "Albania",
+        "ports": [
+            {
+                "portName": "Durres",
+                "unlocs": "ALDRZ"
+            }
+        ]
+    },
+    {
+        "countryName": "Netherlands Antilles",
+        "ports": [
+            {
+                "portName": "Bonaire",
+                "unlocs": "ANBON"
+            },
+            {
+                "portName": "Curacao",
+                "unlocs": "ANCUR"
+            },
+            {
+                "portName": "Galisby",
+                "unlocs": "ANGSB"
+            },
+            {
+                "portName": "Philipsburg",
+                "unlocs": "ANPHI"
+            },
+            {
+                "portName": "St Maarten",
+                "unlocs": "ANSXM"
+            },
+            {
+                "portName": "Willemstad",
+                "unlocs": "ANWIL"
+            }
+        ]
+    },
+    {
+        "countryName": "Netherlands",
+        "ports": [
+            {
+                "portName": "Sint Eustatius (Antilles)",
+                "unlocs": "ANEUX"
+            },
+            {
+                "portName": "Alkmaar",
+                "unlocs": "NLALK"
+            },
+            {
+                "portName": "Amsterdam",
+                "unlocs": "NLAMS"
+            },
+            {
+                "portName": "Bergen op Zoom",
+                "unlocs": "NLBZM"
+            },
+            {
+                "portName": "Dordrecht",
+                "unlocs": "NLDOR"
+            },
+            {
+                "portName": "Eemshaven",
+                "unlocs": "NLEEM"
+            },
+            {
+                "portName": "Groningen",
+                "unlocs": "NLGRQ"
+            },
+            {
+                "portName": "Hoek van Holland",
+                "unlocs": "NLHVH"
+            },
+            {
+                "portName": "IJmuiden/Velsen",
+                "unlocs": "NLIJM"
+            },
+            {
+                "portName": "Moerdijk",
+                "unlocs": "NLMOE"
+            },
+            {
+                "portName": "Rotterdam",
+                "unlocs": "NLRTM"
+            },
+            {
+                "portName": "Terneuzen",
+                "unlocs": "NLTNZ"
+            },
+            {
+                "portName": "Velsen",
+                "unlocs": "NLVEL"
+            },
+            {
+                "portName": "Vlaardingen",
+                "unlocs": "NLVLA"
+            },
+            {
+                "portName": "Vlissingen",
+                "unlocs": "NLVLI"
+            },
+            {
+                "portName": "Zaandam",
+                "unlocs": "NLZAA"
+            },
+            {
+                "portName": "Zeewolde",
+                "unlocs": "NLZEW"
+            }
+        ]
+    },
+    {
+        "countryName": "Angola",
+        "ports": [
+            {
+                "portName": "Cabinda",
+                "unlocs": "AOCAB"
+            },
+            {
+                "portName": "Luanda",
+                "unlocs": "AOLAD"
+            },
+            {
+                "portName": "Lobito",
+                "unlocs": "AOLOB"
+            },
+            {
+                "portName": "Namibe",
+                "unlocs": "AOMSZ"
+            },
+            {
+                "portName": "Soyo",
+                "unlocs": "AOSZA"
+            }
+        ]
+    },
+    {
+        "countryName": "Argentina",
+        "ports": [
+            {
+                "portName": "Bahia Blanca",
+                "unlocs": "ARBHI"
+            },
+            {
+                "portName": "Buenos Aires",
+                "unlocs": "ARBUE"
+            },
+            {
+                "portName": "Campana",
+                "unlocs": "ARCMP"
+            },
+            {
+                "portName": "Corrientes",
+                "unlocs": "ARCNQ"
+            },
+            {
+                "portName": "Comodoro Rivadavia",
+                "unlocs": "ARCRD"
+            },
+            {
+                "portName": "Caleta Olivia",
+                "unlocs": "ARCVI"
+            },
+            {
+                "portName": "Delta Dock",
+                "unlocs": "ARDDC"
+            },
+            {
+                "portName": "La Plata",
+                "unlocs": "ARLPG"
+            },
+            {
+                "portName": "Mar del Plata",
+                "unlocs": "ARMDQ"
+            },
+            {
+                "portName": "Necochea",
+                "unlocs": "ARNEC"
+            },
+            {
+                "portName": "Goya",
+                "unlocs": "AROYA"
+            },
+            {
+                "portName": "Puerto Madryn",
+                "unlocs": "ARPMY"
+            },
+            {
+                "portName": "Puerto Deseado",
+                "unlocs": "ARPUD"
+            },
+            {
+                "portName": "Rio Grande",
+                "unlocs": "ARRGA"
+            },
+            {
+                "portName": "Rio Gallegos",
+                "unlocs": "ARRGL"
+            },
+            {
+                "portName": "Rio Cullen",
+                "unlocs": "ARRIC"
+            },
+            {
+                "portName": "Rosario",
+                "unlocs": "ARROS"
+            },
+            {
+                "portName": "San Antonio Este",
+                "unlocs": "ARSAE"
+            },
+            {
+                "portName": "Santa Fe",
+                "unlocs": "ARSFN"
+            },
+            {
+                "portName": "San Lorenzo",
+                "unlocs": "ARSLO"
+            },
+            {
+                "portName": "San Nicolas de los Arroyos",
+                "unlocs": "ARSNS"
+            },
+            {
+                "portName": "San Pedro",
+                "unlocs": "ARSPD"
+            },
+            {
+                "portName": "Ushuaia",
+                "unlocs": "ARUSH"
+            },
+            {
+                "portName": "Zarate",
+                "unlocs": "ARZAE"
+            }
+        ]
+    },
+    {
+        "countryName": "American Samoa",
+        "ports": [
+            {
+                "portName": "Pago Pago",
+                "unlocs": "ASPPG"
+            }
+        ]
+    },
+    {
+        "countryName": "Austria",
+        "ports": [
+            {
+                "portName": "Hainfeld",
+                "unlocs": "ATLTX"
+            }
+        ]
+    },
+    {
+        "countryName": "Australia",
+        "ports": [
+            {
+                "portName": "Abbot Point",
+                "unlocs": "AUABP"
+            },
+            {
+                "portName": "Adelaide",
+                "unlocs": "AUADL"
+            },
+            {
+                "portName": "Ardrossan",
+                "unlocs": "AUARD"
+            },
+            {
+                "portName": "Bremer Bay",
+                "unlocs": "AUBBY"
+            },
+            {
+                "portName": "Bell Bay",
+                "unlocs": "AUBEL"
+            },
+            {
+                "portName": "Brisbane",
+                "unlocs": "AUBNE"
+            },
+            {
+                "portName": "Booby Island",
+                "unlocs": "AUBOO"
+            },
+            {
+                "portName": "Burnie",
+                "unlocs": "AUBWT"
+            },
+            {
+                "portName": "Chittering",
+                "unlocs": "AUCHT"
+            },
+            {
+                "portName": "Cairns",
+                "unlocs": "AUCNS"
+            },
+            {
+                "portName": "Devonport",
+                "unlocs": "AUDPO"
+            },
+            {
+                "portName": "Darwin",
+                "unlocs": "AUDRW"
+            },
+            {
+                "portName": "Fremantle",
+                "unlocs": "AUFRE"
+            },
+            {
+                "portName": "Gladstone",
+                "unlocs": "AUGLT"
+            },
+            {
+                "portName": "Gove",
+                "unlocs": "AUGOV"
+            },
+            {
+                "portName": "Hobart",
+                "unlocs": "AUHBA"
+            },
+            {
+                "portName": "Hay Point",
+                "unlocs": "AUHPT"
+            },
+            {
+                "portName": "Launceston",
+                "unlocs": "AULST"
+            },
+            {
+                "portName": "Melbourne",
+                "unlocs": "AUMEL"
+            },
+            {
+                "portName": "New Norfolk",
+                "unlocs": "AUNLK"
+            },
+            {
+                "portName": "Newcastle",
+                "unlocs": "AUNTL"
+            },
+            {
+                "portName": "Port Adelaide",
+                "unlocs": "AUPAE"
+            },
+            {
+                "portName": "Port Hedland",
+                "unlocs": "AUPHE"
+            },
+            {
+                "portName": "Port Kembla",
+                "unlocs": "AUPKL"
+            },
+            {
+                "portName": "Sydney",
+                "unlocs": "AUSYD"
+            },
+            {
+                "portName": "Townsville",
+                "unlocs": "AUTSV"
+            },
+            {
+                "portName": "Weipa",
+                "unlocs": "AUWEI"
+            }
+        ]
+    },
+    {
+        "countryName": "Aruba",
+        "ports": [
+            {
+                "portName": "Aruba",
+                "unlocs": "AWAUA"
+            },
+            {
+                "portName": "Oranjestad",
+                "unlocs": "AWORJ"
+            }
+        ]
+    },
+    {
+        "countryName": "Azerbaijan",
+        "ports": [
+            {
+                "portName": "Baku",
+                "unlocs": "AZBAK"
+            }
+        ]
+    },
+    {
+        "countryName": "Barbados",
+        "ports": [
+            {
+                "portName": "Bridgetown",
+                "unlocs": "BBBGI"
+            }
+        ]
+    },
+    {
+        "countryName": "Bangladesh",
+        "ports": [
+            {
+                "portName": "Chittagong",
+                "unlocs": "BDCGP"
+            },
+            {
+                "portName": "Chalna",
+                "unlocs": "BDCHL"
+            },
+            {
+                "portName": "Dhaka",
+                "unlocs": "BDDAC"
+            },
+            {
+                "portName": "Mongla",
+                "unlocs": "BDMGL"
+            }
+        ]
+    },
+    {
+        "countryName": "Belgium",
+        "ports": [
+            {
+                "portName": "Antwerpen",
+                "unlocs": "BEANR"
+            },
+            {
+                "portName": "Bossuit",
+                "unlocs": "BEBSU"
+            },
+            {
+                "portName": "Doel",
+                "unlocs": "BEDEL"
+            },
+            {
+                "portName": "Gent (Ghent)",
+                "unlocs": "BEGNE"
+            },
+            {
+                "portName": "Oostende (Ostend)",
+                "unlocs": "BEOST"
+            },
+            {
+                "portName": "Zeebrugge",
+                "unlocs": "BEZEE"
+            }
+        ]
+    },
+    {
+        "countryName": "Burkina Faso",
+        "ports": [
+            {
+                "portName": "Ouagadougou",
+                "unlocs": "BFOUA"
+            }
+        ]
+    },
+    {
+        "countryName": "Bulgaria",
+        "ports": [
+            {
+                "portName": "Burgas",
+                "unlocs": "BGBOJ"
+            },
+            {
+                "portName": "Varna",
+                "unlocs": "BGVAR"
+            }
+        ]
+    },
+    {
+        "countryName": "Bahrain",
+        "ports": [
+            {
+                "portName": "Al Hidd",
+                "unlocs": "BHAHD"
+            },
+            {
+                "portName": "Bahrain",
+                "unlocs": "BHBAH"
+            },
+            {
+                "portName": "Khalifa Bin Salman Port",
+                "unlocs": "BHKBS"
+            },
+            {
+                "portName": "Manama",
+                "unlocs": "BHMAN"
+            },
+            {
+                "portName": "Sitrah",
+                "unlocs": "BHSIT"
+            }
+        ]
+    },
+    {
+        "countryName": "Benin",
+        "ports": [
+            {
+                "portName": "Cotonou",
+                "unlocs": "BJCOO"
+            }
+        ]
+    },
+    {
+        "countryName": "Bermuda",
+        "ports": [
+            {
+                "portName": "Hamilton",
+                "unlocs": "BMBDA"
+            },
+            {
+                "portName": "Southampton",
+                "unlocs": "BMSOU"
+            }
+        ]
+    },
+    {
+        "countryName": "Brunei Darussalam",
+        "ports": [
+            {
+                "portName": "Bandar Seri Begawan",
+                "unlocs": "BNBWN"
+            },
+            {
+                "portName": "Kuala Belait",
+                "unlocs": "BNKUB"
+            },
+            {
+                "portName": "Muara",
+                "unlocs": "BNMUA"
+            }
+        ]
+    },
+    {
+        "countryName": "Bolivia, Plurinational State of",
+        "ports": [
+            {
+                "portName": "Puerto Busch",
+                "unlocs": "BOPBU"
+            },
+            {
+                "portName": "Santa Cruz",
+                "unlocs": "BOSRZ"
+            }
+        ]
+    },
+    {
+        "countryName": "Brazil",
+        "ports": [
+            {
+                "portName": "Aratu",
+                "unlocs": "BRARB"
+            },
+            {
+                "portName": "Areia Branca",
+                "unlocs": "BRARE"
+            },
+            {
+                "portName": "Belem",
+                "unlocs": "BRBEL"
+            },
+            {
+                "portName": "Cabedelo",
+                "unlocs": "BRCDO"
+            },
+            {
+                "portName": "Forno",
+                "unlocs": "BRFNO"
+            },
+            {
+                "portName": "Fortaleza",
+                "unlocs": "BRFOR"
+            },
+            {
+                "portName": "Imbituba",
+                "unlocs": "BRIBB"
+            },
+            {
+                "portName": "Itaguai",
+                "unlocs": "BRIGI"
+            },
+            {
+                "portName": "Itapoa",
+                "unlocs": "BRIOA"
+            },
+            {
+                "portName": "Ilheus",
+                "unlocs": "BRIOS"
+            },
+            {
+                "portName": "Itabirito",
+                "unlocs": "BRIRO"
+            },
+            {
+                "portName": "Itajai",
+                "unlocs": "BRITJ"
+            },
+            {
+                "portName": "Itaqui",
+                "unlocs": "BRITQ"
+            },
+            {
+                "portName": "Itapemirim",
+                "unlocs": "BRITZ"
+            },
+            {
+                "portName": "Manaus",
+                "unlocs": "BRMAO"
+            },
+            {
+                "portName": "Maceio",
+                "unlocs": "BRMCZ"
+            },
+            {
+                "portName": "Natal",
+                "unlocs": "BRNAT"
+            },
+            {
+                "portName": "Navegantes",
+                "unlocs": "BRNVT"
+            },
+            {
+                "portName": "Portocel",
+                "unlocs": "BRPCL"
+            },
+            {
+                "portName": "Pecem",
+                "unlocs": "BRPEC"
+            },
+            {
+                "portName": "Paranagua",
+                "unlocs": "BRPNG"
+            },
+            {
+                "portName": "Paranã",
+                "unlocs": "BRPNN"
+            },
+            {
+                "portName": "Porto Alegre",
+                "unlocs": "BRPOA"
+            },
+            {
+                "portName": "Recife",
+                "unlocs": "BRREC"
+            },
+            {
+                "portName": "Rio Grande",
+                "unlocs": "BRRIG"
+            },
+            {
+                "portName": "Rio de Janeiro",
+                "unlocs": "BRRIO"
+            },
+            {
+                "portName": "Salto Grande",
+                "unlocs": "BRSAL"
+            },
+            {
+                "portName": "Sao Francisco do Sul",
+                "unlocs": "BRSFS"
+            },
+            {
+                "portName": "Porto de Itaguai",
+                "unlocs": "BRSPB"
+            },
+            {
+                "portName": "Salvador",
+                "unlocs": "BRSSA"
+            },
+            {
+                "portName": "Sao Sebastiao",
+                "unlocs": "BRSSO"
+            },
+            {
+                "portName": "Santos",
+                "unlocs": "BRSSZ"
+            },
+            {
+                "portName": "Santarem",
+                "unlocs": "BRSTM"
+            },
+            {
+                "portName": "Suape",
+                "unlocs": "BRSUA"
+            },
+            {
+                "portName": "Vitoria da Conquista",
+                "unlocs": "BRVDC"
+            },
+            {
+                "portName": "Vila do Conde",
+                "unlocs": "BRVIC"
+            },
+            {
+                "portName": "Vitoria",
+                "unlocs": "BRVIX"
+            },
+            {
+                "portName": "Vila do Conde",
+                "unlocs": "BRVLC"
+            }
+        ]
+    },
+    {
+        "countryName": "Bahamas",
+        "ports": [
+            {
+                "portName": "Freeport, Grand Bahama",
+                "unlocs": "BSFPO"
+            },
+            {
+                "portName": "Nassau",
+                "unlocs": "BSNAS"
+            }
+        ]
+    },
+    {
+        "countryName": "Belarus",
+        "ports": [
+            {
+                "portName": "Minsk",
+                "unlocs": "BYMSQ"
+            }
+        ]
+    },
+    {
+        "countryName": "Belize",
+        "ports": [
+            {
+                "portName": "Belize City",
+                "unlocs": "BZBZE"
+            }
+        ]
+    },
+    {
+        "countryName": "Canada",
+        "ports": [
+            {
+                "portName": "Bathurst",
+                "unlocs": "CABAT"
+            },
+            {
+                "portName": "Brockville",
+                "unlocs": "CABCK"
+            },
+            {
+                "portName": "Baie d'Urfe",
+                "unlocs": "CABDU"
+            },
+            {
+                "portName": "Becancour",
+                "unlocs": "CABEC"
+            },
+            {
+                "portName": "Baie-Johan-Beetz",
+                "unlocs": "CABJO"
+            },
+            {
+                "portName": "Burlington",
+                "unlocs": "CABRL"
+            },
+            {
+                "portName": "Calgary",
+                "unlocs": "CACAL"
+            },
+            {
+                "portName": "Corner Brook",
+                "unlocs": "CACBK"
+            },
+            {
+                "portName": "Cowichan Bay",
+                "unlocs": "CACCB"
+            },
+            {
+                "portName": "Collingwood",
+                "unlocs": "CACOL"
+            },
+            {
+                "portName": "Crofton",
+                "unlocs": "CACRO"
+            },
+            {
+                "portName": "Cornwall",
+                "unlocs": "CACWL"
+            },
+            {
+                "portName": "Dorval",
+                "unlocs": "CADOR"
+            },
+            {
+                "portName": "Drummondville",
+                "unlocs": "CADRU"
+            },
+            {
+                "portName": "Edmonton",
+                "unlocs": "CAEDM"
+            },
+            {
+                "portName": "Halifax",
+                "unlocs": "CAHAL"
+            },
+            {
+                "portName": "Hamilton",
+                "unlocs": "CAHAM"
+            },
+            {
+                "portName": "Harmac",
+                "unlocs": "CAHMC"
+            },
+            {
+                "portName": "Kingsville",
+                "unlocs": "CAKVL"
+            },
+            {
+                "portName": "Magog",
+                "unlocs": "CAMAG"
+            },
+            {
+                "portName": "Moncton",
+                "unlocs": "CAMNT"
+            },
+            {
+                "portName": "Montreal",
+                "unlocs": "CAMTR"
+            },
+            {
+                "portName": "Niagara Falls",
+                "unlocs": "CANIA"
+            },
+            {
+                "portName": "Nanaimo",
+                "unlocs": "CANNO"
+            },
+            {
+                "portName": "North Bay",
+                "unlocs": "CANOR"
+            },
+            {
+                "portName": "New Westminster",
+                "unlocs": "CANWE"
+            },
+            {
+                "portName": "Oakville",
+                "unlocs": "CAOAK"
+            },
+            {
+                "portName": "Odessa",
+                "unlocs": "CAODE"
+            },
+            {
+                "portName": "Oshawa",
+                "unlocs": "CAOSH"
+            },
+            {
+                "portName": "Port Credit",
+                "unlocs": "CAPCR"
+            },
+            {
+                "portName": "Port Dover",
+                "unlocs": "CAPDV"
+            },
+            {
+                "portName": "Port Mellon",
+                "unlocs": "CAPML"
+            },
+            {
+                "portName": "Pointe-Claire",
+                "unlocs": "CAPOI"
+            },
+            {
+                "portName": "Prince Rupert",
+                "unlocs": "CAPRR"
+            },
+            {
+                "portName": "Quebec",
+                "unlocs": "CAQUE"
+            },
+            {
+                "portName": "Saskatoon",
+                "unlocs": "CASAK"
+            },
+            {
+                "portName": "Saint-Catharines",
+                "unlocs": "CASCA"
+            },
+            {
+                "portName": "Saint-John",
+                "unlocs": "CASJB"
+            },
+            {
+                "portName": "Saint-John's",
+                "unlocs": "CASJF"
+            },
+            {
+                "portName": "Sarnia",
+                "unlocs": "CASNI"
+            },
+            {
+                "portName": "Sorel",
+                "unlocs": "CASOR"
+            },
+            {
+                "portName": "Sault-Sainte-Marie",
+                "unlocs": "CASSM"
+            },
+            {
+                "portName": "Stoney Creek",
+                "unlocs": "CASTC"
+            },
+            {
+                "portName": "Summerside",
+                "unlocs": "CASUM"
+            },
+            {
+                "portName": "Texada Island",
+                "unlocs": "CATEX"
+            },
+            {
+                "portName": "Thunder Bay",
+                "unlocs": "CATHU"
+            },
+            {
+                "portName": "Toronto",
+                "unlocs": "CATOR"
+            },
+            {
+                "portName": "Trois-Rivieres (Three Rivers)",
+                "unlocs": "CATRR"
+            },
+            {
+                "portName": "Trenton",
+                "unlocs": "CATTC"
+            },
+            {
+                "portName": "Vancouver",
+                "unlocs": "CAVAN"
+            },
+            {
+                "portName": "Valleyfield",
+                "unlocs": "CAVLF"
+            },
+            {
+                "portName": "Winona",
+                "unlocs": "CAWIN"
+            },
+            {
+                "portName": "Winnipeg",
+                "unlocs": "CAWNP"
+            }
+        ]
+    },
+    {
+        "countryName": "Congo, The Democratic Republic of the",
+        "ports": [
+            {
+                "portName": "Boma",
+                "unlocs": "CDBOA"
+            },
+            {
+                "portName": "Matadi",
+                "unlocs": "CDMAT"
+            }
+        ]
+    },
+    {
+        "countryName": "Congo",
+        "ports": [
+            {
+                "portName": "Pointe Noire",
+                "unlocs": "CGPNR"
+            }
+        ]
+    },
+    {
+        "countryName": "Côte d'Ivoire",
+        "ports": [
+            {
+                "portName": "Abidjan",
+                "unlocs": "CIABJ"
+            },
+            {
+                "portName": "San-Pedro",
+                "unlocs": "CISPY"
+            }
+        ]
+    },
+    {
+        "countryName": "Chile",
+        "ports": [
+            {
+                "portName": "Antofagasta",
+                "unlocs": "CLANF"
+            },
+            {
+                "portName": "Arica",
+                "unlocs": "CLARI"
+            },
+            {
+                "portName": "Bahia San Gregorio",
+                "unlocs": "CLBAG"
+            },
+            {
+                "portName": "Barquito",
+                "unlocs": "CLBAR"
+            },
+            {
+                "portName": "San Vicente",
+                "unlocs": "CLCAP"
+            },
+            {
+                "portName": "Calbuco",
+                "unlocs": "CLCBC"
+            },
+            {
+                "portName": "Caleta Coloso",
+                "unlocs": "CLCCL"
+            },
+            {
+                "portName": "Chacabuco",
+                "unlocs": "CLCHB"
+            },
+            {
+                "portName": "Caldera",
+                "unlocs": "CLCLD"
+            },
+            {
+                "portName": "Coronel",
+                "unlocs": "CLCNL"
+            },
+            {
+                "portName": "Chanaral",
+                "unlocs": "CLCNR"
+            },
+            {
+                "portName": "Cabo Negro",
+                "unlocs": "CLCNX"
+            },
+            {
+                "portName": "Coquimbo",
+                "unlocs": "CLCQQ"
+            },
+            {
+                "portName": "Corral",
+                "unlocs": "CLCRR"
+            },
+            {
+                "portName": "Dalcahue",
+                "unlocs": "CLDCH"
+            },
+            {
+                "portName": "Guayacan",
+                "unlocs": "CLGYC"
+            },
+            {
+                "portName": "Huasco",
+                "unlocs": "CLHSO"
+            },
+            {
+                "portName": "Isla de Pascua",
+                "unlocs": "CLIPC"
+            },
+            {
+                "portName": "Iquique",
+                "unlocs": "CLIQQ"
+            },
+            {
+                "portName": "Jureles",
+                "unlocs": "CLJRL"
+            },
+            {
+                "portName": "Los Vilos",
+                "unlocs": "CLLOS"
+            },
+            {
+                "portName": "Lirquen",
+                "unlocs": "CLLQN"
+            },
+            {
+                "portName": "Las Ventanas",
+                "unlocs": "CLLVS"
+            },
+            {
+                "portName": "Michilla",
+                "unlocs": "CLMCH"
+            },
+            {
+                "portName": "Mejillones",
+                "unlocs": "CLMJS"
+            },
+            {
+                "portName": "Puerto Angamos",
+                "unlocs": "CLPAG"
+            },
+            {
+                "portName": "Puerto Chacabuco",
+                "unlocs": "CLPCH"
+            },
+            {
+                "portName": "Penco",
+                "unlocs": "CLPEO"
+            },
+            {
+                "portName": "Punta Chungo",
+                "unlocs": "CLPGO"
+            },
+            {
+                "portName": "Puerto Montt",
+                "unlocs": "CLPMC"
+            },
+            {
+                "portName": "Puerto Natales",
+                "unlocs": "CLPNT"
+            },
+            {
+                "portName": "Punta Patache",
+                "unlocs": "CLPPC"
+            },
+            {
+                "portName": "Punta Padrones",
+                "unlocs": "CLPPD"
+            },
+            {
+                "portName": "Quellon (Puerto Quellon)",
+                "unlocs": "CLPTE"
+            },
+            {
+                "portName": "Patillos",
+                "unlocs": "CLPTI"
+            },
+            {
+                "portName": "Punta Arenas",
+                "unlocs": "CLPUQ"
+            },
+            {
+                "portName": "Quemchi",
+                "unlocs": "CLQMC"
+            },
+            {
+                "portName": "Quintero",
+                "unlocs": "CLQTV"
+            },
+            {
+                "portName": "San Antonio",
+                "unlocs": "CLSAI"
+            },
+            {
+                "portName": "San Vicente",
+                "unlocs": "CLSVE"
+            },
+            {
+                "portName": "Talcahuano",
+                "unlocs": "CLTAL"
+            },
+            {
+                "portName": "Talcahuano",
+                "unlocs": "CLTHO"
+            },
+            {
+                "portName": "Tome",
+                "unlocs": "CLTOM"
+            },
+            {
+                "portName": "Tocopilla",
+                "unlocs": "CLTOQ"
+            },
+            {
+                "portName": "Taltal",
+                "unlocs": "CLTTC"
+            },
+            {
+                "portName": "Valparaiso",
+                "unlocs": "CLVAP"
+            },
+            {
+                "portName": "Castro",
+                "unlocs": "CLWCA"
+            },
+            {
+                "portName": "Chaiten",
+                "unlocs": "CLWCH"
+            },
+            {
+                "portName": "Puerto Aisen",
+                "unlocs": "CLWPA"
+            },
+            {
+                "portName": "Puerto Williams",
+                "unlocs": "CLWPU"
+            },
+            {
+                "portName": "Ancud",
+                "unlocs": "CLZUD"
+            }
+        ]
+    },
+    {
+        "countryName": "Cameroon",
+        "ports": [
+            {
+                "portName": "Douala",
+                "unlocs": "CMDLA"
+            }
+        ]
+    },
+    {
+        "countryName": "China",
+        "ports": [
+            {
+                "portName": "Bayuquan",
+                "unlocs": "CNBAY"
+            },
+            {
+                "portName": "Beihai Fucheng Apt",
+                "unlocs": "CNBHY"
+            },
+            {
+                "portName": "Beijiao",
+                "unlocs": "CNBJO"
+            },
+            {
+                "portName": "Guangzhou",
+                "unlocs": "CNCAN"
+            },
+            {
+                "portName": "Changshu",
+                "unlocs": "CNCGU"
+            },
+            {
+                "portName": "Chongqing",
+                "unlocs": "CNCKG"
+            },
+            {
+                "portName": "Chaozhou Port",
+                "unlocs": "CNCOZ"
+            },
+            {
+                "portName": "Changsha",
+                "unlocs": "CNCSX"
+            },
+            {
+                "portName": "Chengdu",
+                "unlocs": "CNCTU"
+            },
+            {
+                "portName": "Chiwan Port",
+                "unlocs": "CNCWN"
+            },
+            {
+                "portName": "Dagang",
+                "unlocs": "CNDAA"
+            },
+            {
+                "portName": "Dalian",
+                "unlocs": "CNDLC"
+            },
+            {
+                "portName": "Da Chan Bay",
+                "unlocs": "CNDCB"
+            },
+            {
+                "portName": "Dongguan Port",
+                "unlocs": "CNDGG"
+            },
+            {
+                "portName": "Dalian",
+                "unlocs": "CNDLC"
+            },
+            {
+                "portName": "Doumen Port",
+                "unlocs": "CNDOU"
+            },
+            {
+                "portName": "Fangcheng Port",
+                "unlocs": "CNFAN"
+            },
+            {
+                "portName": "Fuyong",
+                "unlocs": "CNFNG"
+            },
+            {
+                "portName": "Fuzhou",
+                "unlocs": "CNFOC"
+            },
+            {
+                "portName": "Foshan",
+                "unlocs": "CNFOS"
+            },
+            {
+                "portName": "Fuqing",
+                "unlocs": "CNFUG"
+            },
+            {
+                "portName": "Gongyi",
+                "unlocs": "CNGGY"
+            },
+            {
+                "portName": "Gongming",
+                "unlocs": "CNGOG"
+            },
+            {
+                "portName": "Gaoming Port",
+                "unlocs": "CNGOM"
+            },
+            {
+                "portName": "Guigang",
+                "unlocs": "CNGUG"
+            },
+            {
+                "portName": "Haikou",
+                "unlocs": "CNHAK"
+            },
+            {
+                "portName": "Huadu",
+                "unlocs": "CNHDU"
+            },
+            {
+                "portName": "Hebei",
+                "unlocs": "CNHEB"
+            },
+            {
+                "portName": "Hangzhou",
+                "unlocs": "CNHGH"
+            },
+            {
+                "portName": "Haimen",
+                "unlocs": "CNHME"
+            },
+            {
+                "portName": "Humen Port",
+                "unlocs": "CNHMN"
+            },
+            {
+                "portName": "Heshan Port",
+                "unlocs": "CNHSN"
+            },
+            {
+                "portName": "Huangpu Port",
+                "unlocs": "CNHUA"
+            },
+            {
+                "portName": "Huludao Port",
+                "unlocs": "CNHUD"
+            },
+            {
+                "portName": "Huizhou Port",
+                "unlocs": "CNHUI"
+            },
+            {
+                "portName": "Jingzhou",
+                "unlocs": "CNJGZ"
+            },
+            {
+                "portName": "Jiangyin Port",
+                "unlocs": "CNJIA"
+            },
+            {
+                "portName": "Jian",
+                "unlocs": "CNJIN"
+            },
+            {
+                "portName": "Jiujiang Port",
+                "unlocs": "CNJIU"
+            },
+            {
+                "portName": "Jiangmen Port",
+                "unlocs": "CNJMN"
+            },
+            {
+                "portName": "Jinzhou Port",
+                "unlocs": "CNJNZ"
+            },
+            {
+                "portName": "Jiao Xin",
+                "unlocs": "CNJXN"
+            },
+            {
+                "portName": "Jiuzhou Port",
+                "unlocs": "CNJZU"
+            },
+            {
+                "portName": "Nanchang",
+                "unlocs": "CNKHN"
+            },
+            {
+                "portName": "Kunming",
+                "unlocs": "CNKMG"
+            },
+            {
+                "portName": "Kaiping",
+                "unlocs": "CNKPN"
+            },
+            {
+                "portName": "Lanshi Port",
+                "unlocs": "CNLAN"
+            },
+            {
+                "portName": "Longhua",
+                "unlocs": "CNLGH"
+            },
+            {
+                "portName": "Lianhuashan Port",
+                "unlocs": "CNLIH"
+            },
+            {
+                "portName": "Longkou Port",
+                "unlocs": "CNLKU"
+            },
+            {
+                "portName": "Lanshi",
+                "unlocs": "CNLSI"
+            },
+            {
+                "portName": "Lianyungang",
+                "unlocs": "CNLYG"
+            },
+            {
+                "portName": "Liuzhou Port",
+                "unlocs": "CNLZH"
+            },
+            {
+                "portName": "Mawei Port",
+                "unlocs": "CNMAW"
+            },
+            {
+                "portName": "Maoming",
+                "unlocs": "CNMMI"
+            },
+            {
+                "portName": "Mawan Port",
+                "unlocs": "CNMWN"
+            },
+            {
+                "portName": "Mianyang",
+                "unlocs": "CNMYG"
+            },
+            {
+                "portName": "Nanhai Port",
+                "unlocs": "CNNAH"
+            },
+            {
+                "portName": "Ningbo",
+                "unlocs": "CNNGB" 
+                
+            },
+            {
+                "portName": "Ningbo",
+                "unlocs": "CNNGB"  
+            },
+            {
+                "portName": "Nangang",
+                "unlocs": "CNNGG"
+            },
+            {
+                "portName": "Nanjing",
+                "unlocs": "CNNKG"
+            },
+            {
+                "portName": "Nanning",
+                "unlocs": "CNNNG"
+            },
+            {
+                "portName": "Nansha Port",
+                "unlocs": "CNNSA"
+            },
+            {
+                "portName": "Nantong Port",
+                "unlocs": "CNNTG"
+            },
+            {
+                "portName": "Shiqiao",
+                "unlocs": "CNPNY"
+            },
+            {
+                "portName": "Putian",
+                "unlocs": "CNPUT"
+            },
+            {
+                "portName": "Qianwan",
+                "unlocs": "CNQAW"
+            },
+            {
+                "portName": "Qingdao",
+                "unlocs": "CNTAO"  
+            },
+            {
+                "portName": "Qingyuan",
+                "unlocs": "CNQYN"
+            },
+            {
+                "portName": "Quanzhou Port",
+                "unlocs": "CNQZJ"
+            },
+            {
+                "portName": "Rongqi Port",
+                "unlocs": "CNROQ"
+            },
+            {
+                "portName": "Rizhao Port",
+                "unlocs": "CNRZH"
+            },
+            {
+                "portName": "Sanbu Port",
+                "unlocs": "CNSBU"
+            },
+            {
+                "portName": "Shuidong Port",
+                "unlocs": "CNSDG"
+            },
+            {
+                "portName": "Shanghai",
+                "unlocs": "CNSHA"  
+            },
+            {
+                "portName": "Shanghai",
+                "unlocs": "CNSHA" 
+            },
+            {
+                "portName": "Shekou Port",
+                "unlocs": "CNSHK"
+            },
+            {
+                "portName": "Qinhuangdao Port",
+                "unlocs": "CNSHP"
+            },
+            {
+                "portName": "Shatian",
+                "unlocs": "CNSIN"
+            },
+            {
+                "portName": "Sanshui",
+                "unlocs": "CNSJQ"
+            },
+            {
+                "portName": "Shenwan",
+                "unlocs": "CNSNW"
+            },
+            {
+                "portName": "Sanshan (Nanhai)",
+                "unlocs": "CNSSH"
+            },
+            {
+                "portName": "Port of Shantou",
+                "unlocs": "CNSTG"
+            },
+            {
+                "portName": "Shunde Port",
+                "unlocs": "CNSUD"
+            },
+            {
+                "portName": "Jieyang Chaoshan Apt",
+                "unlocs": "CNSWA"
+            },
+            {
+                "portName": "Shanwei Port",
+                "unlocs": "CNSWE"
+            },
+            {
+                "portName": "Shenzhen Baoan",
+                "unlocs": "CNSZX"
+            },
+            {
+                "portName": "Taicang",
+                "unlocs": "CNTAG"
+            },
+            {
+                "portName": "Qingdao",
+                "unlocs": "CNTAO"
+            },
+            {
+                "portName": "Taiping",
+                "unlocs": "CNTAP"
+            },
+            {
+                "portName": "Taicheng (Taishan)",
+                "unlocs": "CNTHG"
+            },
+            {
+                "portName": "Tianjin",
+                "unlocs": "CNTSN"
+            },
+            {
+                "portName": "Tianjin New Port",
+                "unlocs": "CNTXG"
+            },
+            {
+                "portName": "Taizhou",
+                "unlocs": "CNTZO"
+            },
+            {
+                "portName": "Wanzai",
+                "unlocs": "CNWAZ"
+            },
+            {
+                "portName": "Weihai",
+                "unlocs": "CNWEI"
+            },
+            {
+                "portName": "Wuhu Port",
+                "unlocs": "CNWHI"
+            },
+            {
+                "portName": "Wenzhou",
+                "unlocs": "CNWNZ"
+            },
+            {
+                "portName": "Wuhan",
+                "unlocs": "CNWUH"
+            },
+            {
+                "portName": "Xinfeng",
+                "unlocs": "CNXAB"
+            },
+            {
+                "portName": "Xiamen",
+                "unlocs": "CNXMN" 
+            },
+            {
+                "portName": "Xingang",
+                "unlocs": "CNXGG" 
+            },
+            {
+                "portName": "Xingang",
+                "unlocs": "CNXGG" 
+            },
+            {
+                "portName": "Xiaolan",
+                "unlocs": "CNXIL"
+            },
+            {
+                "portName": "Xinhui Port",
+                "unlocs": "CNXIN"
+            },
+            {
+                "portName": "Xintang Port",
+                "unlocs": "CNXIT"
+            },
+            {
+                "portName": "Xiamen",
+                "unlocs": "CNXMN" 
+            },
+            {
+                "portName": "Yangshan",
+                "unlocs": "CNYAN"
+            },
+            {
+                "portName": "Yichang",
+                "unlocs": "CNYIC"
+            },
+            {
+                "portName": "Yingkou Port",
+                "unlocs": "CNYIK"
+            },
+            {
+                "portName": "Yangjiang Port",
+                "unlocs": "CNYJI"
+            },
+            {
+                "portName": "Yunfu",
+                "unlocs": "CNYNF"
+            },
+            {
+                "portName": "Yantai",
+                "unlocs": "CNYNT"
+            },
+            {
+                "portName": "Yangpu Port",
+                "unlocs": "CNYPG"
+            },
+            {
+                "portName": "Beijiao",
+                "unlocs": "CNYQS"
+            },
+            {
+                "portName": "Yantai",
+                "unlocs": "CNYNT" 
+            },
+            {
+                "portName": "Yantian Port",
+                "unlocs": "CNYTN"
+            },
+            {
+                "portName": "Yangzhou Port",
+                "unlocs": "CNYZH"
+            },
+            {
+                "portName": "Zhapu (Zhejiang)",
+                "unlocs": "CNZAP"
+            },
+            {
+                "portName": "Zhanjiang Potou Apt",
+                "unlocs": "CNZHA"
+            },
+            {
+                "portName": "Zhenjiang Port",
+                "unlocs": "CNZHE"
+            },
+            {
+                "portName": "Zhangjiagang",
+                "unlocs": "CNZJG"
+            },
+            {
+                "portName": "Zhoushan Port",
+                "unlocs": "CNZOS"
+            },
+            {
+                "portName": "Zhaoqing Port",
+                "unlocs": "CNZQG"
+            },
+            {
+                "portName": "Zhongshan Port",
+                "unlocs": "CNZSN"
+            },
+            {
+                "portName": "Zhuhai Port",
+                "unlocs": "CNZUH"
+            }
+        ]
+    },
+    {
+        "countryName": "Colombia",
+        "ports": [
+            {
+                "portName": "Barranquilla",
+                "unlocs": "COBAQ"
+            },
+            {
+                "portName": "Buenaventura",
+                "unlocs": "COBUN"
+            },
+            {
+                "portName": "Cartagena",
+                "unlocs": "COCTG"
+            },
+            {
+                "portName": "Puerto Bolivar",
+                "unlocs": "COPBO"
+            },
+            {
+                "portName": "Santa Marta",
+                "unlocs": "COSMR"
+            },
+            {
+                "portName": "Tumaco",
+                "unlocs": "COTCO"
+            }
+        ]
+    },
+    {
+        "countryName": "Costa Rica",
+        "ports": [
+            {
+                "portName": "Caldera",
+                "unlocs": "CRCAL"
+            },
+            {
+                "portName": "Golfito",
+                "unlocs": "CRGLF"
+            },
+            {
+                "portName": "Puerto Limon",
+                "unlocs": "CRLIO"
+            },
+            {
+                "portName": "Moin",
+                "unlocs": "CRMOB"
+            },
+            {
+                "portName": "Puntarenas",
+                "unlocs": "CRPAS"
+            },
+            {
+                "portName": "Puerto Caldera",
+                "unlocs": "CRPCA"
+            },
+            {
+                "portName": "San Jose",
+                "unlocs": "CRSJO"
+            }
+        ]
+    },
+    {
+        "countryName": "Cuba",
+        "ports": [
+            {
+                "portName": "La Habana",
+                "unlocs": "CUHAV"
+            },
+            {
+                "portName": "Mariel",
+                "unlocs": "CUMAR"
+            },
+            {
+                "portName": "Matanzas",
+                "unlocs": "CUQMA"
+            },
+            {
+                "portName": "Santiago de Cuba",
+                "unlocs": "CUSCU"
+            }
+        ]
+    },
+    {
+        "countryName": "Cape Verde",
+        "ports": [
+            {
+                "portName": "Mindelo",
+                "unlocs": "CVMIN"
+            },
+            {
+                "portName": "Palmeira",
+                "unlocs": "CVPAL"
+            },
+            {
+                "portName": "Praia",
+                "unlocs": "CVRAI"
+            }
+        ]
+    },
+    {
+        "countryName": "Cyprus",
+        "ports": [
+            {
+                "portName": "Limassol",
+                "unlocs": "CYLMS"
+            },
+            {
+                "portName": "Nicosia",
+                "unlocs": "CYNIC"
+            },
+            {
+                "portName": "Paphos",
+                "unlocs": "CYPFO"
+            }
+        ]
+    },
+    {
+        "countryName": "Germany",
+        "ports": [
+            {
+                "portName": "Bahlingen",
+                "unlocs": "DEBEZ"
+            },
+            {
+                "portName": "Bingen am Rhein",
+                "unlocs": "DEBIN"
+            },
+            {
+                "portName": "Brake",
+                "unlocs": "DEBKE"
+            },
+            {
+                "portName": "Bad Oeynhausen",
+                "unlocs": "DEBOY"
+            },
+            {
+                "portName": "Bramel",
+                "unlocs": "DEBRA"
+            },
+            {
+                "portName": "Brunsbuttel",
+                "unlocs": "DEBRB"
+            },
+            {
+                "portName": "Bremen",
+                "unlocs": "DEBRE"
+            },
+            {
+                "portName": "Bremerhaven",
+                "unlocs": "DEBRV"
+            },
+            {
+                "portName": "Burgstaaken/Fehmarn",
+                "unlocs": "DEBSK"
+            },
+            {
+                "portName": "Koln",
+                "unlocs": "DECGN"
+            },
+            {
+                "portName": "Cuxhaven",
+                "unlocs": "DECUX"
+            },
+            {
+                "portName": "Dusseldorf",
+                "unlocs": "DEDUS"
+            },
+            {
+                "portName": "Elsfleth",
+                "unlocs": "DEELS"
+            },
+            {
+                "portName": "Emden",
+                "unlocs": "DEEME"
+            },
+            {
+                "portName": "Flensburg",
+                "unlocs": "DEFLF"
+            },
+            {
+                "portName": "Hamburg",
+                "unlocs": "DEHAM"
+            },
+            {
+                "portName": "Harburg",
+                "unlocs": "DEHBU"
+            },
+            {
+                "portName": "Hamm",
+                "unlocs": "DEHMM"
+            },
+            {
+                "portName": "Kiel",
+                "unlocs": "DEKEL"
+            },
+            {
+                "portName": "Kriegenbrunn",
+                "unlocs": "DEKGU"
+            },
+            {
+                "portName": "Kochendorf",
+                "unlocs": "DEKHO"
+            },
+            {
+                "portName": "Lubeck",
+                "unlocs": "DELBC"
+            },
+            {
+                "portName": "Leer",
+                "unlocs": "DELEE"
+            },
+            {
+                "portName": "Mannheim",
+                "unlocs": "DEMHG"
+            },
+            {
+                "portName": "Nordenham",
+                "unlocs": "DENHA"
+            },
+            {
+                "portName": "Nordstrand",
+                "unlocs": "DENOR"
+            },
+            {
+                "portName": "Pfronten",
+                "unlocs": "DEPFR"
+            },
+            {
+                "portName": "Rostock",
+                "unlocs": "DERSK"
+            },
+            {
+                "portName": "Wedel",
+                "unlocs": "DEWED"
+            },
+            {
+                "portName": "Worms",
+                "unlocs": "DEWOR"
+            },
+            {
+                "portName": "Wilhelmshaven",
+                "unlocs": "DEWVN"
+            }
+        ]
+    },
+    {
+        "countryName": "Djibouti",
+        "ports": [
+            {
+                "portName": "Djibouti",
+                "unlocs": "DJJIB"
+            },
+            {
+                "portName": "Djibouti",
+                "unlocs": "DJJIB"
+            }
+        ]
+    },
+    {
+        "countryName": "Denmark",
+        "ports": [
+            {
+                "portName": "Aalborg",
+                "unlocs": "DKAAL"
+            },
+            {
+                "portName": "Aarhus",
+                "unlocs": "DKAAR"
+            },
+            {
+                "portName": "Assens",
+                "unlocs": "DKASN"
+            },
+            {
+                "portName": "Kobenhavn",
+                "unlocs": "DKCPH"
+            },
+            {
+                "portName": "Esbjerg",
+                "unlocs": "DKEBJ"
+            },
+            {
+                "portName": "Fredericia",
+                "unlocs": "DKFRC"
+            },
+            {
+                "portName": "Hirtshals",
+                "unlocs": "DKHIR"
+            },
+            {
+                "portName": "Helsingor",
+                "unlocs": "DKHLS"
+            },
+            {
+                "portName": "Holstebro",
+                "unlocs": "DKHSB"
+            },
+            {
+                "portName": "Kalundborg",
+                "unlocs": "DKKAL"
+            },
+            {
+                "portName": "Kerteminde",
+                "unlocs": "DKKTD"
+            },
+            {
+                "portName": "Nyborg",
+                "unlocs": "DKNBG"
+            },
+            {
+                "portName": "Odense",
+                "unlocs": "DKODE"
+            },
+            {
+                "portName": "Rungsted",
+                "unlocs": "DKRUG"
+            },
+            {
+                "portName": "Skagen",
+                "unlocs": "DKSKA"
+            },
+            {
+                "portName": "Svendborg",
+                "unlocs": "DKSVE"
+            }
+        ]
+    },
+    {
+        "countryName": "Dominica",
+        "ports": [
+            {
+                "portName": "Roseau",
+                "unlocs": "DMRSU"
+            }
+        ]
+    },
+    {
+        "countryName": "Dominican Republic",
+        "ports": [
+            {
+                "portName": "Caucedo",
+                "unlocs": "DOCAU"
+            },
+            {
+                "portName": "Rio Haina",
+                "unlocs": "DOHAI"
+            },
+            {
+                "portName": "Manzanillo",
+                "unlocs": "DOMAN"
+            },
+            {
+                "portName": "Puerto Plata",
+                "unlocs": "DOPOP"
+            },
+            {
+                "portName": "Santo Domingo",
+                "unlocs": "DOSDQ"
+            },
+            {
+                "portName": "San Pedro de Macoris",
+                "unlocs": "DOSPM"
+            }
+        ]
+    },
+    {
+        "countryName": "Algeria",
+        "ports": [
+            {
+                "portName": "Annaba (ex Bone)",
+                "unlocs": "DZAAE"
+            },
+            {
+                "portName": "Alger (Algiers)",
+                "unlocs": "DZALG"
+            },
+            {
+                "portName": "Bejaia (ex Bougie)",
+                "unlocs": "DZBJA"
+            },
+            {
+                "portName": "Ghardaia",
+                "unlocs": "DZGHA"
+            },
+            {
+                "portName": "Mostaganem",
+                "unlocs": "DZMOS"
+            },
+            {
+                "portName": "Oran",
+                "unlocs": "DZORN"
+            },
+            {
+                "portName": "Skikda (ex Philippeville)",
+                "unlocs": "DZSKI"
+            }
+        ]
+    },
+    {
+        "countryName": "Ecuador",
+        "ports": [
+            {
+                "portName": "Bahia de Caraquez",
+                "unlocs": "ECBHA"
+            },
+            {
+                "portName": "Chanduy",
+                "unlocs": "ECCHA"
+            },
+            {
+                "portName": "Esmeraldas",
+                "unlocs": "ECESM"
+            },
+            {
+                "portName": "Guayaquil",
+                "unlocs": "ECGYE"
+            },
+            {
+                "portName": "La Libertad",
+                "unlocs": "ECLLD"
+            },
+            {
+                "portName": "Manta",
+                "unlocs": "ECMEC"
+            },
+            {
+                "portName": "Monteverde",
+                "unlocs": "ECMTV"
+            },
+            {
+                "portName": "Puerto Bolivar",
+                "unlocs": "ECPBO"
+            }
+        ]
+    },
+    {
+        "countryName": "Estonia",
+        "ports": [
+            {
+                "portName": "Haldi",
+                "unlocs": "EEHLD"
+            },
+            {
+                "portName": "Muuga",
+                "unlocs": "EEMUG"
+            },
+            {
+                "portName": "Tallinn",
+                "unlocs": "EETLL"
+            }
+        ]
+    },
+    {
+        "countryName": "Egypt",
+        "ports": [
+            {
+                "portName": "Ain Sukhna",
+                "unlocs": "EGAIS"
+            },
+            {
+                "portName": "El Iskandariya (Alexandria)",
+                "unlocs": "EGALY"
+            },
+            {
+                "portName": "Dumyat (Damietta)",
+                "unlocs": "EGDAM"
+            },
+            {
+                "portName": "El Dekheila",
+                "unlocs": "EGEDK"
+            },
+            {
+                "portName": "Port Said",
+                "unlocs": "EGPSD"
+            },
+            {
+                "portName": "Sokhna Port",
+                "unlocs": "EGSOK"
+            },
+            {
+                "portName": "As Suways (Suez)",
+                "unlocs": "EGSUZ"
+            }
+        ]
+    },
+    {
+        "countryName": "Eritrea",
+        "ports": [
+            {
+                "portName": "Assab",
+                "unlocs": "ERASA"
+            },
+            {
+                "portName": "Massawa (Mitsiwa)",
+                "unlocs": "ERMSW"
+            }
+        ]
+    },
+    {
+        "countryName": "Spain",
+        "ports": [
+            {
+                "portName": "Lanzarote",
+                "unlocs": "ESACE"
+            },
+            {
+                "portName": "Malaga",
+                "unlocs": "ESAGP"
+            },
+            {
+                "portName": "Alicante",
+                "unlocs": "ESALC"
+            },
+            {
+                "portName": "Algeciras",
+                "unlocs": "ESALG"
+            },
+            {
+                "portName": "Aviles",
+                "unlocs": "ESAVS"
+            },
+            {
+                "portName": "Barcelona",
+                "unlocs": "ESBCN"
+            },
+            {
+                "portName": "Bilbao",
+                "unlocs": "ESBIO"
+            },
+            {
+                "portName": "Bermeo",
+                "unlocs": "ESBRM"
+            },
+            {
+                "portName": "Cadiz",
+                "unlocs": "ESCAD"
+            },
+            {
+                "portName": "Cartagena",
+                "unlocs": "ESCAR"
+            },
+            {
+                "portName": "Castellon de la Plana",
+                "unlocs": "ESCAS"
+            },
+            {
+                "portName": "Ceuta",
+                "unlocs": "ESCEU"
+            },
+            {
+                "portName": "Cebolla",
+                "unlocs": "ESEBO"
+            },
+            {
+                "portName": "Ferez",
+                "unlocs": "ESFER"
+            },
+            {
+                "portName": "Puerto del Rosario-Fuerteventura",
+                "unlocs": "ESFUE"
+            },
+            {
+                "portName": "Gijon",
+                "unlocs": "ESGIJ"
+            },
+            {
+                "portName": "Huelva",
+                "unlocs": "ESHUV"
+            },
+            {
+                "portName": "Ibiza",
+                "unlocs": "ESIBZ"
+            },
+            {
+                "portName": "La Coruna (A Coruna)",
+                "unlocs": "ESLCG"
+            },
+            {
+                "portName": "Almeria",
+                "unlocs": "ESLEI"
+            },
+            {
+                "portName": "Las Palmas de Gran Canaria",
+                "unlocs": "ESLPA"
+            },
+            {
+                "portName": "Madrid",
+                "unlocs": "ESMAD"
+            },
+            {
+                "portName": "Mahon, Menorca",
+                "unlocs": "ESMAH"
+            },
+            {
+                "portName": "Melilla",
+                "unlocs": "ESMLN"
+            },
+            {
+                "portName": "Motril",
+                "unlocs": "ESMOT"
+            },
+            {
+                "portName": "Marin, Pontevedra",
+                "unlocs": "ESMPG"
+            },
+            {
+                "portName": "Palamos",
+                "unlocs": "ESPAL"
+            },
+            {
+                "portName": "Pasajes",
+                "unlocs": "ESPAS"
+            },
+            {
+                "portName": "Palma de Mallorca",
+                "unlocs": "ESPMI"
+            },
+            {
+                "portName": "Santa Cruz de Tenerife",
+                "unlocs": "ESSCT"
+            },
+            {
+                "portName": "Santander",
+                "unlocs": "ESSDR"
+            },
+            {
+                "portName": "Santurce",
+                "unlocs": "ESSNR"
+            },
+            {
+                "portName": "Santa Cruz de La Palma",
+                "unlocs": "ESSPC"
+            },
+            {
+                "portName": "Sevilla",
+                "unlocs": "ESSVQ"
+            },
+            {
+                "portName": "Tarragona",
+                "unlocs": "ESTAR"
+            },
+            {
+                "portName": "Tabuenca",
+                "unlocs": "ESTBZ"
+            },
+            {
+                "portName": "Tenerife",
+                "unlocs": "ESTCI"
+            },
+            {
+                "portName": "Tortosa",
+                "unlocs": "ESTOT"
+            },
+            {
+                "portName": "Vigo",
+                "unlocs": "ESVGO"
+            },
+            {
+                "portName": "Valencia",
+                "unlocs": "ESVLC"
+            },
+            {
+                "portName": "Zaragoza",
+                "unlocs": "ESZAZ"
+            }
+        ]
+    },
+    {
+        "countryName": "Finland",
+        "ports": [
+            {
+                "portName": "Helsingfors (Helsinki)",
+                "unlocs": "FIHEL"
+            },
+            {
+                "portName": "Hango (Hanko)",
+                "unlocs": "FIHKO"
+            },
+            {
+                "portName": "Fredrikshamn (Hamina)",
+                "unlocs": "FIHMN"
+            },
+            {
+                "portName": "Kemi/Tornea (Kemi/Tornio)",
+                "unlocs": "FIKEM"
+            },
+            {
+                "portName": "Karleby (Kokkola)",
+                "unlocs": "FIKOK"
+            },
+            {
+                "portName": "Kotka",
+                "unlocs": "FIKTK"
+            },
+            {
+                "portName": "Mantyluoto",
+                "unlocs": "FIMTL"
+            },
+            {
+                "portName": "Oulu",
+                "unlocs": "FIOLU"
+            },
+            {
+                "portName": "Oulu (Uleaborg)",
+                "unlocs": "FIOUL"
+            },
+            {
+                "portName": "Bjorneborg (Pori)",
+                "unlocs": "FIPOR"
+            },
+            {
+                "portName": "Rauma (Raumo)",
+                "unlocs": "FIRAU"
+            },
+            {
+                "portName": "Abo (Turku)",
+                "unlocs": "FITKU"
+            },
+            {
+                "portName": "Tornea (Tornio)",
+                "unlocs": "FITOR"
+            }
+        ]
+    },
+    {
+        "countryName": "Fiji",
+        "ports": [
+            {
+                "portName": "Lautoka",
+                "unlocs": "FJLTK"
+            },
+            {
+                "portName": "Suva",
+                "unlocs": "FJSUV"
+            }
+        ]
+    },
+    {
+        "countryName": "Falkland Islands (Malvinas)",
+        "ports": [
+            {
+                "portName": "Port Stanley",
+                "unlocs": "FKPSY"
+            }
+        ]
+    },
+    {
+        "countryName": "Micronesia, Federated States of",
+        "ports": [
+            {
+                "portName": "Pohnpei (ex Ponape)",
+                "unlocs": "FMPNI"
+            }
+        ]
+    },
+    {
+        "countryName": "Faroe Islands",
+        "ports": [
+            {
+                "portName": "Thorshavn",
+                "unlocs": "FOTHO"
+            }
+        ]
+    },
+    {
+        "countryName": "France",
+        "ports": [
+            {
+                "portName": "Bassens",
+                "unlocs": "FRBAS"
+            },
+            {
+                "portName": "Bayonne",
+                "unlocs": "FRBAY"
+            },
+            {
+                "portName": "Brest",
+                "unlocs": "FRBES"
+            },
+            {
+                "portName": "Bordeaux",
+                "unlocs": "FRBOD"
+            },
+            {
+                "portName": "Boulogne-sur-Mer",
+                "unlocs": "FRBOL"
+            },
+            {
+                "portName": "Calais",
+                "unlocs": "FRCQF"
+            },
+            {
+                "portName": "Dunkerque",
+                "unlocs": "FRDKK"
+            },
+            {
+                "portName": "Dieppe",
+                "unlocs": "FRDPE"
+            },
+            {
+                "portName": "Fos-sur-Mer",
+                "unlocs": "FRFOS"
+            },
+            {
+                "portName": "Chitry",
+                "unlocs": "FRHGT"
+            },
+            {
+                "portName": "Honfleur",
+                "unlocs": "FRHON"
+            },
+            {
+                "portName": "Javrezac",
+                "unlocs": "FRJAV"
+            },
+            {
+                "portName": "La Ciotat",
+                "unlocs": "FRLCT"
+            },
+            {
+                "portName": "Le Havre",
+                "unlocs": "FRLEH"
+            },
+            {
+                "portName": "La Planche",
+                "unlocs": "FRLPC"
+            },
+            {
+                "portName": "La Pallice",
+                "unlocs": "FRLPE"
+            },
+            {
+                "portName": "La Rochelle",
+                "unlocs": "FRLRH"
+            },
+            {
+                "portName": "Lorient",
+                "unlocs": "FRLRT"
+            },
+            {
+                "portName": "Le Treport",
+                "unlocs": "FRLTR"
+            },
+            {
+                "portName": "Le Verdon-sur-Mer",
+                "unlocs": "FRLVE"
+            },
+            {
+                "portName": "Mundolsheim",
+                "unlocs": "FRMDH"
+            },
+            {
+                "portName": "Marseille",
+                "unlocs": "FRMRS"
+            },
+            {
+                "portName": "Monteton",
+                "unlocs": "FRMT"
+            },
+            {
+                "portName": "Montoir-de-Bretagne",
+                "unlocs": "FRMTX"
+            },
+            {
+                "portName": "Nantes",
+                "unlocs": "FRNTE"
+            },
+            {
+                "portName": "La Groise",
+                "unlocs": "FROR"
+            },
+            {
+                "portName": "Paris",
+                "unlocs": "FRPAR"
+            },
+            {
+                "portName": "Piriac-sur-Mer",
+                "unlocs": "FRPIR"
+            },
+            {
+                "portName": "Port-Vendres",
+                "unlocs": "FRPOV"
+            },
+            {
+                "portName": "Sete",
+                "unlocs": "FRSET"
+            },
+            {
+                "portName": "Saint-Nazaire",
+                "unlocs": "FRSNR"
+            },
+            {
+                "portName": "Toulon",
+                "unlocs": "FRTLN"
+            },
+            {
+                "portName": "Rouen",
+                "unlocs": "FRURO"
+            },
+            {
+                "portName": "Mus",
+                "unlocs": "FRUSJ"
+            }
+        ]
+    },
+    {
+        "countryName": "Gabon",
+        "ports": [
+            {
+                "portName": "Cap Lopez",
+                "unlocs": "GACLZ"
+            },
+            {
+                "portName": "Libreville",
+                "unlocs": "GALBV"
+            },
+            {
+                "portName": "Owendo",
+                "unlocs": "GAOWE"
+            },
+            {
+                "portName": "Port Gentil",
+                "unlocs": "GAPOG"
+            }
+        ]
+    },
+    {
+        "countryName": "United Kingdom",
+        "ports": [
+            {
+                "portName": "Aberdeen",
+                "unlocs": "GBABD"
+            },
+            {
+                "portName": "Avonmouth",
+                "unlocs": "GBAVO"
+            },
+            {
+                "portName": "Barry Dock",
+                "unlocs": "GBBAD"
+            },
+            {
+                "portName": "Broadstairs",
+                "unlocs": "GBBDT"
+            },
+            {
+                "portName": "Belfast",
+                "unlocs": "GBBEL"
+            },
+            {
+                "portName": "Burnham on Crouch",
+                "unlocs": "GBBOC"
+            },
+            {
+                "portName": "Bootle",
+                "unlocs": "GBBOE"
+            },
+            {
+                "portName": "Boston",
+                "unlocs": "GBBOS"
+            },
+            {
+                "portName": "Birkenhead",
+                "unlocs": "GBBRK"
+            },
+            {
+                "portName": "Bristol",
+                "unlocs": "GBBRS"
+            },
+            {
+                "portName": "Bridlington",
+                "unlocs": "GBBRT"
+            },
+            {
+                "portName": "Bridgwater",
+                "unlocs": "GBBRW"
+            },
+            {
+                "portName": "Cardiff",
+                "unlocs": "GBCDF"
+            },
+            {
+                "portName": "Carrickfergus",
+                "unlocs": "GBCFG"
+            },
+            {
+                "portName": "Charleston",
+                "unlocs": "GBCHD"
+            },
+            {
+                "portName": "Cairnryan",
+                "unlocs": "GBCYN"
+            },
+            {
+                "portName": "Dundee",
+                "unlocs": "GBDUN"
+            },
+            {
+                "portName": "Dover",
+                "unlocs": "GBDVR"
+            },
+            {
+                "portName": "Edinburgh",
+                "unlocs": "GBEDI"
+            },
+            {
+                "portName": "Sheildaig",
+                "unlocs": "GBEIL"
+            },
+            {
+                "portName": "Ellesmere Port",
+                "unlocs": "GBELL"
+            },
+            {
+                "portName": "Seaton",
+                "unlocs": "GBEON"
+            },
+            {
+                "portName": "Falmouth",
+                "unlocs": "GBFAL"
+            },
+            {
+                "portName": "Fawley",
+                "unlocs": "GBFAW"
+            },
+            {
+                "portName": "Fraserburgh",
+                "unlocs": "GBFRB"
+            },
+            {
+                "portName": "Felixstowe",
+                "unlocs": "GBFXT"
+            },
+            {
+                "portName": "Guernsey",
+                "unlocs": "GBGCI"
+            },
+            {
+                "portName": "Glasgow",
+                "unlocs": "GBGLW"
+            },
+            {
+                "portName": "Goole",
+                "unlocs": "GBGOO"
+            },
+            {
+                "portName": "Grangemouth",
+                "unlocs": "GBGRG"
+            },
+            {
+                "portName": "Greenock",
+                "unlocs": "GBGRK"
+            },
+            {
+                "portName": "Grimsby",
+                "unlocs": "GBGSY"
+            },
+            {
+                "portName": "Great Yarmouth",
+                "unlocs": "GBGTY"
+            },
+            {
+                "portName": "Gravesend",
+                "unlocs": "GBGVS"
+            },
+            {
+                "portName": "Harwich",
+                "unlocs": "GBHRW"
+            },
+            {
+                "portName": "Hull",
+                "unlocs": "GBHUL"
+            },
+            {
+                "portName": "Immingham",
+                "unlocs": "GBIMM"
+            },
+            {
+                "portName": "Inverkeithing",
+                "unlocs": "GBINK"
+            },
+            {
+                "portName": "Inverness",
+                "unlocs": "GBINV"
+            },
+            {
+                "portName": "Ipswich",
+                "unlocs": "GBIPS"
+            },
+            {
+                "portName": "Irlam",
+                "unlocs": "GBIRL"
+            },
+            {
+                "portName": "King's Lynn",
+                "unlocs": "GBKLN"
+            },
+            {
+                "portName": "Lancaster",
+                "unlocs": "GBLAN"
+            },
+            {
+                "portName": "London Gateway Port",
+                "unlocs": "GBLGP"
+            },
+            {
+                "portName": "Liverpool",
+                "unlocs": "GBLIV"
+            },
+            {
+                "portName": "London",
+                "unlocs": "GBLON"
+            },
+            {
+                "portName": "Maldon",
+                "unlocs": "GBMAL"
+            },
+            {
+                "portName": "Macduff",
+                "unlocs": "GBMCD"
+            },
+            {
+                "portName": "Middlesbrough",
+                "unlocs": "GBMID"
+            },
+            {
+                "portName": "Moaness, Hoy",
+                "unlocs": "GBMNS"
+            },
+            {
+                "portName": "Montrose",
+                "unlocs": "GBMON"
+            },
+            {
+                "portName": "Maryport",
+                "unlocs": "GBMRY"
+            },
+            {
+                "portName": "Newcastle upon Tyne",
+                "unlocs": "GBNCL"
+            },
+            {
+                "portName": "Northfleet",
+                "unlocs": "GBNFT"
+            },
+            {
+                "portName": "Newhaven",
+                "unlocs": "GBNHV"
+            },
+            {
+                "portName": "Nelson",
+                "unlocs": "GBNLN"
+            },
+            {
+                "portName": "Newport",
+                "unlocs": "GBNPT"
+            },
+            {
+                "portName": "Pen-Clawdd",
+                "unlocs": "GBPDD"
+            },
+            {
+                "portName": "Purfleet",
+                "unlocs": "GBPFT"
+            },
+            {
+                "portName": "Plymouth",
+                "unlocs": "GBPLY"
+            },
+            {
+                "portName": "Portsmouth",
+                "unlocs": "GBPME"
+            },
+            {
+                "portName": "Poole",
+                "unlocs": "GBPOO"
+            },
+            {
+                "portName": "Preston",
+                "unlocs": "GBPRE"
+            },
+            {
+                "portName": "Portbury",
+                "unlocs": "GBPRU"
+            },
+            {
+                "portName": "Parkeston Quay",
+                "unlocs": "GBPST"
+            },
+            {
+                "portName": "Queenborough",
+                "unlocs": "GBQUB"
+            },
+            {
+                "portName": "Rye",
+                "unlocs": "GBRYE"
+            },
+            {
+                "portName": "Scarborough",
+                "unlocs": "GBSCA"
+            },
+            {
+                "portName": "Sheerness",
+                "unlocs": "GBSHS"
+            },
+            {
+                "portName": "Southampton",
+                "unlocs": "GBSOU"
+            },
+            {
+                "portName": "Stanlow",
+                "unlocs": "GBSOW"
+            },
+            {
+                "portName": "South Shields",
+                "unlocs": "GBSSH"
+            },
+            {
+                "portName": "Sunderland",
+                "unlocs": "GBSUN"
+            },
+            {
+                "portName": "Silvertown",
+                "unlocs": "GBSVT"
+            },
+            {
+                "portName": "Swansea",
+                "unlocs": "GBSWA"
+            },
+            {
+                "portName": "Teesport",
+                "unlocs": "GBTEE"
+            },
+            {
+                "portName": "Thamesport",
+                "unlocs": "GBTHP"
+            },
+            {
+                "portName": "Tilbury",
+                "unlocs": "GBTIL"
+            },
+            {
+                "portName": "Tyne",
+                "unlocs": "GBTYN"
+            },
+            {
+                "portName": "Widnes",
+                "unlocs": "GBWDN"
+            },
+            {
+                "portName": "Workington",
+                "unlocs": "GBWOR"
+            },
+            {
+                "portName": "Stonehouse",
+                "unlocs": "GBYVZ"
+            }
+        ]
+    },
+    {
+        "countryName": "Grenada",
+        "ports": [
+            {
+                "portName": "Saint George's",
+                "unlocs": "GDSTG"
+            }
+        ]
+    },
+    {
+        "countryName": "Georgia",
+        "ports": [
+            {
+                "portName": "Batumi",
+                "unlocs": "GEBUS"
+            },
+            {
+                "portName": "Poti",
+                "unlocs": "GEPTI"
+            },
+            {
+                "portName": "Tbilisi",
+                "unlocs": "GETBS"
+            }
+        ]
+    },
+    {
+        "countryName": "French Guiana",
+        "ports": [
+            {
+                "portName": "Cayenne",
+                "unlocs": "GFCAY"
+            },
+            {
+                "portName": "Degrad des Cannes",
+                "unlocs": "GFDDC"
+            }
+        ]
+    },
+    {
+        "countryName": "Ghana",
+        "ports": [
+            {
+                "portName": "Tema",
+                "unlocs": "GHTEM"
+            },
+            {
+                "portName": "Takoradi",
+                "unlocs": "GHTKD"
+            }
+        ]
+    },
+    {
+        "countryName": "Gibraltar",
+        "ports": [
+            {
+                "portName": "Gibraltar",
+                "unlocs": "GIGIB"
+            }
+        ]
+    },
+    {
+        "countryName": "Gambia",
+        "ports": [
+            {
+                "portName": "Banjul",
+                "unlocs": "GMBJL"
+            }
+        ]
+    },
+    {
+        "countryName": "Guinea",
+        "ports": [
+            {
+                "portName": "Conakry",
+                "unlocs": "GNCKY"
+            }
+        ]
+    },
+    {
+        "countryName": "Guadeloupe",
+        "ports": [
+            {
+                "portName": "Basse-Terre",
+                "unlocs": "GPBBR"
+            },
+            {
+                "portName": "Gustavia",
+                "unlocs": "GPGUS"
+            },
+            {
+                "portName": "Pointe-a-Pitre",
+                "unlocs": "GPPTP"
+            },
+            {
+                "portName": "Saint Barthelemy",
+                "unlocs": "GPSBH"
+            }
+        ]
+    },
+    {
+        "countryName": "Equatorial Guinea",
+        "ports": [
+            {
+                "portName": "Bata",
+                "unlocs": "GQBSG"
+            },
+            {
+                "portName": "Malabo",
+                "unlocs": "GQSSG"
+            }
+        ]
+    },
+    {
+        "countryName": "Greece",
+        "ports": [
+            {
+                "portName": "Astakos",
+                "unlocs": "GRAST"
+            },
+            {
+                "portName": "Eleusina",
+                "unlocs": "GREEU"
+            },
+            {
+                "portName": "Heraklion (Iraklion)",
+                "unlocs": "GRHER"
+            },
+            {
+                "portName": "Kapsalion (Kythira)",
+                "unlocs": "GRKAP"
+            },
+            {
+                "portName": "Piraeus",
+                "unlocs": "GRPIR"
+            },
+            {
+                "portName": "Rhodes",
+                "unlocs": "GRRHO"
+            },
+            {
+                "portName": "Thessaloniki",
+                "unlocs": "GRSKG"
+            },
+            {
+                "portName": "Volos",
+                "unlocs": "GRVOL"
+            }
+        ]
+    },
+    {
+        "countryName": "Guatemala",
+        "ports": [
+            {
+                "portName": "Champerico",
+                "unlocs": "GTCHR"
+            },
+            {
+                "portName": "Guatemala City",
+                "unlocs": "GTGUA"
+            },
+            {
+                "portName": "Puerto Barrios",
+                "unlocs": "GTPBR"
+            },
+            {
+                "portName": "Puerto Quetzal",
+                "unlocs": "GTPRQ"
+            },
+            {
+                "portName": "Puerto Santo Tomas de Castilla",
+                "unlocs": "GTSTC"
+            }
+        ]
+    },
+    {
+        "countryName": "Guam",
+        "ports": [
+            {
+                "portName": "Guam",
+                "unlocs": "GUGUM"
+            }
+        ]
+    },
+    {
+        "countryName": "Guinea-Bissau",
+        "ports": [
+            {
+                "portName": "Bissau",
+                "unlocs": "GWOXB"
+            }
+        ]
+    },
+    {
+        "countryName": "Guyana",
+        "ports": [
+            {
+                "portName": "Georgetown",
+                "unlocs": "GYGEO"
+            }
+        ]
+    },
+    {
+        "countryName": "Hong Kong",
+        "ports": [
+            {
+                "portName": "Hong Kong",
+                "unlocs": "HKHKG"
+            }
+        ]
+    },
+    {
+        "countryName": "Honduras",
+        "ports": [
+            {
+                "portName": "Amapala",
+                "unlocs": "HNAMP"
+            },
+            {
+                "portName": "La Ceiba",
+                "unlocs": "HNLCE"
+            },
+            {
+                "portName": "Puerto Castilla",
+                "unlocs": "HNPCA"
+            },
+            {
+                "portName": "Puerto Cortes",
+                "unlocs": "HNPCR"
+            },
+            {
+                "portName": "Roatan",
+                "unlocs": "HNRTB"
+            },
+            {
+                "portName": "San Lorenzo",
+                "unlocs": "HNSLO"
+            },
+            {
+                "portName": "Tela",
+                "unlocs": "HNTEA"
+            },
+            {
+                "portName": "Tegucigalpa",
+                "unlocs": "HNTGU"
+            }
+        ]
+    },
+    {
+        "countryName": "Croatia",
+        "ports": [
+            {
+                "portName": "Dubrovnik",
+                "unlocs": "HRDBV"
+            },
+            {
+                "portName": "Lastovo",
+                "unlocs": "HRLST"
+            },
+            {
+                "portName": "Ploce",
+                "unlocs": "HRPLE"
+            },
+            {
+                "portName": "Rijeka",
+                "unlocs": "HRRJK"
+            },
+            {
+                "portName": "Split",
+                "unlocs": "HRSPU"
+            }
+        ]
+    },
+    {
+        "countryName": "Haiti",
+        "ports": [
+            {
+                "portName": "Cap-Haitien",
+                "unlocs": "HTCAP"
+            },
+            {
+                "portName": "Port-au-Prince",
+                "unlocs": "HTPAP"
+            }
+        ]
+    },
+    {
+        "countryName": "Hungary",
+        "ports": [
+            {
+                "portName": "Budapest",
+                "unlocs": "HUBUD"
+            }
+        ]
+    },
+    {
+        "countryName": "Indonesia",
+        "ports": [
+            {
+                "portName": "Amamapare, Ij",
+                "unlocs": "IDAMA"
+            },
+            {
+                "portName": "Banjarmasin",
+                "unlocs": "IDBDJ"
+            },
+            {
+                "portName": "Bitung, Sulawesi",
+                "unlocs": "IDBIT"
+            },
+            {
+                "portName": "Belawan, Sumatra",
+                "unlocs": "IDBLW"
+            },
+            {
+                "portName": "Belanak Terminal",
+                "unlocs": "IDBNT"
+            },
+            {
+                "portName": "Balikpapan",
+                "unlocs": "IDBPN"
+            },
+            {
+                "portName": "Batam Island",
+                "unlocs": "IDBTM"
+            },
+            {
+                "portName": "Buatan",
+                "unlocs": "IDBUN"
+            },
+            {
+                "portName": "Batu Ampal",
+                "unlocs": "IDBUR"
+            },
+            {
+                "portName": "Cigading",
+                "unlocs": "IDCIG"
+            },
+            {
+                "portName": "Jambi, Sumatra",
+                "unlocs": "IDDJB"
+            },
+            {
+                "portName": "Jayapura, Irian Jaya",
+                "unlocs": "IDDJJ"
+            },
+            {
+                "portName": "Jakarta, Java",
+                "unlocs": "IDJKT"
+            },
+            {
+                "portName": "Kabil",
+                "unlocs": "IDKAB"
+            },
+            {
+                "portName": "Lobam",
+                "unlocs": "IDLBM"
+            },
+            {
+                "portName": "Makassar",
+                "unlocs": "IDMAK"
+            },
+            {
+                "portName": "Medan, Sumatra",
+                "unlocs": "IDMES"
+            },
+            {
+                "portName": "Merak, Java",
+                "unlocs": "IDMRK"
+            },
+            {
+                "portName": "Padang",
+                "unlocs": "IDPDG"
+            },
+            {
+                "portName": "Panjang (Lampung, Sumatra)",
+                "unlocs": "IDPJG"
+            },
+            {
+                "portName": "Pekanbaru, Sumatra",
+                "unlocs": "IDPKU"
+            },
+            {
+                "portName": "Palembang, Sumatra",
+                "unlocs": "IDPLM"
+            },
+            {
+                "portName": "Panjang",
+                "unlocs": "IDPNJ"
+            },
+            {
+                "portName": "Pontianak, Kalimantan",
+                "unlocs": "IDPNK"
+            },
+            {
+                "portName": "Perawang",
+                "unlocs": "IDPWG"
+            },
+            {
+                "portName": "Sungai Pakning, Sumatra",
+                "unlocs": "IDSEQ"
+            },
+            {
+                "portName": "Semarang",
+                "unlocs": "IDSRG"
+            },
+            {
+                "portName": "Samarinda, Kalimantan",
+                "unlocs": "IDSRI"
+            },
+            {
+                "portName": "Surabaya",
+                "unlocs": "IDSUB"
+            },
+            {
+                "portName": "Taboneo",
+                "unlocs": "IDTAB"
+            },
+            {
+                "portName": "Teluk Betung, Sumatra",
+                "unlocs": "IDTBG"
+            },
+            {
+                "portName": "Tanjung Priok",
+                "unlocs": "IDTPP"
+            },
+            {
+                "portName": "Tebingtinggi",
+                "unlocs": "IDTTI"
+            },
+            {
+                "portName": "Ujung Pandang, Sulawesi",
+                "unlocs": "IDUPG"
+            }
+        ]
+    },
+    {
+        "countryName": "Ireland",
+        "ports": [
+            {
+                "portName": "Drogheda",
+                "unlocs": "IEDRO"
+            },
+            {
+                "portName": "Dublin",
+                "unlocs": "IEDUB"
+            },
+            {
+                "portName": "Foynes",
+                "unlocs": "IEFOV"
+            },
+            {
+                "portName": "Galway",
+                "unlocs": "IEGWY"
+            },
+            {
+                "portName": "Kinsale",
+                "unlocs": "IEKLN"
+            },
+            {
+                "portName": "Cork",
+                "unlocs": "IEORK"
+            },
+            {
+                "portName": "Waterford",
+                "unlocs": "IEWAT"
+            }
+        ]
+    },
+    {
+        "countryName": "Israel",
+        "ports": [
+            {
+                "portName": "Ashdod",
+                "unlocs": "ILASH"
+            },
+            {
+                "portName": "Hadera",
+                "unlocs": "ILHAD"
+            },
+            {
+                "portName": "Haifa",
+                "unlocs": "ILHFA"
+            },
+            {
+                "portName": "Netanya",
+                "unlocs": "ILNAT"
+            },
+            {
+                "portName": "Ramat Gan",
+                "unlocs": "ILRMG"
+            },
+            {
+                "portName": "Tel Aviv-Yafo",
+                "unlocs": "ILTLV"
+            }
+        ]
+    },
+    {
+        "countryName": "India",
+        "ports": [
+            {
+                "portName": "Agra",
+                "unlocs": "INAGR"
+            },
+            {
+                "portName": "Kakinada",
+                "unlocs": "INKAK"
+            },
+            {
+                "portName": "Ahmedabad",
+                "unlocs": "INAMD"
+            },
+            {
+                "portName": "Bangalore",
+                "unlocs": "INBLR"
+            },
+            {
+                "portName": "Mumbai (ex Bombay)",
+                "unlocs": "INBOM"
+            },
+            {
+                "portName": "Kolkata (ex Calcutta)",
+                "unlocs": "INCCU"
+            },
+            {
+                "portName": "Cuddalore",
+                "unlocs": "INCDL"
+            },
+            {
+                "portName": "Coimbatore",
+                "unlocs": "INCJB"
+            },
+            {
+                "portName": "Cochin",
+                "unlocs": "INCOK"
+            },
+            {
+                "portName": "Daman",
+                "unlocs": "INDAM"
+            },
+            {
+                "portName": "Dadri",
+                "unlocs": "INDRI"
+            },
+            {
+                "portName": "Goa",
+                "unlocs": "INGOI"
+            },
+            {
+                "portName": "Haldia",
+                "unlocs": "INHAL"
+            },
+            {
+                "portName": "Hyderabad",
+                "unlocs": "INHYD"
+            },
+            {
+                "portName": "New Delhi",
+                "unlocs": "INICD"
+            },
+            {
+                "portName": "Mangalore",
+                "unlocs": "INIXE"
+            },
+            {
+                "portName": "Kandla",
+                "unlocs": "INIXY"
+            },
+            {
+                "portName": "Jaipur",
+                "unlocs": "INJAI"
+            },
+            {
+                "portName": "Jodhpur",
+                "unlocs": "INJDH"
+            },
+            {
+                "portName": "Kanpur",
+                "unlocs": "INKNU"
+            },
+            {
+                "portName": "Krishnapatnam",
+                "unlocs": "INKRI"
+            },
+            {
+                "portName": "Ludhiana",
+                "unlocs": "INLUH"
+            },
+            {
+                "portName": "Chennai (ex Madras)",
+                "unlocs": "INMAA"
+            },
+            {
+                "portName": "Moradabad",
+                "unlocs": "INMOR"
+            },
+            {
+                "portName": "Marmagao (Marmugao)",
+                "unlocs": "INMRM"
+            },
+            {
+                "portName": "Mundra",
+                "unlocs": "INMUN"
+            },
+            {
+                "portName": "Nagpur",
+                "unlocs": "INNAG"
+            },
+            {
+                "portName": "Jawaharlal Nehru (Nhava Sheva)",
+                "unlocs": "INNSA"
+            },
+            {
+                "portName": "Panipat",
+                "unlocs": "INPAP"
+            },
+            {
+                "portName": "Pipavav (Victor) Port",
+                "unlocs": "INPAV"
+            },
+            {
+                "portName": "Pithampur",
+                "unlocs": "INPIR"
+            },
+            {
+                "portName": "Pune",
+                "unlocs": "INPNQ"
+            },
+            {
+                "portName": "Surat",
+                "unlocs": "INSTV"
+            },
+            {
+                "portName": "Tuticorin",
+                "unlocs": "INTUT"
+            },
+            {
+                "portName": "Visakhapatnam",
+                "unlocs": "INVTZ"
+            },
+            {
+                "portName": "Veraval",
+                "unlocs": "INVVA"
+            }
+        ]
+    },
+    {
+        "countryName": "Iraq",
+        "ports": [
+            {
+                "portName": "Umm Qasr Port",
+                "unlocs": "IQUQR"
+            }
+        ]
+    },
+    {
+        "countryName": "Iran, Islamic Republic of",
+        "ports": [
+            {
+                "portName": "Bandar Khomeini",
+                "unlocs": "IRBKM"
+            },
+            {
+                "portName": "Bandar Abbas",
+                "unlocs": "IRBND"
+            },
+            {
+                "portName": "Bushehr",
+                "unlocs": "IRBUZ"
+            },
+            {
+                "portName": "Khorramshahr",
+                "unlocs": "IRKHO"
+            },
+            {
+                "portName": "Chah Bahar",
+                "unlocs": "IRZBR"
+            }
+        ]
+    },
+    {
+        "countryName": "Iceland",
+        "ports": [
+            {
+                "portName": "Eskifjordur - hofn",
+                "unlocs": "ISESK"
+            },
+            {
+                "portName": "Grundartangi",
+                "unlocs": "ISGRT"
+            },
+            {
+                "portName": "Reykjavik",
+                "unlocs": "ISREY"
+            }
+        ]
+    },
+    {
+        "countryName": "Italy",
+        "ports": [
+            {
+                "portName": "Ancona",
+                "unlocs": "ITAOI"
+            },
+            {
+                "portName": "Augusta",
+                "unlocs": "ITAUG"
+            },
+            {
+                "portName": "Bari",
+                "unlocs": "ITBRI"
+            },
+            {
+                "portName": "Cagliari",
+                "unlocs": "ITCAG"
+            },
+            {
+                "portName": "Crotone",
+                "unlocs": "ITCRV"
+            },
+            {
+                "portName": "Catania",
+                "unlocs": "ITCTA"
+            },
+            {
+                "portName": "Civitavecchia",
+                "unlocs": "ITCVV"
+            },
+            {
+                "portName": "Faenza",
+                "unlocs": "ITFAE"
+            },
+            {
+                "portName": "Gaeta",
+                "unlocs": "ITGAE"
+            },
+            {
+                "portName": "Gioia Tauro",
+                "unlocs": "ITGIT"
+            },
+            {
+                "portName": "Genova",
+                "unlocs": "ITGOA"
+            },
+            {
+                "portName": "Livorno",
+                "unlocs": "ITLIV"
+            },
+            {
+                "portName": "Milano",
+                "unlocs": "ITMIL"
+            },
+            {
+                "portName": "Monfalcone",
+                "unlocs": "ITMNF"
+            },
+            {
+                "portName": "Modena",
+                "unlocs": "ITMOD"
+            },
+            {
+                "portName": "Napoli",
+                "unlocs": "ITNAP"
+            },
+            {
+                "portName": "Padova",
+                "unlocs": "ITPDA"
+            },
+            {
+                "portName": "Pesaro",
+                "unlocs": "ITPES"
+            },
+            {
+                "portName": "Porto Garibaldi",
+                "unlocs": "ITPGA"
+            },
+            {
+                "portName": "Palermo",
+                "unlocs": "ITPMO"
+            },
+            {
+                "portName": "Capri",
+                "unlocs": "ITPRJ"
+            },
+            {
+                "portName": "Pescara",
+                "unlocs": "ITPSR"
+            },
+            {
+                "portName": "Portoscuso (Porto Vesme)",
+                "unlocs": "ITPVE"
+            },
+            {
+                "portName": "Ravenna",
+                "unlocs": "ITRAN"
+            },
+            {
+                "portName": "Salerno",
+                "unlocs": "ITSAL"
+            },
+            {
+                "portName": "La Spezia",
+                "unlocs": "ITSPE"
+            },
+            {
+                "portName": "Savona",
+                "unlocs": "ITSVN"
+            },
+            {
+                "portName": "Taranto",
+                "unlocs": "ITTAR"
+            },
+            {
+                "portName": "Trapani",
+                "unlocs": "ITTPS"
+            },
+            {
+                "portName": "Torino",
+                "unlocs": "ITTRN"
+            },
+            {
+                "portName": "Trieste",
+                "unlocs": "ITTRS"
+            },
+            {
+                "portName": "Venezia",
+                "unlocs": "ITVCE"
+            },
+            {
+                "portName": "Vado Ligure",
+                "unlocs": "ITVDL"
+            },
+            {
+                "portName": "Viareggio",
+                "unlocs": "ITVIA"
+            }
+        ]
+    },
+    {
+        "countryName": "Jamaica",
+        "ports": [
+            {
+                "portName": "Kingston",
+                "unlocs": "JMKIN"
+            },
+            {
+                "portName": "Montego Bay",
+                "unlocs": "JMMBJ"
+            },
+            {
+                "portName": "Ocho Rios",
+                "unlocs": "JMOCJ"
+            },
+            {
+                "portName": "Port Kaiser",
+                "unlocs": "JMPKS"
+            }
+        ]
+    },
+    {
+        "countryName": "Jordan",
+        "ports": [
+            {
+                "portName": "Al 'Aqabah",
+                "unlocs": "JOAQJ"
+            }
+        ]
+    },
+    {
+        "countryName": "Japan",
+        "ports": [
+            {
+                "portName": "Aburatsu",
+                "unlocs": "JPABU"
+            },
+            {
+                "portName": "Aomori",
+                "unlocs": "JPAOJ"
+            },
+            {
+                "portName": "Akita",
+                "unlocs": "JPAXT"
+            },
+            {
+                "portName": "Chiba",
+                "unlocs": "JPCHB"
+            },
+            {
+                "portName": "Fukuyama, Hiroshima",
+                "unlocs": "JPFKY"
+            },
+            {
+                "portName": "Hachinohe",
+                "unlocs": "JPHHE"
+            },
+            {
+                "portName": "Hibi",
+                "unlocs": "JPHIB"
+            },
+            {
+                "portName": "Hitachinaka",
+                "unlocs": "JPHIC"
+            },
+            {
+                "portName": "Hiroshima",
+                "unlocs": "JPHIJ"
+            },
+            {
+                "portName": "Himeji",
+                "unlocs": "JPHIM"
+            },
+            {
+                "portName": "Hikoshima",
+                "unlocs": "JPHIS"
+            },
+            {
+                "portName": "Hakodate",
+                "unlocs": "JPHKD"
+            },
+            {
+                "portName": "Hakata/Fukuoka",
+                "unlocs": "JPHKT"
+            },
+            {
+                "portName": "Hamada",
+                "unlocs": "JPHMD"
+            },
+            {
+                "portName": "Hamamatsu",
+                "unlocs": "JPHMM"
+            },
+            {
+                "portName": "Hososhima",
+                "unlocs": "JPHSM"
+            },
+            {
+                "portName": "Hitachi",
+                "unlocs": "JPHTC"
+            },
+            {
+                "portName": "Niihama",
+                "unlocs": "JPIHA"
+            },
+            {
+                "portName": "Imabari",
+                "unlocs": "JPIMB"
+            },
+            {
+                "portName": "Imari",
+                "unlocs": "JPIMI"
+            },
+            {
+                "portName": "Ishigaki",
+                "unlocs": "JPISG"
+            },
+            {
+                "portName": "Ishikari",
+                "unlocs": "JPISI"
+            },
+            {
+                "portName": "Ishinomaki",
+                "unlocs": "JPISM"
+            },
+            {
+                "portName": "Isa",
+                "unlocs": "JPISS"
+            },
+            {
+                "portName": "Iwakuni",
+                "unlocs": "JPIWK"
+            },
+            {
+                "portName": "Iyomishima",
+                "unlocs": "JPIYM"
+            },
+            {
+                "portName": "Kochi",
+                "unlocs": "JPKCZ"
+            },
+            {
+                "portName": "Kakogawa",
+                "unlocs": "JPKGA"
+            },
+            {
+                "portName": "Niigata",
+                "unlocs": "JPKIJ"
+            },
+            {
+                "portName": "Kumamoto",
+                "unlocs": "JPKMJ"
+            },
+            {
+                "portName": "Kanda, Fukuoka",
+                "unlocs": "JPKND"
+            },
+            {
+                "portName": "Kinuura",
+                "unlocs": "JPKNU"
+            },
+            {
+                "portName": "Kanazawa",
+                "unlocs": "JPKNZ"
+            },
+            {
+                "portName": "Kagoshima",
+                "unlocs": "JPKOJ"
+            },
+            {
+                "portName": "Kure, Hiroshima",
+                "unlocs": "JPKRE"
+            },
+            {
+                "portName": "Kashima, Ibaraki",
+                "unlocs": "JPKSM"
+            },
+            {
+                "portName": "Kushiro",
+                "unlocs": "JPKUH"
+            },
+            {
+                "portName": "Kawasaki",
+                "unlocs": "JPKWS"
+            },
+            {
+                "portName": "Kisarazu",
+                "unlocs": "JPKZU"
+            },
+            {
+                "portName": "Maizuru",
+                "unlocs": "JPMAI"
+            },
+            {
+                "portName": "Miike, Fukuoka",
+                "unlocs": "JPMII"
+            },
+            {
+                "portName": "Moji/Kitakyushu",
+                "unlocs": "JPMOJ"
+            },
+            {
+                "portName": "Mutsure",
+                "unlocs": "JPMTR"
+            },
+            {
+                "portName": "Muroran",
+                "unlocs": "JPMUR"
+            },
+            {
+                "portName": "Matsuyama",
+                "unlocs": "JPMYJ"
+            },
+            {
+                "portName": "Naha, Okinawa",
+                "unlocs": "JPNAH"
+            },
+            {
+                "portName": "Nakanoseki",
+                "unlocs": "JPNAN"
+            },
+            {
+                "portName": "Naoetsu",
+                "unlocs": "JPNAO"
+            },
+            {
+                "portName": "Naoshima",
+                "unlocs": "JPNAS"
+            },
+            {
+                "portName": "Nagoya, Aichi",
+                "unlocs": "JPNGO"
+            },
+            {
+                "portName": "Nagasaki",
+                "unlocs": "JPNGS"
+            },
+            {
+                "portName": "Oita",
+                "unlocs": "JPOIT"
+            },
+            {
+                "portName": "Okinawa",
+                "unlocs": "JPOKA"
+            },
+            {
+                "portName": "Omaezaki",
+                "unlocs": "JPOMZ"
+            },
+            {
+                "portName": "Onahama",
+                "unlocs": "JPONA"
+            },
+            {
+                "portName": "Onomichi",
+                "unlocs": "JPONO"
+            },
+            {
+                "portName": "Osaka",
+                "unlocs": "JPOSA"
+            },
+            {
+                "portName": "Otake",
+                "unlocs": "JPOTK"
+            },
+            {
+                "portName": "Saganoseki",
+                "unlocs": "JPSAG"
+            },
+            {
+                "portName": "Shibushi",
+                "unlocs": "JPSBS"
+            },
+            {
+                "portName": "Sendai, Miyagi",
+                "unlocs": "JPSDJ"
+            },
+            {
+                "portName": "Sendaishinko",
+                "unlocs": "JPSDS"
+            },
+            {
+                "portName": "Sodegaura",
+                "unlocs": "JPSDU"
+            },
+            {
+                "portName": "Satsumasendai",
+                "unlocs": "JPSEN"
+            },
+            {
+                "portName": "Shimonoseki",
+                "unlocs": "JPSHS"
+            },
+            {
+                "portName": "Sakaide",
+                "unlocs": "JPSKD"
+            },
+            {
+                "portName": "Shikama",
+                "unlocs": "JPSKM"
+            },
+            {
+                "portName": "Sakata",
+                "unlocs": "JPSKT"
+            },
+            {
+                "portName": "Souma",
+                "unlocs": "JPSMA"
+            },
+            {
+                "portName": "Sakaiminato",
+                "unlocs": "JPSMN"
+            },
+            {
+                "portName": "Shimizu",
+                "unlocs": "JPSMZ"
+            },
+            {
+                "portName": "Takamatsu",
+                "unlocs": "JPTAK"
+            },
+            {
+                "portName": "Tobata/Kitakyushu",
+                "unlocs": "JPTBT"
+            },
+            {
+                "portName": "Tagonoura",
+                "unlocs": "JPTGO"
+            },
+            {
+                "portName": "Toyohashi",
+                "unlocs": "JPTHS"
+            },
+            {
+                "portName": "Tokushima",
+                "unlocs": "JPTKS"
+            },
+            {
+                "portName": "Tokuyama",
+                "unlocs": "JPTKY"
+            },
+            {
+                "portName": "Tsukumi",
+                "unlocs": "JPTMI"
+            },
+            {
+                "portName": "Tomakomai",
+                "unlocs": "JPTMK"
+            },
+            {
+                "portName": "Tonda",
+                "unlocs": "JPTND"
+            },
+            {
+                "portName": "Tokachi",
+                "unlocs": "JPTOK"
+            },
+            {
+                "portName": "Toyamashinko",
+                "unlocs": "JPTOS"
+            },
+            {
+                "portName": "Toyama",
+                "unlocs": "JPTOY"
+            },
+            {
+                "portName": "Tsuruga",
+                "unlocs": "JPTRG"
+            },
+            {
+                "portName": "Tokyo",
+                "unlocs": "JPTYO"
+            },
+            {
+                "portName": "Ube",
+                "unlocs": "JPUBJ"
+            },
+            {
+                "portName": "Kobe",
+                "unlocs": "JPUKB"
+            },
+            {
+                "portName": "Unten",
+                "unlocs": "JPUNT"
+            },
+            {
+                "portName": "Wakayama",
+                "unlocs": "JPWAK"
+            },
+            {
+                "portName": "Yatsushiro",
+                "unlocs": "JPYAT"
+            },
+            {
+                "portName": "Yokkaichi",
+                "unlocs": "JPYKK"
+            },
+            {
+                "portName": "Yokohama",
+                "unlocs": "JPYOK"
+            },
+            {
+                "portName": "Yokosuka",
+                "unlocs": "JPYOS"
+            },
+            {
+                "portName": "Yawata/Kitakyushu",
+                "unlocs": "JPYWT"
+            }
+        ]
+    },
+    {
+        "countryName": "Kenya",
+        "ports": [
+            {
+                "portName": "Mombasa",
+                "unlocs": "KEMBA"
+            },
+            {
+                "portName": "Nairobi",
+                "unlocs": "KENBO"
+            }
+        ]
+    },
+    {
+        "countryName": "Cambodia",
+        "ports": [
+            {
+                "portName": "Kampong Saom",
+                "unlocs": "KHKOS"
+            },
+            {
+                "portName": "Phnom Penh",
+                "unlocs": "KHPNH"
+            }
+        ]
+    },
+    {
+        "countryName": "Kiribati",
+        "ports": [
+            {
+                "portName": "Tarawa",
+                "unlocs": "KITRW"
+            }
+        ]
+    },
+    {
+        "countryName": "Comoros",
+        "ports": [
+            {
+                "portName": "Mutsamudu, Anjouan",
+                "unlocs": "KMMUT"
+            },
+            {
+                "portName": "Moroni",
+                "unlocs": "KMYVA"
+            }
+        ]
+    },
+    {
+        "countryName": "Saint Kitts and Nevis",
+        "ports": [
+            {
+                "portName": "Basseterre, Saint Kitts",
+                "unlocs": "KNBAS"
+            },
+            {
+                "portName": "Nevis",
+                "unlocs": "KNNEV"
+            }
+        ]
+    },
+    {
+        "countryName": "Korea, Democratic People's Republic of",
+        "ports": [
+            {
+                "portName": "Chongjin",
+                "unlocs": "KPCHO"
+            },
+            {
+                "portName": "Wonsan",
+                "unlocs": "KPWON"
+            }
+        ]
+    },
+    {
+        "countryName": "South Korea",
+        "ports": [
+            {
+                "portName": "Jeju",
+                "unlocs": "KRCHA"
+            },
+            {
+                "portName": "Jinhae",
+                "unlocs": "KRCHF"
+            },
+            {
+                "portName": "Janghang/Seocheon-gun",
+                "unlocs": "KRCHG"
+            },
+            {
+                "portName": "Cheonan",
+                "unlocs": "KRCHO"
+            },
+            {
+                "portName": "Chungju",
+                "unlocs": "KRCHU"
+            },
+            {
+                "portName": "Changwon",
+                "unlocs": "KRCHW"
+            },
+            {
+                "portName": "Cheongwon-gun",
+                "unlocs": "KRCWO"
+            },
+            {
+                "portName": "Goyang",
+                "unlocs": "KRGYG"
+            },
+            {
+                "portName": "Jinju",
+                "unlocs": "KRHIN"
+            },
+            {
+                "portName": "Hamyang-gun",
+                "unlocs": "KRHYG"
+            },
+            {
+                "portName": "Hyeonpoong/Daegu",
+                "unlocs": "KRHYP"
+            },
+            {
+                "portName": "Incheon",
+                "unlocs": "KRICH"
+            },
+            {
+                "portName": "Incheon",
+                "unlocs": "KRINC"
+            },
+            {
+                "portName": "Jeongeup",
+                "unlocs": "KRJEO"
+            },
+            {
+                "portName": "Geoje",
+                "unlocs": "KRJGE"
+            },
+            {
+                "portName": "Jangheung-gun",
+                "unlocs": "KRJHG"
+            },
+            {
+                "portName": "Gwangyang",
+                "unlocs": "KRKAN"
+            },
+            {
+                "portName": "Geoje",
+                "unlocs": "KRKJE"
+            },
+            {
+                "portName": "Gimcheon",
+                "unlocs": "KRKMC"
+            },
+            {
+                "portName": "Pohang",
+                "unlocs": "KRKPO"
+            },
+            {
+                "portName": "Gumi",
+                "unlocs": "KRKUM"
+            },
+            {
+                "portName": "Gunsan",
+                "unlocs": "KRKUV"
+            },
+            {
+                "portName": "Gwangju",
+                "unlocs": "KRKWJ"
+            },
+            {
+                "portName": "Gwangju",
+                "unlocs": "KRKWU"
+            },
+            {
+                "portName": "Masan",
+                "unlocs": "KRMAS"
+            },
+            {
+                "portName": "Mokpo",
+                "unlocs": "KRMOK"
+            },
+            {
+                "portName": "Namyang/Goheung-gun",
+                "unlocs": "KRNYJ"
+            },
+            {
+                "portName": "Namyangju",
+                "unlocs": "KRNYU"
+            },
+            {
+                "portName": "Okpo/Geoje",
+                "unlocs": "KROKP"
+            },
+            {
+                "portName": "Onsan/Ulsan",
+                "unlocs": "KRONS"
+            },
+            {
+                "portName": "Busan",
+                "unlocs": "KRPUS"
+            },
+            {
+                "portName": "Samcheonpo/Sacheon",
+                "unlocs": "KRSCP"
+            },
+            {
+                "portName": "Seoul",
+                "unlocs": "KRSEL"
+            },
+            {
+                "portName": "Seosan",
+                "unlocs": "KRSSA"
+            },
+            {
+                "portName": "Daegu",
+                "unlocs": "KRTAE"
+            },
+            {
+                "portName": "Daejeon",
+                "unlocs": "KRTJN"
+            },
+            {
+                "portName": "Tongyeong",
+                "unlocs": "KRTYG"
+            },
+            {
+                "portName": "Ulsan",
+                "unlocs": "KRUSN"
+            },
+            {
+                "portName": "Yesan",
+                "unlocs": "KRYES"
+            },
+            {
+                "portName": "Yeosu",
+                "unlocs": "KRYOS"
+            }
+        ]
+    },
+    {
+        "countryName": "Kuwait",
+        "ports": [
+            {
+                "portName": "Kuwait",
+                "unlocs": "KWKWI"
+            },
+            {
+                "portName": "Shuaiba",
+                "unlocs": "KWSAA"
+            },
+            {
+                "portName": "Shuwaikh",
+                "unlocs": "KWSWK"
+            }
+        ]
+    },
+    {
+        "countryName": "Cayman Islands",
+        "ports": [
+            {
+                "portName": "Grand Cayman",
+                "unlocs": "KYGCM"
+            },
+            {
+                "portName": "Georgetown, Grand Cayman",
+                "unlocs": "KYGEC"
+            }
+        ]
+    },
+    {
+        "countryName": "Lebanon",
+        "ports": [
+            {
+                "portName": "Beirut",
+                "unlocs": "LBBEY"
+            },
+            {
+                "portName": "Tripoli",
+                "unlocs": "LBKYE"
+            }
+        ]
+    },
+    {
+        "countryName": "Saint Lucia",
+        "ports": [
+            {
+                "portName": "Castries",
+                "unlocs": "LCCAS"
+            },
+            {
+                "portName": "Saint Lucia Apt",
+                "unlocs": "LCSLU"
+            },
+            {
+                "portName": "Vieux Fort",
+                "unlocs": "LCVIF"
+            }
+        ]
+    },
+    {
+        "countryName": "Sri Lanka",
+        "ports": [
+            {
+                "portName": "Colombo",
+                "unlocs": "LKCMB"
+            }
+        ]
+    },
+    {
+        "countryName": "Liberia",
+        "ports": [
+            {
+                "portName": "Monrovia",
+                "unlocs": "LRMLW"
+            }
+        ]
+    },
+    {
+        "countryName": "Lithuania",
+        "ports": [
+            {
+                "portName": "Klaipeda",
+                "unlocs": "LTKLJ"
+            }
+        ]
+    },
+    {
+        "countryName": "Latvia",
+        "ports": [
+            {
+                "portName": "Aizkraukle",
+                "unlocs": "LVAIZ"
+            },
+            {
+                "portName": "Riga",
+                "unlocs": "LVRIX"
+            },
+            {
+                "portName": "Salacgriva",
+                "unlocs": "LVSAL"
+            },
+            {
+                "portName": "Ventspils",
+                "unlocs": "LVVNT"
+            }
+        ]
+    },
+    {
+        "countryName": "Libya",
+        "ports": [
+            {
+                "portName": "Bingazi (Benghazi)",
+                "unlocs": "LYBEN"
+            },
+            {
+                "portName": "Al Khums",
+                "unlocs": "LYKHO"
+            },
+            {
+                "portName": "Misurata",
+                "unlocs": "LYMRA"
+            },
+            {
+                "portName": "Tripoli",
+                "unlocs": "LYTIP"
+            }
+        ]
+    },
+    {
+        "countryName": "Morocco",
+        "ports": [
+            {
+                "portName": "Agadir",
+                "unlocs": "MAAGA"
+            },
+            {
+                "portName": "Casablanca",
+                "unlocs": "MACAS"
+            },
+            {
+                "portName": "El Jadida",
+                "unlocs": "MAELJ"
+            },
+            {
+                "portName": "Mohammedia",
+                "unlocs": "MAMOH"
+            },
+            {
+                "portName": "Kenitra (ex Port Lyautey)",
+                "unlocs": "MANNA"
+            },
+            {
+                "portName": "Tanger Med",
+                "unlocs": "MAPTM"
+            },
+            {
+                "portName": "Safi",
+                "unlocs": "MASFI"
+            },
+            {
+                "portName": "Tangier",
+                "unlocs": "MATNG"
+            }
+        ]
+    },
+    {
+        "countryName": "Monaco",
+        "ports": [
+            {
+                "portName": "Monaco",
+                "unlocs": "MCMON"
+            }
+        ]
+    },
+    {
+        "countryName": "Moldova, Republic of",
+        "ports": [
+            {
+                "portName": "Giurgiulesti",
+                "unlocs": "MDGIU"
+            }
+        ]
+    },
+    {
+        "countryName": "Montenegro",
+        "ports": [
+            {
+                "portName": "Bar",
+                "unlocs": "MEBAR"
+            }
+        ]
+    },
+    {
+        "countryName": "Madagascar",
+        "ports": [
+            {
+                "portName": "Antsiranana",
+                "unlocs": "MGDIE"
+            },
+            {
+                "portName": "Ehoala",
+                "unlocs": "MGEHL"
+            },
+            {
+                "portName": "Majunga (Mahajanga)",
+                "unlocs": "MGMJN"
+            },
+            {
+                "portName": "Nosy-Be",
+                "unlocs": "MGNOS"
+            },
+            {
+                "portName": "Tulear (Toliara)",
+                "unlocs": "MGTLE"
+            },
+            {
+                "portName": "Tamatave (Toamasina)",
+                "unlocs": "MGTMM"
+            },
+            {
+                "portName": "Toamasina",
+                "unlocs": "MGTOA"
+            }
+        ]
+    },
+    {
+        "countryName": "Marshall Islands",
+        "ports": [
+            {
+                "portName": "Majuro",
+                "unlocs": "MHMAJ"
+            }
+        ]
+    },
+    {
+        "countryName": "Mali",
+        "ports": [
+            {
+                "portName": "Bamako",
+                "unlocs": "MLBKO"
+            }
+        ]
+    },
+    {
+        "countryName": "Myanmar",
+        "ports": [
+            {
+                "portName": "Yangon",
+                "unlocs": "MMRGN"
+            }
+        ]
+    },
+    {
+        "countryName": "Macao",
+        "ports": [
+            {
+                "portName": "Macau",
+                "unlocs": "MOMFM"
+            }
+        ]
+    },
+    {
+        "countryName": "Northern Mariana Islands",
+        "ports": [
+            {
+                "portName": "Saipan",
+                "unlocs": "MPSPN"
+            }
+        ]
+    },
+    {
+        "countryName": "Martinique",
+        "ports": [
+            {
+                "portName": "Fort-de-France",
+                "unlocs": "MQFDF"
+            }
+        ]
+    },
+    {
+        "countryName": "Mauritania",
+        "ports": [
+            {
+                "portName": "Nouadhibou",
+                "unlocs": "MRNDB"
+            },
+            {
+                "portName": "Nouakchott",
+                "unlocs": "MRNKC"
+            }
+        ]
+    },
+    {
+        "countryName": "Malta",
+        "ports": [
+            {
+                "portName": "Marsaxlokk",
+                "unlocs": "MTMAR"
+            },
+            {
+                "portName": "Mgarr, Gozo",
+                "unlocs": "MTMGZ"
+            },
+            {
+                "portName": "Valletta",
+                "unlocs": "MTMLA"
+            }
+        ]
+    },
+    {
+        "countryName": "Mauritius",
+        "ports": [
+            {
+                "portName": "Port Louis",
+                "unlocs": "MUPLU"
+            }
+        ]
+    },
+    {
+        "countryName": "Maldives",
+        "ports": [
+            {
+                "portName": "Male",
+                "unlocs": "MVMLE"
+            }
+        ]
+    },
+    {
+        "countryName": "Malawi",
+        "ports": [
+            {
+                "portName": "Blantyre",
+                "unlocs": "MWBLZ"
+            }
+        ]
+    },
+    {
+        "countryName": "Mexico",
+        "ports": [
+            {
+                "portName": "Acapulco",
+                "unlocs": "MXACA"
+            },
+            {
+                "portName": "Altamira",
+                "unlocs": "MXATM"
+            },
+            {
+                "portName": "Coatzacoalcos",
+                "unlocs": "MXCOA"
+            },
+            {
+                "portName": "Ensenada",
+                "unlocs": "MXESE"
+            },
+            {
+                "portName": "Guaymas",
+                "unlocs": "MXGYM"
+            },
+            {
+                "portName": "Ciudad de Mexico",
+                "unlocs": "MXMEX"
+            },
+            {
+                "portName": "Progreso",
+                "unlocs": "MXPGO"
+            },
+            {
+                "portName": "Puerto Morelos",
+                "unlocs": "MXPMS"
+            },
+            {
+                "portName": "Reynosa",
+                "unlocs": "MXREX"
+            },
+            {
+                "portName": "Salina Cruz",
+                "unlocs": "MXSCX"
+            },
+            {
+                "portName": "Tampico",
+                "unlocs": "MXTAM"
+            },
+            {
+                "portName": "Topolobampo",
+                "unlocs": "MXTPB"
+            },
+            {
+                "portName": "Veracruz",
+                "unlocs": "MXVER"
+            },
+            {
+                "portName": "Manzanillo",
+                "unlocs": "MXZLO"
+            }
+        ]
+    },
+    {
+        "countryName": "Malaysia",
+        "ports": [
+            {
+                "portName": "Kota Kinabalu, Sabah",
+                "unlocs": "MYBKI"
+            },
+            {
+                "portName": "Bintulu, Sarawak",
+                "unlocs": "MYBTU"
+            },
+            {
+                "portName": "Bagan Luar (Butterworth)",
+                "unlocs": "MYBWH"
+            },
+            {
+                "portName": "Johor Bahru",
+                "unlocs": "MYJHB"
+            },
+            {
+                "portName": "Kuching, Sarawak",
+                "unlocs": "MYKCH"
+            },
+            {
+                "portName": "Kuantan (Tanjong Gelang)",
+                "unlocs": "MYKUA"
+            },
+            {
+                "portName": "Labuan, Sabah",
+                "unlocs": "MYLBU"
+            },
+            {
+                "portName": "Mersing",
+                "unlocs": "MYMEP"
+            },
+            {
+                "portName": "Malacca",
+                "unlocs": "MYMKZ"
+            },
+            {
+                "portName": "Muar",
+                "unlocs": "MYMUA"
+            },
+            {
+                "portName": "Miri, Sarawak",
+                "unlocs": "MYMYY"
+            },
+            {
+                "portName": "Penang (Georgetown)",
+                "unlocs": "MYPEN"
+            },
+            {
+                "portName": "Pasir Gudang, Johor",
+                "unlocs": "MYPGU"
+            },
+            {
+                "portName": "Port Klang (Pelabuhan Klang)",
+                "unlocs": "MYPKG"
+            },
+            {
+                "portName": "Sibu, Sarawak",
+                "unlocs": "MYSBW"
+            },
+            {
+                "portName": "Sandakan, Sabah",
+                "unlocs": "MYSDK"
+            },
+            {
+                "portName": "Tanjong Baran",
+                "unlocs": "MYTBA"
+            },
+            {
+                "portName": "Kuala Terengganu",
+                "unlocs": "MYTGG"
+            },
+            {
+                "portName": "Tanjung Pelepas",
+                "unlocs": "MYTPP"
+            },
+            {
+                "portName": "Tawau, Sabah",
+                "unlocs": "MYTWU"
+            },
+            {
+                "portName": "Westport/Port Klang",
+                "unlocs": "MYWSP"
+            }
+        ]
+    },
+    {
+        "countryName": "Mozambique",
+        "ports": [
+            {
+                "portName": "Beira",
+                "unlocs": "MZBEW"
+            },
+            {
+                "portName": "Nacala",
+                "unlocs": "MZMNC"
+            },
+            {
+                "portName": "Maputo",
+                "unlocs": "MZMPM"
+            },
+            {
+                "portName": "Pemba",
+                "unlocs": "MZPOL"
+            },
+            {
+                "portName": "Quelimane",
+                "unlocs": "MZUEL"
+            }
+        ]
+    },
+    {
+        "countryName": "Namibia",
+        "ports": [
+            {
+                "portName": "Luderitz",
+                "unlocs": "NALUD"
+            },
+            {
+                "portName": "Walvis Bay",
+                "unlocs": "NAWVB"
+            }
+        ]
+    },
+    {
+        "countryName": "New Caledonia",
+        "ports": [
+            {
+                "portName": "Noumea",
+                "unlocs": "NCNOU"
+            }
+        ]
+    },
+    {
+        "countryName": "Nigeria",
+        "ports": [
+            {
+                "portName": "Apapa",
+                "unlocs": "NGAPP"
+            },
+            {
+                "portName": "Calabar",
+                "unlocs": "NGCBQ"
+            },
+            {
+                "portName": "Lagos",
+                "unlocs": "NGLOS"
+            },
+            {
+                "portName": "Onne",
+                "unlocs": "NGONN"
+            },
+            {
+                "portName": "Port Harcourt",
+                "unlocs": "NGPHC"
+            },
+            {
+                "portName": "Tincan/Lagos",
+                "unlocs": "NGTIN"
+            },
+            {
+                "portName": "Warri",
+                "unlocs": "NGWAR"
+            }
+        ]
+    },
+    {
+        "countryName": "Nicaragua",
+        "ports": [
+            {
+                "portName": "Corinto",
+                "unlocs": "NICIO"
+            },
+            {
+                "portName": "Managua",
+                "unlocs": "NIMGA"
+            }
+        ]
+    },
+    {
+        "countryName": "Norway",
+        "ports": [
+            {
+                "portName": "Alvik",
+                "unlocs": "NOAAV"
+            },
+            {
+                "portName": "Alesund",
+                "unlocs": "NOAES"
+            },
+            {
+                "portName": "Agotnes",
+                "unlocs": "NOAGO"
+            },
+            {
+                "portName": "Andalsnes",
+                "unlocs": "NOAND"
+            },
+            {
+                "portName": "Austevoll",
+                "unlocs": "NOASV"
+            },
+            {
+                "portName": "Bergen",
+                "unlocs": "NOBGO"
+            },
+            {
+                "portName": "Bodo",
+                "unlocs": "NOBOO"
+            },
+            {
+                "portName": "Brevik",
+                "unlocs": "NOBVK"
+            },
+            {
+                "portName": "Drammen",
+                "unlocs": "NODRM"
+            },
+            {
+                "portName": "Eigersund",
+                "unlocs": "NOEGD"
+            },
+            {
+                "portName": "Frekhaug",
+                "unlocs": "NOFKG"
+            },
+            {
+                "portName": "Fredrikstad",
+                "unlocs": "NOFRK"
+            },
+            {
+                "portName": "Floro",
+                "unlocs": "NOFRO"
+            },
+            {
+                "portName": "Fusa",
+                "unlocs": "NOFUS"
+            },
+            {
+                "portName": "Gjemnes",
+                "unlocs": "NOGJM"
+            },
+            {
+                "portName": "Halden",
+                "unlocs": "NOHAL"
+            },
+            {
+                "portName": "Haugesund",
+                "unlocs": "NOHAU"
+            },
+            {
+                "portName": "Hestvika",
+                "unlocs": "NOHES"
+            },
+            {
+                "portName": "Holla",
+                "unlocs": "NOHLA"
+            },
+            {
+                "portName": "Hogset",
+                "unlocs": "NOHOG"
+            },
+            {
+                "portName": "Husoy - Tonsberg",
+                "unlocs": "NOHOY"
+            },
+            {
+                "portName": "Hareid",
+                "unlocs": "NOHRI"
+            },
+            {
+                "portName": "Heroya",
+                "unlocs": "NOHRY"
+            },
+            {
+                "portName": "Husnes",
+                "unlocs": "NOHUS"
+            },
+            {
+                "portName": "Havik",
+                "unlocs": "NOHVI"
+            },
+            {
+                "portName": "Ikornnes",
+                "unlocs": "NOIKR"
+            },
+            {
+                "portName": "Karmoy",
+                "unlocs": "NOKMY"
+            },
+            {
+                "portName": "Kristiansand",
+                "unlocs": "NOKRS"
+            },
+            {
+                "portName": "Knarrevik",
+                "unlocs": "NOKRV"
+            },
+            {
+                "portName": "Kristiansund",
+                "unlocs": "NOKSU"
+            },
+            {
+                "portName": "Larvik",
+                "unlocs": "NOLAR"
+            },
+            {
+                "portName": "Lyngdal",
+                "unlocs": "NOLND"
+            },
+            {
+                "portName": "Maloy",
+                "unlocs": "NOMAY"
+            },
+            {
+                "portName": "Molde",
+                "unlocs": "NOMOL"
+            },
+            {
+                "portName": "Mongstad",
+                "unlocs": "NOMON"
+            },
+            {
+                "portName": "Mo i Rana",
+                "unlocs": "NOMQN"
+            },
+            {
+                "portName": "Moss",
+                "unlocs": "NOMSS"
+            },
+            {
+                "portName": "Odda",
+                "unlocs": "NOODD"
+            },
+            {
+                "portName": "Orkanger",
+                "unlocs": "NOORK"
+            },
+            {
+                "portName": "Oslo",
+                "unlocs": "NOOSL"
+            },
+            {
+                "portName": "Porsgrunn",
+                "unlocs": "NOPOR"
+            },
+            {
+                "portName": "Sandefjord",
+                "unlocs": "NOSAD"
+            },
+            {
+                "portName": "Sauda",
+                "unlocs": "NOSAU"
+            },
+            {
+                "portName": "Skien",
+                "unlocs": "NOSKE"
+            },
+            {
+                "portName": "Skogn",
+                "unlocs": "NOSKX"
+            },
+            {
+                "portName": "Sortland",
+                "unlocs": "NOSLX"
+            },
+            {
+                "portName": "Sarpsborg",
+                "unlocs": "NOSPG"
+            },
+            {
+                "portName": "Stord",
+                "unlocs": "NOSRP"
+            },
+            {
+                "portName": "Straumen",
+                "unlocs": "NOSTM"
+            },
+            {
+                "portName": "Sunndalsora",
+                "unlocs": "NOSUN"
+            },
+            {
+                "portName": "Svelgen",
+                "unlocs": "NOSVE"
+            },
+            {
+                "portName": "Stavanger",
+                "unlocs": "NOSVG"
+            },
+            {
+                "portName": "Tananger",
+                "unlocs": "NOTAE"
+            },
+            {
+                "portName": "Tonsberg",
+                "unlocs": "NOTON"
+            },
+            {
+                "portName": "Tromso",
+                "unlocs": "NOTOS"
+            },
+            {
+                "portName": "Trondheim",
+                "unlocs": "NOTRD"
+            }
+        ]
+    },
+    {
+        "countryName": "New Zealand",
+        "ports": [
+            {
+                "portName": "Auckland",
+                "unlocs": "NZAKL"
+            },
+            {
+                "portName": "Bluff",
+                "unlocs": "NZBLU"
+            },
+            {
+                "portName": "Christchurch",
+                "unlocs": "NZCHC"
+            },
+            {
+                "portName": "Dunedin",
+                "unlocs": "NZDUD"
+            },
+            {
+                "portName": "Hamilton",
+                "unlocs": "NZHLZ"
+            },
+            {
+                "portName": "Lyttelton",
+                "unlocs": "NZLYT"
+            },
+            {
+                "portName": "Middleton/Christchurch",
+                "unlocs": "NZMNR"
+            },
+            {
+                "portName": "Napier",
+                "unlocs": "NZNPE"
+            },
+            {
+                "portName": "New Plymouth",
+                "unlocs": "NZNPL"
+            },
+            {
+                "portName": "Nelson",
+                "unlocs": "NZNSN"
+            },
+            {
+                "portName": "Palmerston North",
+                "unlocs": "NZPMR"
+            },
+            {
+                "portName": "Port Chalmers",
+                "unlocs": "NZPOE"
+            },
+            {
+                "portName": "Timaru",
+                "unlocs": "NZTIU"
+            },
+            {
+                "portName": "Temuka",
+                "unlocs": "NZTKA"
+            },
+            {
+                "portName": "Tauranga",
+                "unlocs": "NZTRG"
+            },
+            {
+                "portName": "Wanganui",
+                "unlocs": "NZWAG"
+            },
+            {
+                "portName": "Wellington",
+                "unlocs": "NZWLG"
+            },
+            {
+                "portName": "Whangarei",
+                "unlocs": "NZWRE"
+            }
+        ]
+    },
+    {
+        "countryName": "Oman",
+        "ports": [
+            {
+                "portName": "Muscat",
+                "unlocs": "OMMCT"
+            },
+            {
+                "portName": "Mina' Qabus",
+                "unlocs": "OMMNQ"
+            },
+            {
+                "portName": "Port Qaboos",
+                "unlocs": "OMOPQ"
+            },
+            {
+                "portName": "Salalah",
+                "unlocs": "OMSLL"
+            },
+            {
+                "portName": "Sohar",
+                "unlocs": "OMSOH"
+            }
+        ]
+    },
+    {
+        "countryName": "Panama",
+        "ports": [
+            {
+                "portName": "Puerto Armuelles",
+                "unlocs": "PAAML"
+            },
+            {
+                "portName": "Balboa",
+                "unlocs": "PABLB"
+            },
+            {
+                "portName": "Colon Free Zone",
+                "unlocs": "PACFZ"
+            },
+            {
+                "portName": "Coco Solo",
+                "unlocs": "PACSO"
+            },
+            {
+                "portName": "Cristobal",
+                "unlocs": "PACTB"
+            },
+            {
+                "portName": "Chitre",
+                "unlocs": "PACTD"
+            },
+            {
+                "portName": "Canazas",
+                "unlocs": "PACZZ"
+            },
+            {
+                "portName": "Manzanillo",
+                "unlocs": "PAMIT"
+            },
+            {
+                "portName": "Colon",
+                "unlocs": "PAONX"
+            },
+            {
+                "portName": "Rodman",
+                "unlocs": "PAPSA"
+            },
+            {
+                "portName": "Panama, Ciudad de",
+                "unlocs": "PAPTY"
+            }
+        ]
+    },
+    {
+        "countryName": "Peru",
+        "ports": [
+            {
+                "portName": "Atico",
+                "unlocs": "PEATI"
+            },
+            {
+                "portName": "Chimbote",
+                "unlocs": "PECHM"
+            },
+            {
+                "portName": "Callao",
+                "unlocs": "PECLL"
+            },
+            {
+                "portName": "General San Martin",
+                "unlocs": "PEGSM"
+            },
+            {
+                "portName": "Huacho",
+                "unlocs": "PEHCO"
+            },
+            {
+                "portName": "Ilo",
+                "unlocs": "PEILQ"
+            },
+            {
+                "portName": "Iquitos",
+                "unlocs": "PEIQT"
+            },
+            {
+                "portName": "Lobitos",
+                "unlocs": "PELOB"
+            },
+            {
+                "portName": "Matarani",
+                "unlocs": "PEMRI"
+            },
+            {
+                "portName": "Pacasmayo",
+                "unlocs": "PEPAC"
+            },
+            {
+                "portName": "Paita",
+                "unlocs": "PEPAI"
+            },
+            {
+                "portName": "Puerto Chicama",
+                "unlocs": "PEPCH"
+            },
+            {
+                "portName": "Pisco",
+                "unlocs": "PEPIO"
+            },
+            {
+                "portName": "San Nicolas",
+                "unlocs": "PESNX"
+            },
+            {
+                "portName": "Supe",
+                "unlocs": "PESUP"
+            },
+            {
+                "portName": "Salaverry",
+                "unlocs": "PESVY"
+            },
+            {
+                "portName": "Talara",
+                "unlocs": "PETYL"
+            }
+        ]
+    },
+    {
+        "countryName": "French Polynesia",
+        "ports": [
+            {
+                "portName": "Papeete",
+                "unlocs": "PFPPT"
+            }
+        ]
+    },
+    {
+        "countryName": "Papua New Guinea",
+        "ports": [
+            {
+                "portName": "Lae",
+                "unlocs": "PGLAE"
+            },
+            {
+                "portName": "Madang",
+                "unlocs": "PGMAG"
+            },
+            {
+                "portName": "Port Moresby",
+                "unlocs": "PGPOM"
+            },
+            {
+                "portName": "Rabaul",
+                "unlocs": "PGRAB"
+            }
+        ]
+    },
+    {
+        "countryName": "Philippines",
+        "ports": [
+            {
+                "portName": "Cebu",
+                "unlocs": "PHCEB"
+            },
+            {
+                "portName": "Cagayan de Oro, Mindanao",
+                "unlocs": "PHCGY"
+            },
+            {
+                "portName": "Davao, Mindanao",
+                "unlocs": "PHDVO"
+            },
+            {
+                "portName": "General Santos",
+                "unlocs": "PHGES"
+            },
+            {
+                "portName": "Iligan, Mindanao",
+                "unlocs": "PHIGN"
+            },
+            {
+                "portName": "Isabela (Basilan)",
+                "unlocs": "PHISB"
+            },
+            {
+                "portName": "Magellanes/Masao",
+                "unlocs": "PHMLS"
+            },
+            {
+                "portName": "Manicani",
+                "unlocs": "PHMNI"
+            },
+            {
+                "portName": "Manila",
+                "unlocs": "PHMNL"
+            },
+            {
+                "portName": "Manila North Harbour",
+                "unlocs": "PHMNN"
+            },
+            {
+                "portName": "Manila South Harbour",
+                "unlocs": "PHMNS"
+            },
+            {
+                "portName": "Ozamis, Mindanao",
+                "unlocs": "PHOZC"
+            },
+            {
+                "portName": "Pasaleng, Luzon",
+                "unlocs": "PHPSL"
+            },
+            {
+                "portName": "Subic Bay",
+                "unlocs": "PHSFS"
+            },
+            {
+                "portName": "Zamboanga",
+                "unlocs": "PHZAM"
+            }
+        ]
+    },
+    {
+        "countryName": "Pakistan",
+        "ports": [
+            {
+                "portName": "Karachi-muhammad Bin Qasim",
+                "unlocs": "PKBQM"
+            },
+            {
+                "portName": "Karachi",
+                "unlocs": "PKKHI"
+            }
+        ]
+    },
+    {
+        "countryName": "Poland",
+        "ports": [
+            {
+                "portName": "Gdansk",
+                "unlocs": "PLGDN"
+            },
+            {
+                "portName": "Gdynia",
+                "unlocs": "PLGDY"
+            },
+            {
+                "portName": "Swinoujscie",
+                "unlocs": "PLSWI"
+            },
+            {
+                "portName": "Szczecin",
+                "unlocs": "PLSZZ"
+            }
+        ]
+    },
+    {
+        "countryName": "Puerto Rico",
+        "ports": [
+            {
+                "portName": "Aguadilla",
+                "unlocs": "PRBQN"
+            },
+            {
+                "portName": "Mayaguez",
+                "unlocs": "PRMAZ"
+            },
+            {
+                "portName": "Puerto Nuevo",
+                "unlocs": "PRPNU"
+            },
+            {
+                "portName": "Ponce",
+                "unlocs": "PRPSE"
+            },
+            {
+                "portName": "San Juan",
+                "unlocs": "PRSJU"
+            }
+        ]
+    },
+    {
+        "countryName": "Portugal",
+        "ports": [
+            {
+                "portName": "Angra do Heroismo",
+                "unlocs": "PTADH"
+            },
+            {
+                "portName": "Canical",
+                "unlocs": "PTCNL"
+            },
+            {
+                "portName": "Entroncamento",
+                "unlocs": "PTENT"
+            },
+            {
+                "portName": "Figueira da Foz",
+                "unlocs": "PTFDF"
+            },
+            {
+                "portName": "Funchal, Madeira",
+                "unlocs": "PTFNC"
+            },
+            {
+                "portName": "Horta",
+                "unlocs": "PTHOR"
+            },
+            {
+                "portName": "Leixoes",
+                "unlocs": "PTLEI"
+            },
+            {
+                "portName": "Lisboa",
+                "unlocs": "PTLIS"
+            },
+            {
+                "portName": "Porto",
+                "unlocs": "PTOPO"
+            },
+            {
+                "portName": "Ponta Delgada",
+                "unlocs": "PTPDL"
+            },
+            {
+                "portName": "Praia da Vitoria",
+                "unlocs": "PTPRV"
+            },
+            {
+                "portName": "Setubal",
+                "unlocs": "PTSET"
+            },
+            {
+                "portName": "Sines",
+                "unlocs": "PTSIE"
+            },
+            {
+                "portName": "Terceira Island Apt",
+                "unlocs": "PTTER"
+            },
+            {
+                "portName": "Viana do Castelo",
+                "unlocs": "PTVDC"
+            }
+        ]
+    },
+    {
+        "countryName": "Paraguay",
+        "ports": [
+            {
+                "portName": "Asuncion",
+                "unlocs": "PYASU"
+            },
+            {
+                "portName": "Barrio Caacupe Mi",
+                "unlocs": "PYBCM"
+            },
+            {
+                "portName": "Fenix",
+                "unlocs": "PYFNX"
+            },
+            {
+                "portName": "Pilar",
+                "unlocs": "PYPIL"
+            },
+            {
+                "portName": "Pto Seguro/col Mariano Roque Alonso",
+                "unlocs": "PYPSE"
+            },
+            {
+                "portName": "San Antonio",
+                "unlocs": "PYSAN"
+            },
+            {
+                "portName": "Terport (San Antonio)",
+                "unlocs": "PYTER"
+            }
+        ]
+    },
+    {
+        "countryName": "Qatar",
+        "ports": [
+            {
+                "portName": "Doha",
+                "unlocs": "QADOH"
+            },
+            {
+                "portName": "Mesaieed",
+                "unlocs": "QAMES"
+            },
+            {
+                "portName": "Umm Sa'id (Mesaieed)",
+                "unlocs": "QAUMS"
+            }
+        ]
+    },
+    {
+        "countryName": "Réunion",
+        "ports": [
+            {
+                "portName": "Le Port",
+                "unlocs": "RELPT"
+            },
+            {
+                "portName": "Port de Pointe des Galets",
+                "unlocs": "REPDG"
+            },
+            {
+                "portName": "Reunion",
+                "unlocs": "REREU"
+            },
+            {
+                "portName": "Saint-Denis de la Reunion Apt",
+                "unlocs": "RERUN"
+            }
+        ]
+    },
+    {
+        "countryName": "Romania",
+        "ports": [
+            {
+                "portName": "Agigea",
+                "unlocs": "ROAGI"
+            },
+            {
+                "portName": "Braila",
+                "unlocs": "ROBRA"
+            },
+            {
+                "portName": "Constanta",
+                "unlocs": "ROCND"
+            },
+            {
+                "portName": "Galati",
+                "unlocs": "ROGAL"
+            },
+            {
+                "portName": "Mangalia",
+                "unlocs": "ROMAG"
+            }
+        ]
+    },
+    {
+        "countryName": "Russian Federation",
+        "ports": [
+            {
+                "portName": "Arkhangelsk",
+                "unlocs": "RUARH"
+            },
+            {
+                "portName": "Magadan",
+                "unlocs": "RUGDX"
+            },
+            {
+                "portName": "Kaliningrad",
+                "unlocs": "RUKGD"
+            },
+            {
+                "portName": "Kholmsk",
+                "unlocs": "RUKHO"
+            },
+            {
+                "portName": "Korsakov",
+                "unlocs": "RUKOR"
+            },
+            {
+                "portName": "Krasnodar",
+                "unlocs": "RUKRR"
+            },
+            {
+                "portName": "Saint Petersburg (ex Leningrad)",
+                "unlocs": "RULED"
+            },
+            {
+                "portName": "Murmansk",
+                "unlocs": "RUMMK"
+            },
+            {
+                "portName": "Nakhodka",
+                "unlocs": "RUNJK"
+            },
+            {
+                "portName": "Novorossiysk",
+                "unlocs": "RUNVS"
+            },
+            {
+                "portName": "Potapova",
+                "unlocs": "RUPTP"
+            },
+            {
+                "portName": "Rostov",
+                "unlocs": "RUROV"
+            },
+            {
+                "portName": "Taganrog",
+                "unlocs": "RUTAG"
+            },
+            {
+                "portName": "Vladivostok",
+                "unlocs": "RUVVO"
+            },
+            {
+                "portName": "Vyborg",
+                "unlocs": "RUVYG"
+            },
+            {
+                "portName": "Vostochnyy Port",
+                "unlocs": "RUVYP"
+            }
+        ]
+    },
+    {
+        "countryName": "Rwanda",
+        "ports": [
+            {
+                "portName": "Kigali",
+                "unlocs": "RWKGL"
+            }
+        ]
+    },
+    {
+        "countryName": "Saudi Arabia",
+        "ports": [
+            {
+                "portName": "Ad Dammam",
+                "unlocs": "SADMM"
+            },
+            {
+                "portName": "Dammam",
+                "unlocs": "SADMN"
+            },
+            {
+                "portName": "Jeddah",
+                "unlocs": "SAJED"
+            },
+            {
+                "portName": "Jubail",
+                "unlocs": "SAJUB"
+            },
+            {
+                "portName": "King Abdullah City",
+                "unlocs": "SAKAC"
+            },
+            {
+                "portName": "Riyadh",
+                "unlocs": "SARUH"
+            }
+        ]
+    },
+    {
+        "countryName": "Solomon Islands",
+        "ports": [
+            {
+                "portName": "Honiara, Guadalcanal Is",
+                "unlocs": "SBHIR"
+            },
+            {
+                "portName": "Noro, New Georgia",
+                "unlocs": "SBNOR"
+            }
+        ]
+    },
+    {
+        "countryName": "Seychelles",
+        "ports": [
+            {
+                "portName": "Mahe",
+                "unlocs": "SCMAW"
+            },
+            {
+                "portName": "Port Victoria",
+                "unlocs": "SCPOV"
+            }
+        ]
+    },
+    {
+        "countryName": "Sudan",
+        "ports": [
+            {
+                "portName": "Port Sudan",
+                "unlocs": "SDPZU"
+            }
+        ]
+    },
+    {
+        "countryName": "Sweden",
+        "ports": [
+            {
+                "portName": "Ahus",
+                "unlocs": "SEAHU"
+            },
+            {
+                "portName": "Falkenberg",
+                "unlocs": "SEFAG"
+            },
+            {
+                "portName": "Goteborg",
+                "unlocs": "SEGOT"
+            },
+            {
+                "portName": "Gavle",
+                "unlocs": "SEGVX"
+            },
+            {
+                "portName": "Halmstad",
+                "unlocs": "SEHAD"
+            },
+            {
+                "portName": "Helsingborg",
+                "unlocs": "SEHEL"
+            },
+            {
+                "portName": "Karlshamn",
+                "unlocs": "SEKAN"
+            },
+            {
+                "portName": "Karlstad",
+                "unlocs": "SEKSD"
+            },
+            {
+                "portName": "Landskrona",
+                "unlocs": "SELAA"
+            },
+            {
+                "portName": "Malmo",
+                "unlocs": "SEMMA"
+            },
+            {
+                "portName": "Norrkoping",
+                "unlocs": "SENRK"
+            },
+            {
+                "portName": "Oskarshamn",
+                "unlocs": "SEOSK"
+            },
+            {
+                "portName": "Oxelosund",
+                "unlocs": "SEOXE"
+            },
+            {
+                "portName": "Sundsvall",
+                "unlocs": "SESDL"
+            },
+            {
+                "portName": "Skelleftea",
+                "unlocs": "SESFT"
+            },
+            {
+                "portName": "Skelleftehamn",
+                "unlocs": "SESKE"
+            },
+            {
+                "portName": "Sodertalje",
+                "unlocs": "SESOE"
+            },
+            {
+                "portName": "Stockholm",
+                "unlocs": "SESTO"
+            },
+            {
+                "portName": "Trelleborg",
+                "unlocs": "SETRG"
+            },
+            {
+                "portName": "Uddevalla",
+                "unlocs": "SEUDD"
+            },
+            {
+                "portName": "Umea",
+                "unlocs": "SEUME"
+            },
+            {
+                "portName": "Vasteras",
+                "unlocs": "SEVST"
+            }
+        ]
+    },
+    {
+        "countryName": "Singapore",
+        "ports": [
+            {
+                "portName": "Jurong/Singapore",
+                "unlocs": "SGJUR"
+            },
+            {
+                "portName": "Singapore",
+                "unlocs": "SGSIN"
+            }
+        ]
+    },
+    {
+        "countryName": "Slovenia",
+        "ports": [
+            {
+                "portName": "Koper",
+                "unlocs": "SIKOP"
+            }
+        ]
+    },
+    {
+        "countryName": "Slovakia",
+        "ports": [
+            {
+                "portName": "Bratislava",
+                "unlocs": "SKBTS"
+            }
+        ]
+    },
+    {
+        "countryName": "Sierra Leone",
+        "ports": [
+            {
+                "portName": "Freetown",
+                "unlocs": "SLFNA"
+            }
+        ]
+    },
+    {
+        "countryName": "Senegal",
+        "ports": [
+            {
+                "portName": "Dakar",
+                "unlocs": "SNDKR"
+            }
+        ]
+    },
+    {
+        "countryName": "Somalia",
+        "ports": [
+            {
+                "portName": "Berbera",
+                "unlocs": "SOBBO"
+            },
+            {
+                "portName": "Kismayu",
+                "unlocs": "SOKMU"
+            },
+            {
+                "portName": "Mogadishu",
+                "unlocs": "SOMGQ"
+            }
+        ]
+    },
+    {
+        "countryName": "Paramariboame",
+        "ports": [
+            {
+                "portName": "Paramaribo",
+                "unlocs": "SRPBM"
+            }
+        ]
+    },
+    {
+        "countryName": "Sao Tome and Principe",
+        "ports": [
+            {
+                "portName": "Sao Tome Island",
+                "unlocs": "STTMS"
+            }
+        ]
+    },
+    {
+        "countryName": "El Salvador",
+        "ports": [
+            {
+                "portName": "Acajutla",
+                "unlocs": "SVAQJ"
+            },
+            {
+                "portName": "La Libertad",
+                "unlocs": "SVLLD"
+            },
+            {
+                "portName": "La Union",
+                "unlocs": "SVLUN"
+            },
+            {
+                "portName": "San Salvador",
+                "unlocs": "SVSAL"
+            }
+        ]
+    },
+    {
+        "countryName": "Syrian Arab Republic",
+        "ports": [
+            {
+                "portName": "Damascus (Damas)",
+                "unlocs": "SYDAM"
+            },
+            {
+                "portName": "Latakia",
+                "unlocs": "SYLTK"
+            },
+            {
+                "portName": "Tartus",
+                "unlocs": "SYTTS"
+            }
+        ]
+    },
+    {
+        "countryName": "Turks and Caicos Islands",
+        "ports": [
+            {
+                "portName": "Providenciales",
+                "unlocs": "TCPLS"
+            }
+        ]
+    },
+    {
+        "countryName": "Togo",
+        "ports": [
+            {
+                "portName": "Lome",
+                "unlocs": "TGLFW"
+            }
+        ]
+    },
+    {
+        "countryName": "Thailand",
+        "ports": [
+            {
+                "portName": "Bangpakong",
+                "unlocs": "THBGP"
+            },
+            {
+                "portName": "Bangkok",
+                "unlocs": "THBKK"
+            },
+            {
+                "portName": "Bangkok Modern Terminals/Bangkok",
+                "unlocs": "THBMT"
+            },
+            {
+                "portName": "Koh Sichang",
+                "unlocs": "THKSI"
+            },
+            {
+                "portName": "Khlong Toei",
+                "unlocs": "THKTY"
+            },
+            {
+                "portName": "Laem Chabang",
+                "unlocs": "THLCH"
+            },
+            {
+                "portName": "Lat Krabang",
+                "unlocs": "THLKR"
+            },
+            {
+                "portName": "Mab Tapud",
+                "unlocs": "THMAT"
+            },
+            {
+                "portName": "Pat Bangkok",
+                "unlocs": "THPAT"
+            },
+            {
+                "portName": "Paknam",
+                "unlocs": "THPKN"
+            },
+            {
+                "portName": "Siam Bangkok Port",
+                "unlocs": "THSBP"
+            },
+            {
+                "portName": "Songkhla",
+                "unlocs": "THSGZ"
+            },
+            {
+                "portName": "Samut Prakarn",
+                "unlocs": "THSPR"
+            },
+            {
+                "portName": "Sriracha",
+                "unlocs": "THSRI"
+            },
+            {
+                "portName": "Thai prosperity terminal",
+                "unlocs": "THTPT"
+            }
+        ]
+    },
+    {
+        "countryName": "Tunisia",
+        "ports": [
+            {
+                "portName": "Gabes",
+                "unlocs": "TNGAE"
+            },
+            {
+                "portName": "Jarjis",
+                "unlocs": "TNJAR"
+            },
+            {
+                "portName": "La Goulette Nord (Halqueloued)",
+                "unlocs": "TNLGN"
+            },
+            {
+                "portName": "Rades",
+                "unlocs": "TNRDS"
+            },
+            {
+                "portName": "Sfax",
+                "unlocs": "TNSFA"
+            },
+            {
+                "portName": "Sousse",
+                "unlocs": "TNSUS"
+            },
+            {
+                "portName": "Tunis",
+                "unlocs": "TNTUN"
+            }
+        ]
+    },
+    {
+        "countryName": "Tonga",
+        "ports": [
+            {
+                "portName": "Nuku'alofa",
+                "unlocs": "TOTBU"
+            }
+        ]
+    },
+    {
+        "countryName": "Turkey",
+        "ports": [
+            {
+                "portName": "Aliaga",
+                "unlocs": "TRALI"
+            },
+            {
+                "portName": "Ambarli",
+                "unlocs": "TRAMB"
+            },
+            {
+                "portName": "Avcilar",
+                "unlocs": "TRAVC"
+            },
+            {
+                "portName": "Antalya",
+                "unlocs": "TRAYT"
+            },
+            {
+                "portName": "Bayrampasa",
+                "unlocs": "TRBAY"
+            },
+            {
+                "portName": "Bandirma",
+                "unlocs": "TRBDM"
+            },
+            {
+                "portName": "Evyap Port /Kocaeli",
+                "unlocs": "TREYP"
+            },
+            {
+                "portName": "Gebze",
+                "unlocs": "TRGEB"
+            },
+            {
+                "portName": "Gemlik",
+                "unlocs": "TRGEM"
+            },
+            {
+                "portName": "Haydarpasa",
+                "unlocs": "TRHAY"
+            },
+            {
+                "portName": "Hereke",
+                "unlocs": "TRHER"
+            },
+            {
+                "portName": "Iskenderun",
+                "unlocs": "TRISK"
+            },
+            {
+                "portName": "Istanbul",
+                "unlocs": "TRIST"
+            },
+            {
+                "portName": "Izmir",
+                "unlocs": "TRIZM"
+            },
+            {
+                "portName": "Izmit",
+                "unlocs": "TRIZT"
+            },
+            {
+                "portName": "Kumport",
+                "unlocs": "TRKMX"
+            },
+            {
+                "portName": "Mardas",
+                "unlocs": "TRMAD"
+            },
+            {
+                "portName": "Marmara Ereglisi",
+                "unlocs": "TRMAR"
+            },
+            {
+                "portName": "Mersin",
+                "unlocs": "TRMER"
+            },
+            {
+                "portName": "Nemrut Bay",
+                "unlocs": "TRNEM"
+            },
+            {
+                "portName": "Samsun",
+                "unlocs": "TRSSX"
+            },
+            {
+                "portName": "Tekirdag",
+                "unlocs": "TRTEK"
+            },
+            {
+                "portName": "Trabzon",
+                "unlocs": "TRTZX"
+            },
+            {
+                "portName": "Yarimca",
+                "unlocs": "TRYAR"
+            }
+        ]
+    },
+    {
+        "countryName": "Trinidad and Tobago",
+        "ports": [
+            {
+                "portName": "Port-of-Spain",
+                "unlocs": "TTPOS"
+            },
+            {
+                "portName": "Pointe a Pierre",
+                "unlocs": "TTPTP"
+            },
+            {
+                "portName": "Point Lisas",
+                "unlocs": "TTPTS"
+            },
+            {
+                "portName": "San Fernando",
+                "unlocs": "TTSFE"
+            }
+        ]
+    },
+    {
+        "countryName": "Taiwan",
+        "ports": [
+            {
+                "portName": "Keelung (Chilung)",
+                "unlocs": "TWKEL"
+            },
+            {
+                "portName": "Kaohsiung",
+                "unlocs": "TWKHH"
+            },
+            {
+                "portName": "Mai-liao",
+                "unlocs": "TWMLI"
+            },
+            {
+                "portName": "Suao",
+                "unlocs": "TWSUO"
+            },
+            {
+                "portName": "Taipei",
+                "unlocs": "TWTPE"
+            },
+            {
+                "portName": "Taichung",
+                "unlocs": "TWTXG"
+            },
+            {
+                "portName": "Taoyuan",
+                "unlocs": "TWTYN"
+            }
+        ]
+    },
+    {
+        "countryName": "Tanzania, United Republic of",
+        "ports": [
+            {
+                "portName": "Dar es Salaam",
+                "unlocs": "TZDAR"
+            },
+            {
+                "portName": "Tanga",
+                "unlocs": "TZTGT"
+            },
+            {
+                "portName": "Zanzibar",
+                "unlocs": "TZZNZ"
+            }
+        ]
+    },
+    {
+        "countryName": "Ukraine",
+        "ports": [
+            {
+                "portName": "Kiev",
+                "unlocs": "UAIEV"
+            },
+            {
+                "portName": "Illichivs'k",
+                "unlocs": "UAILK"
+            },
+            {
+                "portName": "Kherson",
+                "unlocs": "UAKHE"
+            },
+            {
+                "portName": "Mariupol (ex Zhdanov)",
+                "unlocs": "UAMPW"
+            },
+            {
+                "portName": "Odessa",
+                "unlocs": "UAODS"
+            },
+            {
+                "portName": "Sevastopol",
+                "unlocs": "UASVP"
+            }
+        ]
+    },
+    {
+        "countryName": "Uganda",
+        "ports": [
+            {
+                "portName": "Jinja",
+                "unlocs": "UGJIN"
+            },
+            {
+                "portName": "Kampala",
+                "unlocs": "UGKLA"
+            }
+        ]
+    },
+    {
+        "countryName": "United States",
+        "ports": [
+            {
+                "portName": "Kodiak",
+                "unlocs": "USADQ"
+            },
+            {
+                "portName": "Anchorage",
+                "unlocs": "USANC"
+            },
+            {
+                "portName": "Annapolis",
+                "unlocs": "USANP"
+            },
+            {
+                "portName": "Damascus",
+                "unlocs": "USAR"
+            },
+            {
+                "portName": "Atlanta",
+                "unlocs": "USATL"
+            },
+            {
+                "portName": "Baltimore",
+                "unlocs": "USBAL"
+            },
+            {
+                "portName": "Bear Creek",
+                "unlocs": "USBCC"
+            },
+            {
+                "portName": "Birmingham",
+                "unlocs": "USBHM"
+            },
+            {
+                "portName": "Nashville",
+                "unlocs": "USBNA"
+            },
+            {
+                "portName": "Boston",
+                "unlocs": "USBOS"
+            },
+            {
+                "portName": "Beaumont",
+                "unlocs": "USBPT"
+            },
+            {
+                "portName": "Brownsville",
+                "unlocs": "USBRO"
+            },
+            {
+                "portName": "Buffalo",
+                "unlocs": "USBUF"
+            },
+            {
+                "portName": "Council Bluffs",
+                "unlocs": "USCBF"
+            },
+            {
+                "portName": "Chattanooga",
+                "unlocs": "USCHA"
+            },
+            {
+                "portName": "Chicago",
+                "unlocs": "USCHI"
+            },
+            {
+                "portName": "Charleston",
+                "unlocs": "USCHS"
+            },
+            {
+                "portName": "Cleveland",
+                "unlocs": "USCLE"
+            },
+            {
+                "portName": "Port Angeles",
+                "unlocs": "USCLM"
+            },
+            {
+                "portName": "Charlotte",
+                "unlocs": "USCLT"
+            },
+            {
+                "portName": "Columbus",
+                "unlocs": "USCMH"
+            },
+            {
+                "portName": "Chippewa Falls",
+                "unlocs": "USCPF"
+            },
+            {
+                "portName": "Cape Canaveral",
+                "unlocs": "USCPV"
+            },
+            {
+                "portName": "Corpus Christi",
+                "unlocs": "USCRP"
+            },
+            {
+                "portName": "Cincinnati",
+                "unlocs": "USCVG"
+            },
+            {
+                "portName": "Cape Romanzof",
+                "unlocs": "USCZF"
+            },
+            {
+                "portName": "Dauphin",
+                "unlocs": "USDA"
+            },
+            {
+                "portName": "Dallas",
+                "unlocs": "USDAL"
+            },
+            {
+                "portName": "Decatur",
+                "unlocs": "USDEC"
+            },
+            {
+                "portName": "Denver",
+                "unlocs": "USDEN"
+            },
+            {
+                "portName": "Detroit",
+                "unlocs": "USDET"
+            },
+            {
+                "portName": "Dalton",
+                "unlocs": "USDNN"
+            },
+            {
+                "portName": "Des Moines",
+                "unlocs": "USDSM"
+            },
+            {
+                "portName": "Dutch Harbor",
+                "unlocs": "USDUT"
+            },
+            {
+                "portName": "El Paso",
+                "unlocs": "USELP"
+            },
+            {
+                "portName": "Kenai",
+                "unlocs": "USENA"
+            },
+            {
+                "portName": "Newark",
+                "unlocs": "USEWR"
+            },
+            {
+                "portName": "Fernandina Beach",
+                "unlocs": "USFEB"
+            },
+            {
+                "portName": "Fort Lauderdale",
+                "unlocs": "USFLL"
+            },
+            {
+                "portName": "Freeport",
+                "unlocs": "USFPO"
+            },
+            {
+                "portName": "Fresh Water Bay",
+                "unlocs": "USFRP"
+            },
+            {
+                "portName": "Fort Worth",
+                "unlocs": "USFWT"
+            },
+            {
+                "portName": "Greensboro",
+                "unlocs": "USGBO"
+            },
+            {
+                "portName": "Galveston",
+                "unlocs": "USGLS"
+            },
+            {
+                "portName": "Gulfport",
+                "unlocs": "USGPT"
+            },
+            {
+                "portName": "Greer",
+                "unlocs": "USGSP"
+            },
+            {
+                "portName": "Honolulu",
+                "unlocs": "USHNL"
+            },
+            {
+                "portName": "Houston",
+                "unlocs": "USHOU"
+            },
+            {
+                "portName": "Huntsville",
+                "unlocs": "USHSV"
+            },
+            {
+                "portName": "Wilmington",
+                "unlocs": "USILM"
+            },
+            {
+                "portName": "Indianapolis",
+                "unlocs": "USIND"
+            },
+            {
+                "portName": "Jacksonville",
+                "unlocs": "USJC"
+            },
+            {
+                "portName": "Jacksonville",
+                "unlocs": "USJAX"
+            },
+            {
+                "portName": "Joliet",
+                "unlocs": "USJOT"
+            },
+            {
+                "portName": "Kansas City",
+                "unlocs": "USKCK"
+            },
+            {
+                "portName": "Las Vegas",
+                "unlocs": "USLAS"
+            },
+            {
+                "portName": "Los Alamitos",
+                "unlocs": "USLAT"
+            },
+            {
+                "portName": "Los Angeles",
+                "unlocs": "USLAX"
+            },
+            {
+                "portName": "Lake Charles",
+                "unlocs": "USLCH"
+            },
+            {
+                "portName": "Long Beach",
+                "unlocs": "USLGB"
+            },
+            {
+                "portName": "Laredo",
+                "unlocs": "USLRD"
+            },
+            {
+                "portName": "Louisville",
+                "unlocs": "USLUI"
+            },
+            {
+                "portName": "Memphis",
+                "unlocs": "USMEM"
+            },
+            {
+                "portName": "Minneapolis",
+                "unlocs": "USMES"
+            },
+            {
+                "portName": "Miami",
+                "unlocs": "USMIA"
+            },
+            {
+                "portName": "Kansas City",
+                "unlocs": "USMKC"
+            },
+            {
+                "portName": "Milwaukee",
+                "unlocs": "USMKE"
+            },
+            {
+                "portName": "Mobile",
+                "unlocs": "USMOB"
+            },
+            {
+                "portName": "Morehead City",
+                "unlocs": "USMRH"
+            },
+            {
+                "portName": "Minneapolis/St Paul Apt",
+                "unlocs": "USMSP"
+            },
+            {
+                "portName": "New Orleans",
+                "unlocs": "USMSY"
+            },
+            {
+                "portName": "Newport News",
+                "unlocs": "USNNS"
+            },
+            {
+                "portName": "Port Hueneme",
+                "unlocs": "USNTD"
+            },
+            {
+                "portName": "North Charleston",
+                "unlocs": "USNTS"
+            },
+            {
+                "portName": "New York",
+                "unlocs": "USNYC"
+            },
+            {
+                "portName": "Oakland",
+                "unlocs": "USOAK"
+            },
+            {
+                "portName": "Oceanside",
+                "unlocs": "USOCN"
+            },
+            {
+                "portName": "Washington",
+                "unlocs": "USOCW"
+            },
+            {
+                "portName": "Olympia",
+                "unlocs": "USOLM"
+            },
+            {
+                "portName": "Omaha",
+                "unlocs": "USOMA"
+            },
+            {
+                "portName": "Norfolk",
+                "unlocs": "USORF"
+            },
+            {
+                "portName": "Orlando",
+                "unlocs": "USORL"
+            },
+            {
+                "portName": "Otay Mesa",
+                "unlocs": "USOYM"
+            },
+            {
+                "portName": "Palm Beach",
+                "unlocs": "USPAB"
+            },
+            {
+                "portName": "Portage Creek",
+                "unlocs": "USPCA"
+            },
+            {
+                "portName": "Port Canaveral",
+                "unlocs": "USPCV"
+            },
+            {
+                "portName": "Portland",
+                "unlocs": "USPDX"
+            },
+            {
+                "portName": "Port Elizabeth",
+                "unlocs": "USPEB"
+            },
+            {
+                "portName": "Port Everglades",
+                "unlocs": "USPEF"
+            },
+            {
+                "portName": "Panama City",
+                "unlocs": "USPFN"
+            },
+            {
+                "portName": "Pascagoula",
+                "unlocs": "USPGL"
+            },
+            {
+                "portName": "Hampton-Williamsburg-Newport News Apt",
+                "unlocs": "USPHF"
+            },
+            {
+                "portName": "Philadelphia",
+                "unlocs": "USPHL"
+            },
+            {
+                "portName": "Phoenix",
+                "unlocs": "USPHX"
+            },
+            {
+                "portName": "Peoria",
+                "unlocs": "USPIA"
+            },
+            {
+                "portName": "Pittsburgh",
+                "unlocs": "USPIT"
+            },
+            {
+                "portName": "Port Manatee",
+                "unlocs": "USPME"
+            },
+            {
+                "portName": "Pensacola",
+                "unlocs": "USPNS"
+            },
+            {
+                "portName": "Port Arthur",
+                "unlocs": "USPOA"
+            },
+            {
+                "portName": "Pennsauken",
+                "unlocs": "USPPS"
+            },
+            {
+                "portName": "Pearson",
+                "unlocs": "USPS"
+            },
+            {
+                "portName": "Portsmouth",
+                "unlocs": "USPTM"
+            },
+            {
+                "portName": "Providence",
+                "unlocs": "USPVD"
+            },
+            {
+                "portName": "Portland",
+                "unlocs": "USPWM"
+            },
+            {
+                "portName": "Port Wentworth",
+                "unlocs": "USPWN"
+            },
+            {
+                "portName": "Plymouth",
+                "unlocs": "USPYM"
+            },
+            {
+                "portName": "Rotterdam",
+                "unlocs": "USRAJ"
+            },
+            {
+                "portName": "Riviera Beach",
+                "unlocs": "USRBC"
+            },
+            {
+                "portName": "Richmond",
+                "unlocs": "USRIC"
+            },
+            {
+                "portName": "Reno",
+                "unlocs": "USRNO"
+            },
+            {
+                "portName": "Sacramento",
+                "unlocs": "USSAC"
+            },
+            {
+                "portName": "San Diego",
+                "unlocs": "USSAN"
+            },
+            {
+                "portName": "San Antonio",
+                "unlocs": "USSAT"
+            },
+            {
+                "portName": "Savannah",
+                "unlocs": "USSAV"
+            },
+            {
+                "portName": "Stockton",
+                "unlocs": "USSCK"
+            },
+            {
+                "portName": "Seattle",
+                "unlocs": "USSEA"
+            },
+            {
+                "portName": "San Francisco",
+                "unlocs": "USSFO"
+            },
+            {
+                "portName": "Salt Lake City",
+                "unlocs": "USSLC"
+            },
+            {
+                "portName": "South Saint Paul",
+                "unlocs": "USSPT"
+            },
+            {
+                "portName": "Brunswick",
+                "unlocs": "USSSI"
+            },
+            {
+                "portName": "Saint Louis",
+                "unlocs": "USSTL"
+            },
+            {
+                "portName": "Saint Paul",
+                "unlocs": "USSTP"
+            },
+            {
+                "portName": "Sturgeon Bay",
+                "unlocs": "USSUE"
+            },
+            {
+                "portName": "Superior",
+                "unlocs": "USSUW"
+            },
+            {
+                "portName": "Newburgh",
+                "unlocs": "USSWF"
+            },
+            {
+                "portName": "Santa Teresa",
+                "unlocs": "USSXT"
+            },
+            {
+                "portName": "Swartz Creek",
+                "unlocs": "USSXZ"
+            },
+            {
+                "portName": "Tacoma",
+                "unlocs": "USTIW"
+            },
+            {
+                "portName": "Tamms",
+                "unlocs": "USTMM"
+            },
+            {
+                "portName": "Toledo",
+                "unlocs": "USTOL"
+            },
+            {
+                "portName": "Tampa",
+                "unlocs": "USTPA"
+            },
+            {
+                "portName": "Savannah",
+                "unlocs": "USTSA"
+            },
+            {
+                "portName": "Tulsa",
+                "unlocs": "USTUL"
+            },
+            {
+                "portName": "Waukegan",
+                "unlocs": "USUGN"
+            },
+            {
+                "portName": "Port Chester",
+                "unlocs": "USUXZ"
+            },
+            {
+                "portName": "Tonawanda",
+                "unlocs": "USUZF"
+            },
+            {
+                "portName": "Virginia Beach",
+                "unlocs": "USVAB"
+            },
+            {
+                "portName": "Howard Beach/Queens/New York",
+                "unlocs": "USXGO"
+            },
+            {
+                "portName": "Kirkland",
+                "unlocs": "USXHF"
+            },
+            {
+                "portName": "Long Island City/Queens/New York",
+                "unlocs": "USXHO"
+            },
+            {
+                "portName": "Oakboro",
+                "unlocs": "USYOB"
+            }
+        ]
+    },
+    {
+        "countryName": "Uruguay",
+        "ports": [
+            {
+                "portName": "Colonia",
+                "unlocs": "UYCYR"
+            },
+            {
+                "portName": "Montevideo",
+                "unlocs": "UYMVD"
+            },
+            {
+                "portName": "Nueva Palmira",
+                "unlocs": "UYNVP"
+            },
+            {
+                "portName": "Paysandu",
+                "unlocs": "UYPDU"
+            }
+        ]
+    },
+    {
+        "countryName": "Saint Vincent and the Grenadines",
+        "ports": [
+            {
+                "portName": "Kingstown",
+                "unlocs": "VCKTN"
+            }
+        ]
+    },
+    {
+        "countryName": "Venezuela",
+        "ports": [
+            {
+                "portName": "Amuay",
+                "unlocs": "VEAMY"
+            },
+            {
+                "portName": "Barcelona",
+                "unlocs": "VEBLA"
+            },
+            {
+                "portName": "El Guamache",
+                "unlocs": "VEEGU"
+            },
+            {
+                "portName": "El Tablazo/Maracaibo L",
+                "unlocs": "VEETV"
+            },
+            {
+                "portName": "Guaranao Bay",
+                "unlocs": "VEGUB"
+            },
+            {
+                "portName": "Guanta",
+                "unlocs": "VEGUT"
+            },
+            {
+                "portName": "La Guaira",
+                "unlocs": "VELAG"
+            },
+            {
+                "portName": "La Salina/Maracaibo L",
+                "unlocs": "VELSV"
+            },
+            {
+                "portName": "Maracaibo",
+                "unlocs": "VEMAR"
+            },
+            {
+                "portName": "Matanzas",
+                "unlocs": "VEMTV"
+            },
+            {
+                "portName": "Puerto Cabello",
+                "unlocs": "VEPBL"
+            },
+            {
+                "portName": "Punta Cardon",
+                "unlocs": "VEPCN"
+            },
+            {
+                "portName": "Puerto Sucre",
+                "unlocs": "VEPSU"
+            },
+            {
+                "portName": "Puerto Ordaz",
+                "unlocs": "VEPZO"
+            }
+        ]
+    },
+    {
+        "countryName": "Virgin Islands, British",
+        "ports": [
+            {
+                "portName": "Road Town, Tortola",
+                "unlocs": "VGRAD"
+            },
+            {
+                "portName": "Tortola",
+                "unlocs": "VGTOV"
+            }
+        ]
+    },
+    {
+        "countryName": "Virgin Islands, U.S.",
+        "ports": [
+            {
+                "portName": "Charlotte Amalie, Saint Thomas",
+                "unlocs": "VICHA"
+            },
+            {
+                "portName": "Christiansted, Saint Croix",
+                "unlocs": "VICTD"
+            },
+            {
+                "portName": "Saint Thomas",
+                "unlocs": "VISTT"
+            },
+            {
+                "portName": "Saint Croix",
+                "unlocs": "VISTX"
+            }
+        ]
+    },
+    {
+        "countryName": "Viet Nam",
+        "ports": [
+            {
+                "portName": "Cat Lai",
+                "unlocs": "VNCLI"
+            },
+            {
+                "portName": "Cai Lan",
+                "unlocs": "VNCLN"
+            },
+            {
+                "portName": "Da Nang",
+                "unlocs": "VNDAD"
+            },
+            {
+                "portName": "Haiphong",
+                "unlocs": "VNHPH"
+            },
+            {
+                "portName": "Nha Trang",
+                "unlocs": "VNNHA"
+            },
+            {
+                "portName": "Phuoc Long",
+                "unlocs": "VNPHG"
+            },
+            {
+                "portName": "Ho Chi Minh City",
+                "unlocs": "VNSGN"
+            },
+            {
+                "portName": "Su Tu Den",
+                "unlocs": "VNSTD"
+            },
+            {
+                "portName": "Cai Mep",
+                "unlocs": "VNTOT"
+            },
+            {
+                "portName": "Tan Thuan Dong",
+                "unlocs": "VNTTD"
+            },
+            {
+                "portName": "Qui Nhon",
+                "unlocs": "VNUIH"
+            },
+            {
+                "portName": "Ho Chi Minh, VICT",
+                "unlocs": "VNVIC"
+            },
+            {
+                "portName": "Vung Tau",
+                "unlocs": "VNVUT"
+            }
+        ]
+    },
+    {
+        "countryName": "Vanuatu",
+        "ports": [
+            {
+                "portName": "Espiritu Santo",
+                "unlocs": "VUSON"
+            },
+            {
+                "portName": "Port Vila",
+                "unlocs": "VUVLI"
+            }
+        ]
+    },
+    {
+        "countryName": "Samoa",
+        "ports": [
+            {
+                "portName": "Apia",
+                "unlocs": "WSAPW"
+            }
+        ]
+    },
+    {
+        "countryName": "Yemen",
+        "ports": [
+            {
+                "portName": "Aden",
+                "unlocs": "YEADE"
+            },
+            {
+                "portName": "Hodeidah",
+                "unlocs": "YEHOD"
+            },
+            {
+                "portName": "Little Aden",
+                "unlocs": "YELAD"
+            },
+            {
+                "portName": "Mukalla",
+                "unlocs": "YEMKX"
+            }
+        ]
+    },
+    {
+        "countryName": "Mayotte",
+        "ports": [
+            {
+                "portName": "Longoni",
+                "unlocs": "YTLON"
+            }
+        ]
+    },
+    {
+        "countryName": "South Africa",
+        "ports": [
+            {
+                "portName": "Bloemfontein",
+                "unlocs": "ZABFN"
+            },
+            {
+                "portName": "Cape Town",
+                "unlocs": "ZACPT"
+            },
+            {
+                "portName": "Durban",
+                "unlocs": "ZADUR"
+            },
+            {
+                "portName": "East London",
+                "unlocs": "ZAELS"
+            },
+            {
+                "portName": "Johannesburg",
+                "unlocs": "ZAJNB"
+            },
+            {
+                "portName": "Port Elizabeth",
+                "unlocs": "ZAPLZ"
+            },
+            {
+                "portName": "Pretoria",
+                "unlocs": "ZAPRY"
+            },
+            {
+                "portName": "Richards Bay",
+                "unlocs": "ZARCB"
+            },
+            {
+                "portName": "Coega",
+                "unlocs": "ZAZBA"
+            }
+        ]
+    },
+    {
+        "countryName": "Zambia",
+        "ports": [
+            {
+                "portName": "Lusaka",
+                "unlocs": "ZAZBA"
+            }
+        ]
+    },
+    {
+        "countryName": "Zimbabwe",
+        "ports": [
+            {
+                "portName": "Bulawayo",
+                "unlocs": "ZWBUQ"
+            },
+            {
+                "portName": "Harare",
+                "unlocs": "ZWHRE"
+            },
+            {
+                "portName": "Mutare",
+                "unlocs": "ZWUTA"
+            }
+        ]
+    }
+]

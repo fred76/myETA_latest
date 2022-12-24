@@ -19,23 +19,14 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatChipsModule } from '@angular/material/chips';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
-import {ScrollingModule} from '@angular/cdk/scrolling';
-// import { MatSelectModule } from '@angular/material/select';
-// import { MatChipsModule } from '@angular/material/chips';
-// import { MatCheckboxModule } from '@angular/material/checkbox';
-// import { MatSidenavModule } from '@angular/material/sidenav';
-// import { MatListModule } from '@angular/material/list';
-// import { MatCardModule } from '@angular/material/card';
-// import { MatPaginatorModule } from '@angular/material/paginator';
-// import { MatSnackBarModule } from '@angular/material/snack-bar';
- 
+import { ScrollingModule } from '@angular/cdk/scrolling'; 
+
 
 let p: any[] = [
   MatToolbarModule,
@@ -57,7 +48,6 @@ let p: any[] = [
   MatSortModule,
   MatButtonToggleModule,
   MatTooltipModule,
-  MatProgressSpinnerModule,
   MatChipsModule,
   MatMenuModule,
   MatCheckboxModule,
@@ -65,7 +55,8 @@ let p: any[] = [
   MatProgressBarModule,
   MatRadioModule,
   MatSlideToggleModule,
-  ScrollingModule
+  ScrollingModule, 
+  // MatAutocompleteModule
   // MatSelectModule,
   // MatChipsModule,
   // MatCheckboxModule,
@@ -77,7 +68,7 @@ let p: any[] = [
   // MatPaginatorModule,
   // MatSnackBarModule
 
- 
+
 ]
 @NgModule({
   imports: p,

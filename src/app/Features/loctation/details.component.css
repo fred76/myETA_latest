@@ -1,19 +1,24 @@
+ .padding {
+     margin-top: 12px;
+     padding-left: 8px;
+     padding-right: 8px;
+ }
+
+ .pp {
+     height: 100%
+ }
+
+ .header {
+     height: 300px;
+     z-index: 99;
+     position: -webkit-sticky;
+
+     position: fixed;
+ }
+
+.icon-text {
+    display: flex;
+    align-items: center;
+}
+
  
-
-.padding{ 
-    margin-top: 12px;
-    padding-left: 8px;
-    padding-right: 8px;
-}
-
-.pp{
-    height:100%
-}
-
-.header{
-   height: 300px;
-    z-index: 99; 
-    position: -webkit-sticky;
-
-    position: fixed;
-}

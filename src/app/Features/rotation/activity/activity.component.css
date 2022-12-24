@@ -5,14 +5,16 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
 .text {
-    padding: 6px; 
-    
+    padding: 6px;
+
 }
- 
-.tris{
+
+.tris {
     padding-left: 8px;
 }
+
 .indicator {
     width: 20px;
     height: 20px;
@@ -31,7 +33,12 @@
     height: 50px;
 }
 
-.padding{ 
+.padding {
     padding-left: 12px;
     padding-right: 12px;
+}
+
+.icon-text {
+    display: flex;
+    align-items: center; 
 }

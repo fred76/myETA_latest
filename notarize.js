@@ -6,18 +6,14 @@ const electron_notarize = require('electron-notarize');
 module.exports = async function (params) {
     if (process.platform !== 'darwin') {
         return
-    }
-
-    console.log('afterSign hook triggered', params)
-
+    } 
     let appId = 'com.fred76.embedded'
 
     let appPath = path.join(
         params.appOutDir,
         `${params.packager.appInfo.productFilename}.app`
     )
-    if (!fs.existsSync(appPath)) {
-        console.log('skip')
+    if (!fs.existsSync(appPath)) { 
         return
     }
 

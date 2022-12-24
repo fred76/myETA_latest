@@ -1,112 +1,65 @@
 <div style="overflow-y:hidden; height: 100%;">
-  <mat-card class="header" [formGroup]="form">
-
-    <mat-card-title>
-
-      <span>Countries - Ports - Plt StationS - berths</span>
-
-    </mat-card-title>
-
-    <form div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="12px">
+  <mat-card [formGroup]="form">
+    <form div fxLayout="row" fxLayoutAlign="space-around stretch" fxLayoutGap="12px">
 
       <!-- COUNTRY ADD / SELECT -->
 
-      <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="12px">
-
-        <mat-form-field>
-          <mat-label>Country</mat-label>
-          <mat-select [formControl]="country" name="country">
-            <mat-option *ngFor="let country of countries" [value]="country">
-              {{ country.countryName }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <button (click)="deleteCountry(selectedCountry!)" mat-raised-button>Delete country</button>
-
-        <mat-divider></mat-divider>
-
-        <mat-form-field>
-          <mat-label>New Country</mat-label>
-          <input matInput [formControl]="countryInput" name="countryInput" placeholder="Placeholder">
-        </mat-form-field>
-
-        <button (click)="addCountry(newCountryName)" mat-raised-button>Add country</button>
-
-      </div>
-
-      <!-- PLTSTATION ADD / SELECT -->
-
-      <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="12px">
-        <mat-form-field>
-          <mat-label>pltStation</mat-label>
-          <mat-select [formControl]="pltStationPort" name="pltStationPort">
-            <mat-option *ngFor="let pltStation of pltStations" [value]="pltStation">
-              {{ pltStation.pltStationName }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <button (click)="deletePltStation(selectedPltStation!)" mat-raised-button>Delete Plt/S</button>
-
-        <mat-divider></mat-divider>
-
-        <mat-form-field>
-          <mat-label>New Plt/S</mat-label>
-          <input matInput [formControl]="pltStationInput" name="pltStationInput" placeholder="Placeholder">
-        </mat-form-field>
-
-        <button (click)="addPltStation(newPltStationyName,selectedCountry!)" mat-raised-button>Add Plt/S</button>
-      </div>
+      <mat-form-field style="margin-top: auto">
+        <mat-label>Country</mat-label>
+        <mat-select [formControl]="country" name="country">
+          <mat-option *ngFor="let country of countries" [value]="country">
+            {{ country.countryName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
       <!-- PORT ADD / SELECT -->
 
-      <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="12px">
+      <div fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="12px">
         <mat-form-field>
           <mat-label>Port</mat-label>
-          <mat-select [formControl]="portsCountry" name="portsCountry">
-            <mat-option *ngFor="let ports of portsByCountry" [value]="ports">
-              {{ ports.portName }}
+          <mat-select [formControl]="port" name="port">
+            <mat-option *ngFor="let port of ports" [value]="port">
+              {{ port.portName }} - {{port.unlocs}}
             </mat-option>
           </mat-select>
         </mat-form-field>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="12px">
+          <mat-form-field>
+            <mat-label>Port</mat-label>
+            <input matInput [formControl]="portInput" name="portInput">
+          </mat-form-field>
 
-        <button mat-raised-button (click)="deletePort(selectedPort!)"> Delete Port </button>
-
-        <mat-divider></mat-divider>
-
-        <mat-form-field>
-          <mat-label>New Port</mat-label>
-          <input matInput [formControl]="portInput" name="portInput" placeholder="Placeholder">
-        </mat-form-field>
-
-        <button (click)="addPort(newPortyName,selectedPltStation!)" mat-raised-button>Add Port</button>
-
-      </div>
+          <button mat-icon-button (click)="addPort(newPort!,selectedCountry!)" [disabled]="!form.get('country')?.dirty">
+            <mat-icon>add_circle_outline</mat-icon>
+          </button>
+        </div>
+      </div> 
+      
       <!-- Berth ADD / SELECT -->
 
-      <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="12px">
-
+      <div fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="12px">
         <mat-form-field>
           <mat-label>Berth</mat-label>
-          <mat-select [formControl]="berthPltStation" name="berthPltStation">
+          <mat-select [formControl]="berth" name="berth">
             <mat-option *ngFor="let berth of berths" [value]="berth">
               {{ berth.berthName }}
             </mat-option>
           </mat-select>
         </mat-form-field>
-
-        <button (click)="deleteBerth(selectedBerth!)" mat-raised-button>delete Berth</button>
-
-        <mat-divider></mat-divider>
-
-        <mat-form-field>
-          <mat-label>New Berth</mat-label>
-          <input matInput [formControl]="berthInput" name="berthInput" placeholder="Placeholder">
-        </mat-form-field>
-        <button (click)="addBerth(newBerthName,selectedPort!)" mat-raised-button>Add Berth</button>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="12px">
+          <mat-form-field>
+            <mat-label>New Berth</mat-label>
+            <input matInput [formControl]="berthInput" name="berthInput">
+          </mat-form-field>
+          <button mat-icon-button (click)="addBerth(newBerthName!,selectedPort!)"
+            [disabled]="!form.get('berthInput')?.dirty">
+            <mat-icon>add_circle_outline</mat-icon>
+          </button>
+        </div>
       </div>
     </form>
+
   </mat-card>
 
   <mat-tab-group style="height: calc(100% - 300px); overflow-y:auto">
@@ -115,42 +68,40 @@
       <ng-container *ngIf="selectedCountry;else elseTemplate">
         <app-country-details [country]="selectedCountry"></app-country-details>
       </ng-container>
-
-
       <ng-template #elseTemplate>
         <div class="cont">
           <h1 class="center">Select Country to add notes</h1>
-        </div> 
+        </div>
       </ng-template>
     </mat-tab>
     <mat-tab label="Port Notes">
       <ng-container *ngIf="selectedPort;else elseTemplate1">
         <app-port-details [port]="selectedPort"></app-port-details>
-      </ng-container>  
-      <ng-template #elseTemplate1> 
+      </ng-container>
+      <ng-template #elseTemplate1>
         <div class="cont">
           <h1 class="center">Select Port to add notes</h1>
-        </div> 
+        </div>
       </ng-template>
     </mat-tab>
-    <mat-tab label="Berth Notes"> 
+    <mat-tab label="Berth Notes">
       <ng-container *ngIf="selectedBerth;else elseTemplate2">
         <app-berth-details [berth]="selectedBerth"></app-berth-details>
-      </ng-container> 
-      <ng-template #elseTemplate2> 
+      </ng-container>
+      <ng-template #elseTemplate2>
         <div class="cont">
           <h1 class="center">Select Berth to add notes</h1>
-        </div> 
+        </div>
       </ng-template>
     </mat-tab>
-    <mat-tab label="Port Agencies"> 
-      <ng-container *ngIf="selectedBerth;else elseTemplate3">
+    <mat-tab label="Port Agencies">
+      <ng-container *ngIf="selectedPort;else elseTemplate3">
         <app-agency [port]="selectedPort!"></app-agency>
-      </ng-container> 
-      <ng-template #elseTemplate3> 
+      </ng-container>
+      <ng-template #elseTemplate3>
         <div class="cont">
           <h1 class="center">Select Port to add Agencies</h1>
-        </div> 
+        </div>
       </ng-template>
     </mat-tab>
   </mat-tab-group>

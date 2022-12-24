@@ -1,0 +1,33 @@
+<mat-card>
+    <mat-card-title>Import File</mat-card-title>
+    <mat-card-subtitle>
+        <h3>Would You like import this file</h3>
+        <h3>Following data will be replaced</h3>
+    </mat-card-subtitle>
+    <ul>
+        <li>
+            <p>Country & Country Notes</p>
+        </li>
+        <li>
+            <p>Ports & Ports Notes</p>
+        </li>
+        <li>
+            <p>Berths & Berths notes</p>
+        </li>
+        <li>
+            <p>Pilot Station</p>
+        </li>
+        <li>
+            <p>Agencies</p>
+        </li>
+        <li>Rotation</li>
+    </ul>
+
+    <mat-card-actions>
+        <div div fxLayout="row" fxLayoutAlign="end center" flex="grow" style="padding-top: 8px"> 
+            <button mat-button color="primary" mat-dialog-close >Close</button> 
+            <button mat-button color="primary"  [mat-dialog-close]="true" cdkFocusInitial>Import</button> 
+        </div>
+    </mat-card-actions>
+
+</mat-card>

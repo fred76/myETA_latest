@@ -28,20 +28,18 @@ import { ActivityShortComponent } from './Features/rotation/activity/activity-sh
 import { CountryDetailsComponent } from './Features/loctation/country-details/country-details.component';
 import { BerthDetailsComponent } from './Features/loctation/berth-details/berth-details.component';
 import { PortDetailsComponent } from './Features/loctation/port-details/port-details.component';
-import { AgencyComponent } from './Features/loctation/agency/agency.component'; 
+import { AgencyComponent } from './Features/loctation/agency/agency.component';
+import { AgencyMaskComponent } from './Features/loctation/agency/agency-mask/agency-mask.component';
+import { LegPlannerComponent } from './Features/rotation/port-activities/leg-planner/leg-planner.component';
+import { PdfMaskComponent } from './Features/utility/pdf-mask/pdf-mask.component';
+import { LoaderComponent } from './Features/utility/loader/loader.component';
+import { ImportDialogComponent } from './Features/utility/import-dialog/import-dialog.component';
+import { InstructionComponent } from './Features/utility/instruction/instruction.component';
+import { AboutComponent } from './Features/utility/about/about.component'; 
  
-// const dbConfig: DBConfig = {
-//   name: 'MyDb',
-//   version: 1,
-//   objectStoresMeta: [{
-//     store: 'people',
-//     storeConfig: { keyPath: 'id', autoIncrement: true },
-//     storeSchema: [
-//       { name: 'name', keypath: 'name', options: { unique: false } },
-//       { name: 'email', keypath: 'email', options: { unique: false } }
-//     ]
-//   }]
-// };
+ 
+ 
+ 
 
 @NgModule({
   declarations: [
@@ -63,7 +61,14 @@ import { AgencyComponent } from './Features/loctation/agency/agency.component';
     CountryDetailsComponent,
     BerthDetailsComponent,
     PortDetailsComponent,
-    AgencyComponent
+    AgencyComponent,
+    AgencyMaskComponent,
+    LegPlannerComponent,
+    PdfMaskComponent,
+    LoaderComponent,
+    ImportDialogComponent,
+    InstructionComponent,
+    AboutComponent, 
   ],
   imports: [
     BrowserModule,
@@ -71,8 +76,7 @@ import { AgencyComponent } from './Features/loctation/agency/agency.component';
     AppRoutingModule,
     MaterialModule,
     DateFnsModule.forRoot(),
-    FlexLayoutModule,
-    // NgxIndexedDBModule.forRoot(dbConfig),
+    FlexLayoutModule, 
     FormsModule,
     ReactiveFormsModule  
 

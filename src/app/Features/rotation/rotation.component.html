@@ -1,59 +1,51 @@
-<div fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="12px">
+<form fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="12px" [formGroup]="form">
   
     <!-- GLOBAL INPUT -->
     <mat-card>
-
-        <ng-container *ngIf="!isRotation ;else elseTemplate">
-            <div fxLayout="row" fxLayoutAlign="stretch stretch">
-                <button mat-raised-button color="primary" style="width: 100%" (click)="isShowRotationInitial()">Add
-                    Rotation</button>
-            </div>
-        </ng-container>
-
-        <ng-template #elseTemplate>
-
-            <form fxLayout="row" fxLayoutAlign="space-around center" [formGroup]="form">
+ 
+      
+            <div fxLayout="row" fxLayoutAlign="space-around center" >
                 <mat-form-field>
                     <input [formControl]="dateTime" name="dateTime" matInput type="datetime-local"
                         placeholder="Date & Local Time">
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>UTC Time</mat-label>
-                    <input matInput type="number" placeholder="Ex. 5 Hrs" [formControl]="utcTime" step="0.5" min="-12"
-                        max="12">
+                    <input matInput type="number" placeholder="Ex. 5 Hrs" [formControl]="utc" step="0.5" min="-12"
+                        max="12"  >
                     <span matSuffix>Hrs</span>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>ROB FO</mat-label>
-                    <input matInput type="number" placeholder="ROB in Metric Tons" [formControl]="robFo">
+                    <input matInput type="number" placeholder="ROB in Metric Tons" [formControl]="robFO">
                     <span matSuffix>MT</span>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>ROB DO</mat-label>
-                    <input matInput type="number" placeholder="ROB in Metric Tons" [formControl]="robDo">
+                    <input matInput type="number" placeholder="ROB in Metric Tons" [formControl]="robDO">
                     <span matSuffix>MT</span>
                 </mat-form-field>
                 
                 
                  
-            </form>
-        </ng-template>
+            </div> 
     </mat-card>
 
-    <div *ngIf="rotation">
-        <div *ngFor="let actXloc of rotation.activityPerLocations let i = index">
+    <div *ngIf="rotation$ | async, let rotation">
+        <div *ngFor="let actXloc of location let i = index">
             <app-port-activities  [indexLocation]='i' [activityPerLocationModel]="actXloc" style="margin: 6px"></app-port-activities>
         </div>
     </div>
 
-    <div *ngIf="isShowAddRotationButton" fxLayout="row" fxLayoutAlign="space-around center">
+    <div *ngIf="form.valid" fxLayout="row" fxLayoutAlign="space-around center">
         <div fxFlex="grow" class="divider_blue"> </div>
         <div class="padding">
-            <button mat-mini-fab color="default" (click)="addEmptyActivityPerLocation()">
+            <button style="margin-left: 8px" mat-raised-button color="primary"  (click)="addEmptyActivityPerLocation()">
                 <mat-icon>add</mat-icon>
-            </button>
+                Add Leg & Port Activities
+            </button> 
         </div>
     </div>
 
      
-</div>
+</form>

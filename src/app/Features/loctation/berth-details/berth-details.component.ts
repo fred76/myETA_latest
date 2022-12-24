@@ -37,6 +37,7 @@ export class BerthDetailsComponent implements OnInit, OnChanges {
     this.form = this.fb.group({
       items: this.fb.array([])
     })
+    
     this.appService.getBerthNotes(this.berth).then(p => {
       p.map(o => {
         (this.form.get('items') as FormArray).push(this.createItem(o.berthTitle, o.berthNote))

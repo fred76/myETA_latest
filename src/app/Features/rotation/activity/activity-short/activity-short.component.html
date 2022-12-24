@@ -1,8 +1,8 @@
-<mat-card class="div-card" fxLayout="row" fxLayoutAlign="space-between stretch">
+<mat-card class="div-card" fxLayout="row" fxLayoutAlign="space-between center">
     <div fxLayout="row" fxLayoutAlign="start center" fxFlex>
         <div fxLayout="column" fxLayoutAlign="center start">
-            <h2 class="text">{{ activity.activityType}} </h2>
-            <div fxLayout="row" fxLayoutAlign="start center"r>
+            <h2 class="text">{{activity.activityType}} </h2>
+            <div fxLayout="row" fxLayoutAlign="start center">
                 <div *ngIf="activity.activityType === 'Sea Passage' && activity.ECA === 'isECA'">
                     <h4> (ECA Area)</h4>
                 </div>

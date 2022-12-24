@@ -1,139 +1,107 @@
 import { Component, OnInit } from '@angular/core';
-import { MyElectronService } from 'src/app/Core/Services/electron.service'; 
-import { Berth, Country, PltStation, Port } from 'src/shared/schema/location.schema';
+import { MyElectronService } from 'src/app/Core/Services/electron.service';
+import { Berth, Country, Port } from 'src/shared/schema/location.schema';
 import {
   FormControl,
-  FormGroup,  
+  FormGroup,
   Validators,
 } from '@angular/forms';
 import { RotationService } from 'src/app/Core/Services/rotation.service';
 
- 
+
 @Component({
   selector: 'app-loctation',
   templateUrl: './loctation.component.html',
   styleUrls: ['./loctation.component.css']
 })
 export class LoctationComponent implements OnInit {
-  constructor(private appservice: MyElectronService, private rotationService  :RotationService) {
-
+  constructor(private appservice: MyElectronService, private rotationService: RotationService) {
+   
     this.getCountry();
-
+ 
     this.form = new FormGroup({
       country: this.country,
-      portCountry: this.portsCountry,
-      pltStationPort: this.pltStationPort,
-      berthPltStation: this.berthPltStation,
-      countryInput: this.countryInput,
-      portInput: this.portInput,
-      pltStationInput: this.pltStationInput,
-      berthInput: this.berthInput,
-
+      port: this.port, 
+      berth: this.berth,
+      portInput: this.portInput, 
+      berthInput: this.berthInput 
     });
   }
 
-  form: FormGroup; 
+  form: FormGroup;
+
+
 
   country = new FormControl<Country | null>(null,
-    { nonNullable: true, validators: [Validators.required ] });
+    { nonNullable: true, validators: [Validators.required] });
 
-    pltStationPort = new FormControl<PltStation | null>({ value: null, disabled: true },
-    { nonNullable: true, validators: [Validators.required ] });
-
-  portsCountry = new FormControl<Port | null>({ value: null, disabled: true },
-    { nonNullable: true, validators: [Validators.required ] });
-
-  
-
-  berthPltStation = new FormControl<Berth | null>({ value: null, disabled: true },
-    { nonNullable: true, validators: [Validators.required ] });
+  port = new FormControl<Port | null>({ value: null, disabled: true },
+    { nonNullable: true, validators: [Validators.required] });
  
-  countryInput = new FormControl<string>('', { nonNullable: true })
+  berth = new FormControl<Berth | null>({ value: null, disabled: true },
+    { nonNullable: true, validators: [Validators.required] });
 
-  portInput = new FormControl<string>('', { nonNullable: true })
 
-  pltStationInput = new FormControl<string>('', { nonNullable: true })
+  portInput = new FormControl<string>('', { nonNullable: true }) 
 
   berthInput = new FormControl<string>('', { nonNullable: true })
 
-  
+
   countries: Country[] = []
-  portsByCountry: Port[] = []
-  pltStations: PltStation[] = []
+  ports: Port[] = [] 
   berths: Berth[] = []
 
   selectedCountry: Country | null
-  selectedPort: Port | null
-  selectedPltStation: PltStation | null
+  selectedPort: Port | null 
   selectedBerth: Berth | null
- 
-  newCountryName: string
-  newPortyName: string
-  newPltStationyName: string
-  newBerthName: string
+
+  newPort: string | null 
+  newBerthName: string | null
 
   ngOnInit(): void {
 
-    this.country.valueChanges.subscribe((country) => {  
-      this.pltStationPort.reset();
-      this.pltStationPort.disable(); 
-      this.selectedCountry = null
-      this.selectedPltStation = null
-      this.selectedPort = null
-      this.selectedBerth = null
-      if (country) { 
-        this.selectedCountry = country 
-        this.getPltStation(country)
-        this.pltStationPort.enable();
+    this.country.valueChanges.subscribe((country) => {
+      this.port.reset();
+      this.port.disable();
+      if (country) {
+        this.selectedCountry = country
+        this.getPort(country)
+        this.port.enable();
       }
     });
 
-    this.pltStationPort.valueChanges
-    .subscribe((pltStation) => {
-      this.portsCountry.reset();
-      this.portsCountry.disable();
-      this.selectedPltStation = null
-      this.selectedPort = null
-      this.selectedBerth = null
-      if (pltStation) {
-        this.selectedPltStation = pltStation 
-        this.getPort(pltStation)
-        this.portsCountry.enable();
-      }
+    this.port.valueChanges
+      .subscribe((port) => {
+        this.berth.reset();
+        this.berth.disable();
+        if (port) {
+          this.selectedPort = port
+          this.getBerth(port)
+          this.berth.enable();
+        }
+      })
+
+  
+
+
+
+    this.berth.valueChanges
+      .subscribe((berth) => {
+        if (berth) {
+          this.selectedBerth = berth
+        }
+      })
+
+
+
+
+    this.portInput.valueChanges.subscribe((newPort) => {
+      this.newPort = newPort
+
     })
 
-    this.portsCountry.valueChanges
-      .subscribe((port) => {
-        this.berthPltStation.reset();
-        this.berthPltStation.disable();
-        this.selectedPort = null
-        this.selectedBerth = null
-        if (port) {
-          this.selectedPort = port 
-          this.getBerth(port)
-          this.berthPltStation.enable();
-        }
-      })
-   
-    this.berthPltStation.valueChanges
-      .subscribe((berth) => {  
-        this.selectedBerth = null
-        if (berth) {
-          this.selectedBerth = berth 
-         
-        }
-      })
-  
  
-    this.countryInput.valueChanges.subscribe((newCountryName) => {
-      this.newCountryName = newCountryName
-    })
-    this.portInput.valueChanges.subscribe((newPortyName) => {
-      this.newPortyName = newPortyName
-    })
-    this.pltStationInput.valueChanges.subscribe((newPltStationyName) => {
-      this.newPltStationyName = newPltStationyName
-    })
+
     this.berthInput.valueChanges.subscribe((newBerthName) => {
       this.newBerthName = newBerthName
     })
@@ -144,108 +112,39 @@ export class LoctationComponent implements OnInit {
       this.countries = countries
     })
   }
-
- getPltStation(country: Country) {
-    this.appservice.getPltStation(country).then(pltStations => {
-      this.pltStations = pltStations
-    })
-  }
-   
-  getPort(pltStation: PltStation) {
-    this.appservice.getPort(pltStation).then(ports => {
-      this.portsByCountry = ports
-    })
-  }
-
  
-
+  getPort(country: Country) {
+    this.appservice.getPort(country).then(ports => {
+      this.ports = ports
+    })
+  }
+ 
   getBerth(port: Port) {
     this.appservice.getBerth(port).then(berths => {
       this.berths = berths
     })
   }
- 
-  addCountry(country: string): void {
-    let newCountry = new Country();
-    newCountry.countryName = country
-    this.appservice.addCountry(newCountry).then(country => { 
-      this.countries.push(country) 
-      this.country.patchValue(country)
-    }
-    )
-  }
 
-   addPltStation(pltStation: string, country: Country): void { 
-    let newPltStation = new PltStation();
-    newPltStation.pltStationName = pltStation
-    this.appservice.addPltStation(newPltStation, country).then(pltStation => {
-     this.pltStations.push(pltStation)
-     this.pltStationPort.patchValue(pltStation)
-    })
-  }
-
-  addPort(port: string, pltStation: PltStation): void {
+  addPort(port: string, country: Country): void {
     let newPort = new Port();
-    newPort.portName = port 
-     
-    this.appservice.addPort(newPort, pltStation).then(port => {  
-      this.portsByCountry.push(port) 
-      this.portsCountry.patchValue(port)
+    newPort.portName = port
+
+    this.appservice.addPort(newPort, country).then(port => {
+      port.unlocs = ''
+      this.ports.push(port)
+      this.form.get('port')!.patchValue(port!)
     })
   }
-
  
-  addBerth( berth: string, port: Port): void { 
+ 
+
+  addBerth(berth: string, port: Port): void {
     let newBerth = new Berth();
     newBerth.berthName = berth
     this.appservice.addBerth(newBerth, port).then(berth => {
-     this.berths.push(berth)
-     this.berthPltStation.patchValue(berth)
+      this.berths.push(berth)
+      this.form.get('berth')!.patchValue(berth!)
+      this.form.get('berth')!.markAsDirty()
     })
   }
-
-  deleteCountry(country: Country) {
-    this.appservice.deleteCountry(country).then(countries => {
-      this.countries = countries 
-      this.portsCountry.reset();
-      this.portsCountry.disable();
-      this.pltStationPort.reset();
-      this.pltStationPort.disable();
-      this.berthPltStation.reset();
-      this.berthPltStation.disable();
-    })
-  }
-
-  deletePort(port: Port) {
-    this.appservice.deletePort(port).then(ports => {
-       this.portsByCountry = ports  
-       this.portsCountry.reset();
-       this.portsCountry.disable();
-       this.pltStationPort.reset();
-       this.pltStationPort.disable();
-       this.berthPltStation.reset();
-       this.berthPltStation.disable();
-    })
-  }
-
-  deletePltStation(pltStation: PltStation) {
-    this.appservice.deletePltStation(pltStation).then(pltStations => {
-       this.pltStations = pltStations  
-       this.pltStationPort.reset();
-       this.pltStationPort.disable();
-       this.berthPltStation.reset();
-       this.berthPltStation.disable();
-    })
-  }
-
-  deleteBerth(berth: Berth) { 
-    this.appservice.deleteBerth(berth).then(berths => {
-       this.berths = berths 
-       this.berthPltStation.reset();
-       this.berthPltStation.disable();
-    })
-  }
-
-  
-
 }

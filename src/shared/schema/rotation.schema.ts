@@ -1,7 +1,8 @@
 
 import {
-  Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, CreateDateColumn, ManyToMany, JoinTable
+  Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, Relation
 } from 'typeorm';
+import { Agency } from './location.schema';
 
 @Entity()
 export class Rotation {
@@ -39,6 +40,9 @@ export class ActivityPerLocation {
   berth: string
   @Column({ nullable: true })
   utcTime: number
+  @Column({ nullable: true })
+  idOrder: number
+
 
   @ManyToOne(() => Rotation, (rotation) => rotation.activityPerLocations, { onDelete: "CASCADE", orphanedRowAction: 'delete' })
   rotation: Rotation
@@ -49,6 +53,10 @@ export class ActivityPerLocation {
   })
 
   activities: Activity[]
+
+  // AGGIUNTO
+
+
 }
 
 @Entity()
@@ -69,13 +77,13 @@ export class Activity {
   @Column({ nullable: true })
   mainEngineFuel: 'off' | 'fo' | 'do'
   @Column({ nullable: true })
-  ddggOne: 'on' | 'off'
+  ddggOne: 'off' | 'fo' | 'do'
   @Column({ nullable: true })
-  ddggTwo: 'on' | 'off'
+  ddggTwo: 'off' | 'fo' | 'do'
   @Column({ nullable: true })
-  ddggThree: 'on' | 'off'
-  @Column({ nullable: true })
-  ddGGBunker: 'fo' | 'do'
+  ddggThree: 'off' | 'fo' | 'do'
+  // @Column({ nullable: true })
+  // ddGGBunker: 'off' | 'fo' | 'do'
   @Column({ nullable: true })
   boilerOneFuel: 'off' | 'fo' | 'do'
   @Column({ nullable: true })
@@ -133,7 +141,9 @@ export class Activity {
   @Column({ nullable: true })
   mainEngine: number
   @Column({ nullable: true })
-  ddGG: number
+  ddGGFONumber: number
+  @Column({ nullable: true })
+  ddGGDONumber: number
   @Column({ nullable: true })
   ddGGFODO: string
   @Column({ nullable: true })
@@ -143,10 +153,19 @@ export class Activity {
   @Column({ nullable: true })
   ECA: 'isECA' | 'notECA'
   @Column({ nullable: true })
-  EoSP: 'isEoSP' | 'notEoSP'
+  EoSP: 'isEoSP' | 'notEoSP' 
+  @Column({ nullable: true })
+  idOrder: number
 
-  @ManyToOne(() => ActivityPerLocation, (activityPerLocation) => activityPerLocation.activities, { onDelete: "CASCADE", orphanedRowAction: 'delete' })
-  activityPerLocation: ActivityPerLocation
+  @ManyToOne(() => ActivityPerLocation,
+    (activityPerLocation) => activityPerLocation.activities,
+    { onDelete: "CASCADE", orphanedRowAction: 'delete' })
+
+  public activityPerLocation: ActivityPerLocation
+
+  @ManyToOne(() => Agency, (agency) => agency.activities, { nullable: true, onDelete: "SET NULL" })
+  public agency: Agency
+
 
 }
 

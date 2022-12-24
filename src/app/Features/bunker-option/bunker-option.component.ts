@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { MyElectronService } from 'src/app/Core/Services/electron.service';
 import { RotationService } from 'src/app/Core/Services/rotation.service';
@@ -86,6 +86,7 @@ export class BunkerOptionComponent implements OnInit, OnDestroy {
   onSubmit() { 
     this.electronService.addBunker(this.form.value)
     this.rotationService.bunkerOption$.next(this.form.value) 
+    this.rotationService.noBunker$.next(true)
   }
 
 

@@ -1,0 +1,47 @@
+<mat-card>
+
+    <mat-card-title> Export PDF Rotation</mat-card-title>
+
+    <h3>Set up PDF</h3>
+<form [formGroup]="form">
+    <p><mat-checkbox formControlName="byPort">One page per Port</mat-checkbox></p>  
+ 
+    <h3>Select activities to export</h3>
+
+    <div fxLayout="row wrap" fxLayoutGap="16px">
+        <p><mat-checkbox formControlName='seaPassage'>Sea Passage</mat-checkbox></p> 
+        <p><mat-checkbox formControlName='pilotageInbound'>Pilotage Inbound</mat-checkbox></p>
+        <p><mat-checkbox formControlName='pilotageOutbound'>Pilotage Outbound</mat-checkbox></p>
+        <p><mat-checkbox formControlName='loading'>Loading</mat-checkbox></p>
+        <p><mat-checkbox formControlName='discharging'>Discharging</mat-checkbox></p>
+        <p><mat-checkbox formControlName='tankCleaning'>Tank Cleaning</mat-checkbox></p>
+        <p><mat-checkbox formControlName='shifting'>ShiftingPort</mat-checkbox></p>
+        <p><mat-checkbox formControlName='laybyBerth'>Layby Berth</mat-checkbox></p>
+        <p><mat-checkbox formControlName='bunkering'>Bunkering</mat-checkbox></p>
+        <p><mat-checkbox formControlName='anchoring'>Anchoring</mat-checkbox></p>
+        <p><mat-checkbox formControlName='drifting'>Drifting</mat-checkbox></p>
+        <p><mat-checkbox formControlName='canalTransit'>Canal Transit</mat-checkbox></p>
+    </div>
+
+    <h3>Select column to export</h3>
+
+    <div fxLayout="row wrap" fxLayoutGap="16px">
+        <p><mat-checkbox formControlName="activity">Activity Type</mat-checkbox></p>
+        <p><mat-checkbox formControlName="ETX">ETX</mat-checkbox></p>
+        <p><mat-checkbox formControlName="dateAndTime">Date & Time</mat-checkbox></p>
+        <p><mat-checkbox formControlName="expectedTime">Duration of the activity</mat-checkbox></p>
+        <p><mat-checkbox formControlName="ladden">Ladden Percentage</mat-checkbox></p>
+        <p><mat-checkbox formControlName="cargo">MT of Cargo on board </mat-checkbox></p>
+        <p><mat-checkbox formControlName="robDO">ROB DO</mat-checkbox></p>
+        <p><mat-checkbox formControlName="robFO">ROB FO</mat-checkbox></p>
+        <p><mat-checkbox formControlName="restockFO">Resotck FO</mat-checkbox></p>
+        <p><mat-checkbox formControlName="restockDO">Restock DO</mat-checkbox></p>
+        <p><mat-checkbox formControlName="agency">Agency Details</mat-checkbox></p>
+    </div>
+</form>
+
+<div div fxLayout="row" fxLayoutAlign="end center" flex="grow" style="padding-top: 8px"> 
+    <button mat-button color="primary" mat-dialog-close >Close</button> 
+    <button mat-button color="primary"  [mat-dialog-close]="form.value"  cdkFocusInitial>Save</button> 
+</div>
+</mat-card>

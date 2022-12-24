@@ -1,9 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'; 
-import { Activity } from 'src/shared/schema/rotation.schema';
 import { PortActivitiesComponent } from '../../port-activities/port-activities.component';
-
+import { BehaviorSubject } from 'rxjs';
+import { MyElectronService } from 'src/app/Core/Services/electron.service';
+import { Agency } from 'src/shared/schema/location.schema';
 @Component({
   selector: 'app-sea-passage',
   templateUrl: './sea-passage.component.html',
@@ -20,7 +21,7 @@ export class SeaPassageComponent implements OnInit {
   ddggOne: FormControl
   ddggTwo: FormControl
   ddggThree: FormControl
-  ddGGBunker: FormControl
+  // ddGGBunker: FormControl
   boilerOneFuel: FormControl
   boilerTwoFuel: FormControl
   boilerThreeFuel: FormControl
@@ -31,47 +32,51 @@ export class SeaPassageComponent implements OnInit {
   ECA: FormControl 
   EoSP: FormControl 
   ETX: FormControl
-  
+  agencies: FormControl 
+
+
+  agenciesPerLocation$ = new BehaviorSubject<Agency[] | null>(null);
 
   constructor(public dialogRef: MatDialogRef<PortActivitiesComponent>,
-    @Inject(MAT_DIALOG_DATA)  public data: Activity,
+    @Inject(MAT_DIALOG_DATA) public data: any, private appservice: MyElectronService
   ) {
+    this.appservice.getAgencByPortName(this.data.portName).then(p => {   
+      this.agenciesPerLocation$.next(p)
+    })
 
   this.distance = new FormControl(data.distance, Validators.required)
   this.speed = new FormControl(data.speed, Validators.required)
-  this.cargoOnBoardMT = new FormControl(data.cargoOnBoardMT, Validators.required)
+  this.cargoOnBoardMT = new FormControl(data.cargoOnBoardMT )
   this.laddenPercentage = new FormControl(data.laddenPercentage, [
     Validators.min(0),
     Validators.max(100),
     Validators.required
   ]) 
-  this.mainEngineFuel = new FormControl(data.mainEngineFuel, Validators.required)
-  this.ddggOne = new FormControl(data.ddggOne, Validators.required);
-  this.ddggTwo = new FormControl(data.ddggTwo, Validators.required);
-  this.ddggThree = new FormControl(data.ddggThree, Validators.required);
-  this.ddGGBunker = new FormControl(data.ddGGBunker, Validators.required);
-  this.boilerOneFuel = new FormControl(data.boilerOneFuel, Validators.required);
-  this.boilerTwoFuel = new FormControl(data.boilerTwoFuel, Validators.required);
-  this.boilerThreeFuel = new FormControl(data.boilerThreeFuel, Validators.required);
+  this.mainEngineFuel = new FormControl(data.mainEngineFuel)
+  this.ddggOne = new FormControl(data.ddggOne);
+  this.ddggTwo = new FormControl(data.ddggTwo);
+  this.ddggThree = new FormControl(data.ddggThree);
+  // this.ddGGBunker = new FormControl(data.ddGGBunker);
+  this.boilerOneFuel = new FormControl(data.boilerOneFuel);
+  this.boilerTwoFuel = new FormControl(data.boilerTwoFuel);
+  this.boilerThreeFuel = new FormControl(data.boilerThreeFuel);
    this.boilerOnePercentage = new FormControl(data.boilerOnePercentage, [
       Validators.min(0),
-      Validators.max(100),
-      Validators.required
+      Validators.max(100) 
     ]);
    this.boilerTwoPercentage = new FormControl(data.boilerTwoPercentage, [
       Validators.min(0),
-      Validators.max(100),
-      Validators.required
+      Validators.max(100) 
     ]);
    this.boilerThreePercentage = new FormControl(data.boilerThreePercentage, [
       Validators.min(0),
-      Validators.max(100),
-      Validators.required
+      Validators.max(100) 
     ]);
   this.activityType = new FormControl('Sea Passage');
   this.ECA = new FormControl(data.ECA, Validators.required);
   this.EoSP = new FormControl(data.EoSP, Validators.required);
   this.ETX = new FormControl('ETA');
+  this.agencies = new FormControl<Agency[] | null>(this.agenciesPerLocation$.getValue()!);
 
   this.form = new FormGroup({
     distance: this.distance,
@@ -82,7 +87,7 @@ export class SeaPassageComponent implements OnInit {
     ddggOne: this.ddggOne,
     ddggTwo: this.ddggTwo,
     ddggThree: this.ddggThree,
-    ddGGBunker: this.ddGGBunker,
+    // ddGGBunker: this.ddGGBunker,
     boilerOneFuel: this.boilerOneFuel,
     boilerTwoFuel: this.boilerTwoFuel,
     boilerThreeFuel: this.boilerThreeFuel,
@@ -92,17 +97,12 @@ export class SeaPassageComponent implements OnInit {
     ETX: this.ETX,
     ECA: this.ECA,
     EoSP: this.EoSP,
-    activityType: this.activityType
+    activityType: this.activityType,
+    agency: this.agencies
     
   })
 
- 
-  this.form.valueChanges.subscribe(p => {
-    console.log(this.EoSP);
-    console.log(this.ECA);
-    console.log(p);
-    
-  })
+  
  
 
  

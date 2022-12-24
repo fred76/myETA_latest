@@ -55,3 +55,39 @@ electron-builder Exit code:: 1. Command failed: which python failedTask=build st
  timestamp?,
  type?,
  x64ArchFiles? }
+
+"files": [
+            "dist/**/*",
+            "package.json",
+            "embeddedprovisionprofile.provisionprofile",
+            "entitlements.mac.plist",
+            "Certificati.p12",
+            "notarize.js"
+        ],
+        "mac": {
+            "category": "public.app-category.productivity",
+            "entitlements": "./entitlements.mac.plist",
+            "entitlementsInherit": "./entitlements.mac.plist",
+            "hardenedRuntime": true,
+            "provisioningProfile": "embeddedprovisionprofile.provisionprofile",
+            "target": [
+                "zip"
+            ]
+        },
+        "win": {
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ]
+        },
+        "nsis": {
+            "oneClick": false,
+            "perMachine": false,
+            "allowElevation": true,
+            "allowToChangeInstallationDirectory": true
+        }
+    },

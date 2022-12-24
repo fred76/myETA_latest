@@ -1,13 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { MyElectronService } from './electron.service';
 import { BunkerOption } from 'src/shared/schema/bunker.schema';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Rotation, ActivityPerLocation, Activity } from 'src/shared/schema/rotation.schema';
 
 
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import { PDFsetup } from 'src/shared/entity/rotation-model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +17,13 @@ export class RotationService {
 
   toMilliSecond: number = 3600000
 
-  constructor(private appservice: MyElectronService) { }
+  constructor(private appservice: MyElectronService, private zone: NgZone) { }
 
   bunkerOption$ = new BehaviorSubject<BunkerOption | null>(null);
   rotation$ = new BehaviorSubject<Rotation | null>(null);
   isShort$ = new BehaviorSubject<boolean>(false);
-
+  noBunker$ = new BehaviorSubject<boolean>(false);
+  isLoading$ = new BehaviorSubject<boolean>(false);
   compactRotation() {
     let i = this.isShort$.getValue()
     i = !i
@@ -58,15 +60,8 @@ export class RotationService {
       t.activityPerLocations = []
       this.rotation$.next(t)
 
-
       return
     }
-
-
-
-
-
-
 
   }
 
@@ -77,6 +72,9 @@ export class RotationService {
     let id = rotation.activityPerLocations?.length!
 
     let locAtc: ActivityPerLocation = new ActivityPerLocation()
+    locAtc.idOrder = id
+
+    locAtc.activities = []
 
     rotation.activityPerLocations?.push(locAtc)
 
@@ -106,7 +104,10 @@ export class RotationService {
 
     r.activityPerLocations![id] = t
 
+
     this.saveCalculateNext(r)
+
+
   }
 
   addActivity(
@@ -116,7 +117,7 @@ export class RotationService {
     const r = this.rotation$.getValue()!
 
     const t = r.activityPerLocations![id]
-
+    act.idOrder = t.activities?.length!
     t.activities?.push(act)
     this.saveCalculateNext(r)
   }
@@ -127,11 +128,10 @@ export class RotationService {
     act: Activity) {
     const r = this.rotation$.getValue()!
 
+    act.idOrder = idAct 
+    console.log( r.activityPerLocations![id].activities!) 
     r.activityPerLocations![id].activities![idAct] = act
     this.saveCalculateNext(r)
-    // this.laddenCargo = null
-    // this.laddenPercentage = null
-
   }
 
   deleteActivitey(index: number,
@@ -139,14 +139,30 @@ export class RotationService {
 
     const r = this.rotation$.getValue()!
     r.activityPerLocations![index].activities!.splice(idAct, 1)
+
+    this.reorderActivityID(r, index)
+
     this.saveCalculateNext(r)
   }
 
   deleteLocationActivitey(id: number) {
     const r = this.rotation$.getValue()!
     r.activityPerLocations!.splice(id, 1)
-
+    this.reorderID(r)
     this.saveCalculateNext(r)
+  }
+
+  reorderID(rot: Rotation) {
+    rot.activityPerLocations.map((a, i) => {
+      a.idOrder = i
+    })
+  }
+
+  reorderActivityID(rot: Rotation, indexLoc: number) {
+    let arra = rot.activityPerLocations![indexLoc].activities!
+    arra.map((a, i) => {
+      a.idOrder = i
+    })
   }
 
   moveDownLocationActivitey(index: number) {
@@ -163,6 +179,8 @@ export class RotationService {
     arra[swap1] = arra[swap2]
     arra[swap2] = temp
 
+    this.reorderID(r)
+
     this.saveCalculateNext(rot)
   }
 
@@ -172,12 +190,24 @@ export class RotationService {
     if (index === 0) { return }
     let swap1 = index
     let swap2 = index - 1
+    
     const rot = r
     let arra = rot.activityPerLocations!
+
+
+    console.log('move up prima' + arra[swap1].port + ' ' + arra[swap1].idOrder);
+    console.log('move up prima' + arra[swap2].port + ' ' + arra[swap2].idOrder);
     var temp = arra[swap1];
     arra[swap1] = arra[swap2]
     arra[swap2] = temp
 
+    console.log('move up dopo' + arra[swap1].port + ' ' + arra[swap1].idOrder);
+    console.log('move up dopo' + arra[swap2].port + ' ' + arra[swap2].idOrder);
+    
+    
+    
+
+    this.reorderID(r)
     this.saveCalculateNext(rot)
   }
 
@@ -193,7 +223,7 @@ export class RotationService {
     var temp = arra[swap1];
     arra[swap1] = arra[swap2]
     arra[swap2] = temp
-
+    this.reorderActivityID(r, indexLoc)
     this.saveCalculateNext(rot)
   }
 
@@ -208,16 +238,17 @@ export class RotationService {
     var temp = arra[swap1];
     arra[swap1] = arra[swap2]
     arra[swap2] = temp
-
+    this.reorderActivityID(r, indexLoc)
     this.saveCalculateNext(rot)
   }
 
   saveCalculateNext(rotation: Rotation) {
-
     this.timeCalculation()
     this.bunkerCalculation()
     this.rotation$.next(rotation)
-    this.appservice.addRotation(rotation)
+    this.appservice.addRotation(rotation).then(p => {
+      p
+    })
 
   }
 
@@ -258,8 +289,8 @@ export class RotationService {
         deltaTime += durationMilliSecond
 
         let newEtaMillisecond: number = startDateMilleseconds + deltaTime + UTCMilliSecond
-  
-        act.date = this.dateConversionFromUnix(newEtaMillisecond) 
+
+        act.date = this.dateConversionFromUnix(newEtaMillisecond)
 
       })
     })
@@ -276,52 +307,27 @@ export class RotationService {
     const activityPerLoca = t.activityPerLocations!
     const bunker = this.bunkerOption$.getValue()!
 
-    let robFORot: number = 0
-    let robDORot: number = 0
+    if (bunker === undefined) {
+      return
+    }
 
-    activityPerLoca.map((p, ix) => {
+    let incrementalDeltaFO = 0
+    let incrementalDeltaDO = 0
 
-      let robFOAct: number = 0
-      let robDOAct: number = 0
-
-
-
+    activityPerLoca.map(p => {
       let act = p.activities
-
-
       act?.map((a, i) => {
+        let b = this.bunkerCalculationPerActivity(a, bunker)
 
-        if (i === 0) {
+        incrementalDeltaFO += b.deltaFO
+        incrementalDeltaDO += b.deltaDO
 
-          let b = this.bunkerCalculationPerActivity(a, bunker)
-
-          a.robFO! = startFO - b.deltaFO
-          a.robDO! = startDO - b.deltaDO
-
-          robFOAct = startFO - b.deltaFO
-          robDOAct = startDO - b.deltaDO
-
-          i === p.activities?.length! - 1 ? (robFORot = robFOAct, robDORot = robDOAct) : null
-        }
-        else {
-          let b = this.bunkerCalculationPerActivity(a, bunker)
-
-          a.robFO! = robFOAct - b.deltaFO
-          a.robDO! = robDOAct - b.deltaDO
-
-          robFOAct = robFOAct - b.deltaFO
-          robDOAct = robDOAct - b.deltaDO
-
-          i === p.activities?.length! - 1 ? (robFORot = robFOAct, robDORot = robDOAct) : null
-
-        }
-
+        a.robFO! = startFO - incrementalDeltaFO
+        a.robDO! = startDO - incrementalDeltaDO
       })
-
-
     })
-    // this.rotation$.next(t)
   }
+
 
   bunkerCalculationPerActivity(activity: Activity, bunker: BunkerOption): { deltaFO: number, deltaDO: number } {
 
@@ -346,7 +352,8 @@ export class RotationService {
 
     activity.deltaFO = deltaFO
     activity.deltaDO = deltaDO
-    activity.ddGG = ddgg.ddGG
+    activity.ddGGFONumber = ddgg.ddGGFONumber
+    activity.ddGGDONumber = ddgg.ddGGDONumber
     activity.boilerFO = boilers.boilersNumberFO
     activity.boilerDO = boilers.boilersNumberDO
     activity.mainEngine = me.meNumber
@@ -366,7 +373,7 @@ export class RotationService {
 
     if (activity.activityType === 'Bunkering') {
 
-      return { deltaFO: activity.restockFo!, deltaDO: activity.restockFo! }
+      return { deltaFO: activity.restockFo!, deltaDO: activity.restockDo! }
     }
 
     return { deltaFO: 0, deltaDO: 0, }
@@ -412,31 +419,36 @@ export class RotationService {
     return { deltaFO: 0, deltaDO: 0, meNumber: 1 }
   }
 
-  ddggCalculation(activity: Activity, bunker: BunkerOption): { ddGG: number, deltaFO: number, deltaDO: number } {
+  ddggCalculation(activity: Activity, bunker: BunkerOption): {ddGGFONumber: number,ddGGDONumber: number, deltaFO: number, deltaDO: number } {
 
-    let multiplier: number = 0
+    let multiplierFO: number = 0
+    let multiplierDO: number = 0
 
     const ddGGOne = activity.ddggOne
     const ddGGTwo = activity.ddggTwo
-    const ddGGThree = activity.ddggThree
-    const ddGGBunker = activity.ddGGBunker
+    const ddGGThree = activity.ddggThree 
+
+    
+    
+
     let deltaFO: number = 0
     let deltaDO: number = 0
     const ddGGBunkerCons = bunker.ddggDailyConsumption
-    ddGGOne === 'on' ? multiplier += 1 : null
-    ddGGTwo === 'on' ? multiplier += 1 : null
-    ddGGThree === 'on' ? multiplier += 1 : null
+    ddGGOne === 'fo' ? multiplierFO += 1 : null
+    ddGGTwo === 'fo' ? multiplierFO += 1 : null
+    ddGGThree === 'fo' ? multiplierFO += 1 : null
+    ddGGOne === 'do' ? multiplierDO += 1 : null
+    ddGGTwo === 'do' ? multiplierDO += 1 : null
+    ddGGThree === 'do' ? multiplierDO += 1 : null 
+ 
 
-    const deltaBunker: number = ((ddGGBunkerCons * multiplier) / 24) * activity.duration!
-
-    if (ddGGBunker === 'fo') {
-      return { ddGG: multiplier, deltaFO: deltaBunker, deltaDO: 0 }
-    }
-    if (ddGGBunker === 'do') {
-      return { ddGG: multiplier, deltaFO: 0, deltaDO: deltaBunker }
-    }
-
-    return { ddGG: 0, deltaFO: 0, deltaDO: 0 }
+    const deltaBunkerFO: number = ((ddGGBunkerCons * multiplierFO) / 24) * activity.duration!
+    const deltaBunkerDO: number = ((ddGGBunkerCons * multiplierDO) / 24) * activity.duration!
+    deltaFO = deltaBunkerFO
+    deltaDO = deltaBunkerDO
+ 
+ 
+    return { ddGGFONumber: multiplierFO,ddGGDONumber: multiplierDO, deltaFO: deltaFO, deltaDO: deltaDO }
   }
 
   boilerCalculation(activity: Activity, bunker: BunkerOption): { deltaFO: number, deltaDO: number, boilersNumberFO: number, boilersNumberDO: number } {
@@ -449,8 +461,7 @@ export class RotationService {
     let boilerNDO: number = 0
 
     switch (activity.boilerOneFuel) {
-      case 'off': boilerFO += 0; boilerDO += 0;
-        break
+       
       case 'fo':
         const consFO = (((boilerMax / 100) * activity.boilerOnePercentage!) / 24) * activity.duration!
         boilerFO += consFO; boilerDO += 0; boilerNFO += 1
@@ -461,8 +472,7 @@ export class RotationService {
     }
 
     switch (activity.boilerTwoFuel) {
-      case 'off': boilerFO += 0; boilerDO += 0;
-        break
+     
       case 'fo':
         const consFO = (((boilerMax / 100) * activity.boilerTwoPercentage!) / 24) * activity.duration!
         boilerFO += consFO; boilerDO += 0; boilerNFO += 1
@@ -473,8 +483,7 @@ export class RotationService {
     }
 
     switch (activity.boilerThreeFuel) {
-      case 'off': boilerFO += 0; boilerDO += 0;
-        break
+      
       case 'fo':
         const consFO = (((boilerMax / 100) * activity.boilerThreePercentage!) / 24) * activity.duration!
         boilerFO += consFO; boilerDO += 0; boilerNFO += 1
@@ -612,66 +621,95 @@ export class RotationService {
     return formatDate(date, format, locale);
   }
 
-  fullRotation() {
+
+  fullRotation(
+    pdfSetup: PDFsetup
+  ) {
     const doc = new jsPDF({
       orientation: "landscape"
     });
-    const img = new Image();
     let t = this.rotation$.getValue()!
     const format = 'dd-MM-yyyy HH:mm';
     const locale = 'en-UK';
-
     const formattedDate = formatDate(t.dateTime, format, locale);
     doc.text('Start ETA Calculation @ ' + formattedDate + ' LT', 10, 10);
     doc.text('UTC: ' + t.utc.toString(), 140, 10);
     doc.text('ROB FO: ' + t.robFO.toString(), 170, 10);
     doc.text('ROB DO: ' + t.robDO.toString(), 210, 10);
     t.activityPerLocations.map((a, i) => {
+      pdfSetup.byPort ? doc.addPage() : null
       let heads: any = []
       let headerTop = [
         {
           content: ['Port of: ' + a.port + ' -  Berth: ' + a.berth + ' -  UTC: ' + a.utcTime + ' HRS'],
           colSpan: 10,
           styles: { fillColor: [22, 160, 133] },
+
         },
       ]
-      let headerBottom = ['Activityd', ' - ', 'Date & Time', 'Expected Time', 'Ladden @ %', 'Cargo in MT', 'ROB DO', 'ROB FO', 'Restock DO', 'Resotck FO']
+      let headerBottomDefault = ['Activityd', ' - ', 'Date & Time']
+
+      pdfSetup.expectedTime ? headerBottomDefault.push('Expected Time') : null
+      pdfSetup.ladden ? headerBottomDefault.push('Ladden @ %') : null
+      pdfSetup.cargo ? headerBottomDefault.push('Cargo in MT') : null
+      pdfSetup.robFO ? headerBottomDefault.push('ROB FO') : null
+      pdfSetup.robDO ? headerBottomDefault.push('ROB DO') : null
+      pdfSetup.restockFO ? headerBottomDefault.push('Restock DO') : null
+      pdfSetup.restockDO ? headerBottomDefault.push('Resotck FO') : null
+
 
       heads.push(headerTop)
-      heads.push(headerBottom)
+      heads.push(headerBottomDefault)
       let arrayOfArrayValueActivity: any[] = []
 
       a.activities.map((p, i) => {
         let arrayOfValueActivity: any[] = []
+        let arrayOfAgentctivity: any[] = []
 
-        let body = [
-          {
-            content: ['Activityd', ' - ', 'Date & Time', 'Expected Time', 'Ladden @ %', 'Cargo in MT', 'ROB DO', 'ROB FO', 'Restock DO', 'Resotck FO'],
-            colSpan: 10,
-            styles: { fillColor: [22, 160, 133] },
-          },
-        ]
-        arrayOfValueActivity.push(p.activityType)
-        arrayOfValueActivity.push(p.ETX)
-        arrayOfValueActivity.push(p.date + ' LT')
-        arrayOfValueActivity.push((Math.round(p.duration * 100) / 100).toFixed(1) + ' HRS')
-        arrayOfValueActivity.push(p.laddenPercentage)
-        arrayOfValueActivity.push(p.cargoOnBoardMT)
-        arrayOfValueActivity.push((Math.round(p.robFO * 100) / 100).toFixed(1) + ' MT')
-        arrayOfValueActivity.push((Math.round(p.robDO * 100) / 100).toFixed(1) + ' MT')
-        arrayOfValueActivity.push(p.restockFo + ' MT')
-        arrayOfValueActivity.push(p.restockDo + ' MT')
+        if (
+          (pdfSetup.seaPassage ? p.activityType === 'Sea Passage' : null)
+          || (pdfSetup.pilotageInbound ? p.activityType === 'Pilotage Inbound' : null)
+          || (pdfSetup.pilotageOutbound ? p.activityType === 'Pilotage Outbound' : null)
+          || (pdfSetup.loading ? p.activityType === 'Loading' : null)
+          || (pdfSetup.discharging ? p.activityType === 'Discharging' : null)
+          || (pdfSetup.tankCleaning ? p.activityType === 'Tank Cleaning' : null)
+          || (pdfSetup.shifting ? p.activityType === 'Shifting' : null)
+          || (pdfSetup.laybyBerth ? p.activityType === 'Layby Berth' : null)
+          || (pdfSetup.bunkering ? p.activityType === 'Bunkering' : null)
+          || (pdfSetup.anchoring ? p.activityType === 'Anchoring' : null)
+          || (pdfSetup.drifting ? p.activityType === 'Drifting' : null)
+          || (pdfSetup.canalTransit ? p.activityType === 'Canal Transit' : null)
 
-        arrayOfArrayValueActivity.push(arrayOfValueActivity)
 
+        ) {
+
+          if (p.activityType === 'Sea Passage') { 
+            const eca = p.ECA === 'isECA' ? "ECA" : ''
+            const eosp = p.EoSP === 'isEoSP' ? "EoSP" : '' 
+            arrayOfValueActivity.push(p.activityType + ' ' + eca + ' ' + eosp )
+          }else {
+            arrayOfValueActivity.push(p.activityType)
+          }
+          arrayOfValueActivity.push(p.ETX)
+          arrayOfValueActivity.push(p.date + ' LT')
+          pdfSetup.expectedTime ? arrayOfValueActivity.push((Math.round(p.duration * 100) / 100).toFixed(1) + ' HRS') : null
+          pdfSetup.ladden ? arrayOfValueActivity.push(p.laddenPercentage) : null
+          pdfSetup.cargo ? arrayOfValueActivity.push(p.cargoOnBoardMT) : null
+          pdfSetup.robFO ? arrayOfValueActivity.push((Math.round(p.robFO * 100) / 100).toFixed(1) + ' MT') : null
+          pdfSetup.robDO ? arrayOfValueActivity.push((Math.round(p.robDO * 100) / 100).toFixed(1) + ' MT') : null
+          pdfSetup.restockFO ? arrayOfValueActivity.push(p.restockFo + ' MT') : null
+          pdfSetup.restockDO ? arrayOfValueActivity.push(p.restockDo + ' MT') : null
+          arrayOfArrayValueActivity.push(arrayOfValueActivity)
+          if (p.agency && pdfSetup.agency) {
+            arrayOfAgentctivity.push({ content: p.agency.agencyName, colSpan: 3 })
+            arrayOfAgentctivity.push({ content: p.agency.agencyGeneralEmail, colSpan: 3 })
+            arrayOfAgentctivity.push({ content: p.agency.agencyCell24Hrs, colSpan: 3 })
+            arrayOfArrayValueActivity.push(arrayOfAgentctivity)
+          }
+
+
+        }
       })
-
-      let body: any = [
-        {
-          content: arrayOfArrayValueActivity,
-          row: 10,
-        },
-      ]
 
       autoTable(doc, {
         head: heads,
@@ -684,71 +722,21 @@ export class RotationService {
     // doc.save('Instruction.pdf');
   }
 
-  shortRotation() {
-    const doc = new jsPDF({
-      orientation: "landscape"
-    });
-    const img = new Image();
-
-    let t = this.rotation$.getValue()!
-
-    t.activityPerLocations.map((a, i) => {
-      doc.addPage()
-
-      const format = 'dd-MM-yyyy HH:mm';
-      const locale = 'en-UK';
-
-      const formattedDate = formatDate(t.dateTime, format, locale);
-      doc.text('Start ETA Calculation @ ' + formattedDate + ' LT', 10, 10);
-      doc.text('UTC: ' + t.utc.toString(), 140, 10);
-      doc.text('ROB FO: ' + t.robFO.toString(), 170, 10);
-      doc.text('ROB DO: ' + t.robDO.toString(), 210, 10);
-      let heads: any = []
-      let headerTop = [
-        {
-          content: ['Port of: ' + a.port + ' -  Berth: ' + a.berth + ' -  UTC: ' + a.utcTime + ' HRS'],
-          colSpan: 10,
-          styles: { fillColor: [22, 160, 133] },
-        },
-      ]
-      let headerBottom = ['Activityd', ' - ', 'Date & Time', 'Expected Time']
-
-      heads.push(headerTop)
-      heads.push(headerBottom)
-      let arrayOfArrayValueActivity: any[] = []
-
-      a.activities.map((p, i) => {
-        let arrayOfValueActivity: any[] = []
 
 
-
-        if (p.activityType === 'Sea Passage' && p.EoSP === 'isEoSP' || p.activityType === 'Pilotage Inbound' || p.activityType === 'Loading' || p.activityType === 'Discharging' || p.activityType === 'Pilotage Outbound') {
-          arrayOfValueActivity.push(p.activityType)
-          arrayOfValueActivity.push(p.ETX)
-          arrayOfValueActivity.push(p.date + ' LT')
-          arrayOfValueActivity.push((Math.round(p.duration * 100) / 100).toFixed(1) + ' HRS')
-
-          arrayOfArrayValueActivity.push(arrayOfValueActivity)
-        }
-
-      })
-
-      let body: any = [
-        {
-          content: arrayOfArrayValueActivity,
-          row: 10,
-        },
-      ]
-
-      autoTable(doc, {
-        head: heads,
-        body: arrayOfArrayValueActivity,
-        theme: 'striped',
-      })
-
-    });
-    doc.save('ShortRotation.pdf')
-    // doc.save('Instruction.pdf');
+  exportRotation() {
+    const t = this.rotation$.getValue()!
+    this.appservice.exportRotation(t)
   }
+  importRotation() {
+    this.appservice.importRotation().subscribe(p => {
+      this.zone.run(() => {
+        this.rotation$.next(p.rot.rotation)
+        this.bunkerOption$.next(p.rot.bunker[0])
+      });
 
+    })
+
+
+  }
 }

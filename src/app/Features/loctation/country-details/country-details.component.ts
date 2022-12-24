@@ -69,9 +69,7 @@ export class CountryDetailsComponent implements OnInit, OnChanges {
   remove(i: number) {  
     if (this.notes.length>0 && this.notes[i].id !== undefined) { 
       this.appService.deleteCountryNotes(this.notes[i]).then(n => {
-        this.notes = n
-        console.log(n);
-        
+        this.notes = n 
       })
     }
     const o = this.form.get('items') as FormArray

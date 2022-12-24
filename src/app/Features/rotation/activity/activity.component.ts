@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { RotationService } from 'src/app/Core/Services/rotation.service';
-import { Activity } from 'src/shared/schema/rotation.schema'; 
+import { Activity } from 'src/shared/schema/rotation.schema';
 import { CanalTransitComponent } from '../cards/canal-transit/canal-transit.component';
 import { LaybyBerthComponent } from '../cards/layby-berth/layby-berth.component';
 import { OperationComponent } from '../cards/operation/operation.component';
@@ -11,6 +11,8 @@ import { SeaPassageComponent } from '../cards/sea-passage/sea-passage.component'
 import { ShiftingComponent } from '../cards/shifting/shifting.component';
 import { WaitingAtSeaComponent } from '../cards/waiting-at-sea/waiting-at-sea.component';
 import { MyElectronService } from 'src/app/Core/Services/electron.service';
+import { AgencyMaskComponent } from '../../loctation/agency/agency-mask/agency-mask.component';
+import { Agency } from 'src/shared/schema/location.schema';
 
 @Component({
   selector: 'app-activity',
@@ -22,18 +24,44 @@ export class ActivityComponent implements OnInit {
   constructor(private rotationService: RotationService,
     public dialog: MatDialog, private appservice: MyElectronService) { }
 
-
   @Input() indexActivity: number
   @Input() indexLocationActivityActivity: number
   @Input() activity: Activity
 
-  berths: string[] = []
+  noBunker = this.rotationService.noBunker$.asObservable();
 
-  ngOnInit(): void {  
+  berths: string[] = []
+ 
+  ngOnInit(): void { }
+
+  openDialogAgencyToEdit(enterAnimationDuration: string, exitAnimationDuration: string): void {
+
+    this.appservice.getAgencyByID(this.activity.agency.id).then(p => {
+      const dialogRef = this.dialog.open(AgencyMaskComponent, {
+        width: '1100px',
+        height: '800px',
+        enterAnimationDuration,
+        exitAnimationDuration,
+        disableClose: true,
+        data: { port: 'this.port', agency: p }
+      })
+      dialogRef.afterClosed().subscribe((result: Agency) => {
+
+        if (result) {
+          this.appservice.editPortAgentFromActivity(result).then(p => {
+
+            this.activity.agency = p
+
+          })
+        }
+      })
+    })
   }
 
+  //AA
+
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
- 
+
 
     if (this.activity.activityType === 'Sea Passage') {
       const dialogRef = this.dialog.open(SeaPassageComponent, {
@@ -44,12 +72,12 @@ export class ActivityComponent implements OnInit {
         data: this.activity
       });
       dialogRef.afterClosed().subscribe((result: Activity) => {
-        if (result) {  
+        if (result) {
           const duration = result.distance! / result.speed!
           result.duration = duration
-          result.id = this.indexActivity  
-          
-          this.rotationService.editActivity(this.indexLocationActivityActivity,this.indexActivity,result)
+          result.id = this.indexActivity
+
+          this.rotationService.editActivity(this.indexLocationActivityActivity, this.indexActivity, result)
         }
       });
     }
@@ -64,8 +92,8 @@ export class ActivityComponent implements OnInit {
       });
       dialogRef.afterClosed().subscribe((result: Activity) => {
         if (result) {
-          result.id = this.indexActivity 
-          this.rotationService.editActivity(this.indexLocationActivityActivity,this.indexActivity,result) 
+          result.id = this.indexActivity
+          this.rotationService.editActivity(this.indexLocationActivityActivity, this.indexActivity, result)
         }
       });
     }
@@ -78,11 +106,11 @@ export class ActivityComponent implements OnInit {
         disableClose: true,
         data: this.activity
       });
-      dialogRef.afterClosed().subscribe((result: Activity) => { 
-        if (result) { 
+      dialogRef.afterClosed().subscribe((result: Activity) => {
+        if (result) {
           result.activityType === 'Pilotage Inbound' ? result.ETX = 'ETB' : result.ETX = 'SoSP'
           result.id = this.indexActivity
-          this.rotationService.editActivity(this.indexLocationActivityActivity,this.indexActivity,result)
+          this.rotationService.editActivity(this.indexLocationActivityActivity, this.indexActivity, result)
 
         }
       });
@@ -100,32 +128,32 @@ export class ActivityComponent implements OnInit {
 
           result.mainEngineFuel = 'off'
           result.id = this.indexActivity
-          this.rotationService.editActivity(this.indexLocationActivityActivity,this.indexActivity,result)
+          this.rotationService.editActivity(this.indexLocationActivityActivity, this.indexActivity, result)
 
         }
       });
     }
     if (this.activity.activityType === 'Shifting') {
-      this.appservice.getBerthByActivityID(this.activity).then(b => { 
+      this.appservice.getBerthByActivityID(this.activity).then(b => {
         this.berths = b
-    
-      const dialogRef = this.dialog.open(ShiftingComponent, {
-        width: '1100px',
-        enterAnimationDuration,
-        exitAnimationDuration,
-        disableClose: true,
-        data: {activity: this.activity, berths: this.berths }
-      });
-  
-      dialogRef.afterClosed().subscribe((result: Activity) => {
-        if (result) { 
-          result.id = this.indexActivity 
-          this.rotationService.editActivity(this.indexLocationActivityActivity,this.indexActivity,result)
 
-        }
+        const dialogRef = this.dialog.open(ShiftingComponent, {
+          width: '1100px',
+          enterAnimationDuration,
+          exitAnimationDuration,
+          disableClose: true,
+          data: { activity: this.activity, berths: this.berths }
+        });
 
-      });
-    })
+        dialogRef.afterClosed().subscribe((result: Activity) => {
+          if (result) {
+            result.id = this.indexActivity
+            this.rotationService.editActivity(this.indexLocationActivityActivity, this.indexActivity, result)
+
+          }
+
+        });
+      })
     }
     if (this.activity.activityType === 'Layby Berth') {
       const dialogRef = this.dialog.open(LaybyBerthComponent, {
@@ -140,7 +168,7 @@ export class ActivityComponent implements OnInit {
 
           result.mainEngineFuel = 'off'
           result.id = this.indexActivity
-          this.rotationService.editActivity(this.indexLocationActivityActivity,this.indexActivity,result)
+          this.rotationService.editActivity(this.indexLocationActivityActivity, this.indexActivity, result)
 
         }
 
@@ -159,7 +187,7 @@ export class ActivityComponent implements OnInit {
 
           result.mainEngineFuel = 'off'
           result.id = this.indexActivity
-          this.rotationService.editActivity(this.indexLocationActivityActivity,this.indexActivity,result)
+          this.rotationService.editActivity(this.indexLocationActivityActivity, this.indexActivity, result)
 
         }
 
@@ -177,7 +205,7 @@ export class ActivityComponent implements OnInit {
         if (result) {
 
           result.id = this.indexActivity
-          this.rotationService.editActivity(this.indexLocationActivityActivity,this.indexActivity,result)
+          this.rotationService.editActivity(this.indexLocationActivityActivity, this.indexActivity, result)
 
         }
 
@@ -185,14 +213,14 @@ export class ActivityComponent implements OnInit {
     }
   }
 
-  deleteActivity(){
+  deleteActivity() {
     this.rotationService.deleteActivitey(this.indexLocationActivityActivity, this.indexActivity)
   }
 
-  moveDownActivitey(){
+  moveDownActivitey() {
     this.rotationService.moveDownActivitey(this.indexActivity, this.indexLocationActivityActivity)
   }
-  moveUpActivitey(){
+  moveUpActivitey() {
     this.rotationService.moveUpActivitey(this.indexActivity, this.indexLocationActivityActivity)
   }
 

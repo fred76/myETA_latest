@@ -29,53 +29,84 @@
             </div>
             <mat-divider [inset]="true"></mat-divider>
 
-            <div class="div-card" fxLayout="row" fxLayoutAlign="space-between center">
-                <div class="text" fxLayout="row" fxLayoutAlign="start center">
-                    <h2>△</h2>
-                    <div fxLayout="column" fxLayoutAlign="center start">
-                        <h3 class="tris">FO {{activity.deltaFO |number : '1.1-1'}} MT</h3>
-                        <h3 class="tris">DO {{activity.deltaDO |number : '1.1-1'}} MT</h3>
+            <ng-container *ngIf="(noBunker | async) === true; else nob">
+                <div class="div-card" fxLayout="row" fxLayoutAlign="space-between center">
+                    <div class="text" fxLayout="row" fxLayoutAlign="start center">
+                        <h2>△</h2>
+                        <div fxLayout="column" fxLayoutAlign="center start">
+                            <h3 class="tris">FO {{activity.deltaFO |number : '1.1-1'}} MT</h3>
+                            <h3 class="tris">DO {{activity.deltaDO |number : '1.1-1'}} MT</h3>
+                        </div>
                     </div>
+                    <div class="text" fxLayout="row" fxLayoutAlign="start center">
+                        <h2>ROB</h2>
+                        <div fxLayout="column" fxLayoutAlign="center start">
+                            <h3 class="tris"> FO {{activity.robFO |number : '1.1-1'}} MT</h3>
+                            <h3 class="tris">DO {{activity.robDO|number : '1.1-1'}} MT</h3>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="90px">
+                        <div fxLayout="row" fxLayoutAlign="space-around end">
+                            <img class="indicator" class="img" src="assets/icon/propeller_black.png" alt="image">
+                            <div fxLayout="column" fxLayoutAlign="end start" style="margin-left: 8px">
+                                <h4 style="margin: auto;">{{activity.mainEngineFuel | uppercase}}</h4>
+                                <h4 class="indicator" style="margin: auto">{{activity.mainEngine}}</h4>
+                            </div>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="space-around end">
+                            <img class="indicator" class="img" src="assets/icon/ddgg_black.png" alt="image">
+                            <div fxLayout="column" fxLayoutAlign="end start" style="margin-left: 8px">
+                                <h4 style="margin: auto;"> FO: {{activity.ddGGFONumber}}</h4>
+                                <h4 style="margin: auto">DO: {{activity.ddGGDONumber}}</h4> 
+                            </div>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="space-around center">
+                            <img class="indicator" class="img" src="assets/icon/boiler_black.png" alt="image">
+                            <div fxLayout="column" fxLayoutAlign="end start" style="margin-left: 8px">
+                                <h4 style="margin: auto;"> FO: {{activity.boilerFO}}</h4>
+                                <h4 style="margin: auto">DO: {{activity.boilerDO}}</h4>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="text" fxLayout="row" fxLayoutAlign="start center">
-                    <h2>ROB</h2>
-                    <div fxLayout="column" fxLayoutAlign="center start">
-                        <h3 class="tris"> FO {{activity.robFO |number : '1.1-1'}} MT</h3>
-                        <h3 class="tris">DO {{activity.robDO|number : '1.1-1'}} MT</h3>
-                    </div>
+            </ng-container>
+            <ng-template #nob>
+                <h3> Add bunker detail in Engine & Auxiliares to evaluate consumption</h3>
+            </ng-template>
+ 
+            <mat-divider [inset]="true"></mat-divider>
+
+            <div *ngIf="activity.agency" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="12px"
+                style="margin-top: 8px">
+                <h4 fxFlex="grow">{{activity.agency.agencyName}}</h4>
+                <div fxFlex="grow" class="icon-text">
+                    <mat-icon style="margin-right:8p; margin-top: -10px;">email</mat-icon>
+
+                    <span>
+                        <h4>: {{activity.agency.agencyGeneralEmail}}</h4>
+                    </span>
+
+
                 </div>
-                <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="90px">
-                    <div fxLayout="row" fxLayoutAlign="space-around end">
-                        <img class="indicator" class="img" src="assets/icon/propeller_black.png" alt="image">
-                        <div fxLayout="column" fxLayoutAlign="end start" style="margin-left: 8px">
-                            <h4 style="margin: auto;">{{activity.mainEngineFuel | uppercase}}</h4>
-                            <h4 class="indicator" style="margin: auto">{{activity.mainEngine}}</h4>
-                        </div>
-                    </div>
-                    <div fxLayout="row" fxLayoutAlign="space-around end">
-                        <img class="indicator" class="img" src="assets/icon/ddgg_black.png" alt="image">
-                        <div fxLayout="column" fxLayoutAlign="end start" style="margin-left: 8px">
-                            <h4 style="margin: auto;">{{activity.ddGGBunker | uppercase}}</h4>
-                            <h4 class="indicator" style="margin: auto">{{activity.ddGG}}</h4>
-                        </div>
-                    </div>
-                    <div fxLayout="row" fxLayoutAlign="space-around center">
-                        <img class="indicator" class="img" src="assets/icon/boiler_black.png" alt="image">
-                        <div fxLayout="column" fxLayoutAlign="end start" style="margin-left: 8px">
-                            <h4 style="margin: auto;"> FO: {{activity.boilerFO}}</h4>
-                            <h4 style="margin: auto">DO: {{activity.boilerDO}}</h4>
-                        </div>
-                    </div>
+                <div>
+                    <button mat-icon-button color="primary" style="margin-right:8px; margin-top: -10px;"
+                        (click)="openDialogAgencyToEdit('7ms', '1ms')">
+                        <mat-icon>info</mat-icon>
+                    </button>
                 </div>
 
             </div>
+
+
+
         </mat-card>
     </div>
     <div class="padding" fxLayout="column" fxLayoutAlign="space-around stretch" style="color: white">
         <button mat-icon-button color="default" (click)="moveUpActivitey()">
             <mat-icon>keyboard_arrow_up</mat-icon>
         </button>
-        <button mat-icon-button color="default" (click)="openDialog('0ms', '0ms')">
+        <button mat-icon-button color="default" (click)="openDialog('7ms', '1ms')">
             <mat-icon>edit</mat-icon>
         </button>
         <button mat-icon-button color="default" (click)="deleteActivity()">
