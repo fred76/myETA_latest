@@ -59,6 +59,10 @@ function createWindow(): BrowserWindow {
 			nodeIntegration: true,
 			allowRunningInsecureContent: (serve),
 			contextIsolation: false,
+			//  preload: path.join(
+            //     __dirname,
+            //     "preload.js"
+            // )
 		},
 	});
 

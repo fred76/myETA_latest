@@ -11,10 +11,11 @@ import { RotationService } from './Core/Services/rotation.service';
 import port from 'src/shared/port.json'
 import { PdfMaskComponent } from './Features/utility/pdf-mask/pdf-mask.component';
 import { MatDialog } from '@angular/material/dialog';
-import { PDFsetup } from 'src/shared/entity/rotation-model'; 
+import { PDFsetup } from 'src/shared/entity/rotation-model';
 import { ImportDialogComponent } from './Features/utility/import-dialog/import-dialog.component';
-import { AboutComponent } from './Features/utility/about/about.component';
+import { AboutComponent } from './Features/utility/about/about.component'; 
  
+
 @UntilDestroy()
 @Component({
   selector: 'app-root',
@@ -25,21 +26,21 @@ export class AppComponent implements OnInit {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
 
-   
+
   constructor(
     private observer: BreakpointObserver,
     private router: Router,
     private appservice: MyElectronService,
     public rotationService: RotationService,
-    public dialog: MatDialog ) {
-    this.appservice.getRotation().then(r => { 
+    public dialog: MatDialog) {
+    this.appservice.getRotation().then(r => {
       this.rotationService.rotation$.next(r)
       this.rotationService.isLoading$.next(true)
 
     })
     this.appservice.getBunker().then(bunker => {
       this.rotationService.bunkerOption$.next(bunker)
-      if (bunker !== undefined) { 
+      if (bunker !== undefined) {
         this.rotationService.noBunker$.next(true)
       }
 
@@ -53,10 +54,10 @@ export class AppComponent implements OnInit {
         this.appservice.addCountryPorts(ports).then(p => {
         })
       }
-    }) 
+    })
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
   }
 
   openPDFMask(enterAnimationDuration: string, exitAnimationDuration: string): void {
@@ -71,8 +72,8 @@ export class AppComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result: PDFsetup) => {
 
-      if (result) { 
-        this.rotationService.fullRotation(result) 
+      if (result) {
+        this.rotationService.fullRotation(result)
       }
     });
   }
@@ -88,9 +89,9 @@ export class AppComponent implements OnInit {
       data: null
     });
     dialogRef.afterClosed().subscribe((result: boolean) => {
- 
-      if (result) { 
-       this.importRotation()
+
+      if (result) {
+        this.importRotation()
       }
     });
   }
@@ -105,7 +106,7 @@ export class AppComponent implements OnInit {
       disableClose: true,
       data: null
     });
-    
+
   }
 
 
@@ -116,8 +117,8 @@ export class AppComponent implements OnInit {
   exportRotation() {
     this.rotationService.exportRotation()
   }
-  importRotation()  {
-    return this.rotationService.importRotation() 
+  importRotation() {
+    return this.rotationService.importRotation()
   }
 
 

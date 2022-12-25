@@ -16,7 +16,7 @@ import { Activity, Rotation } from 'src/shared/schema/rotation.schema';
 export class MyElectronService {
 
   constructor(private _electronService: ElectronService) { }
-
+ 
 
   getAgencByPortName(portName: string): Promise<Agency[]> {
     return this._electronService.ipcRenderer.invoke('get-agency-by-port-name', portName)
@@ -31,10 +31,11 @@ export class MyElectronService {
 
   // ROTATION
 
-  getRotation(): Promise<Rotation> {
+  getRotation(): Promise<Rotation> {  
     return this._electronService.ipcRenderer.invoke('get-rotation')
   }
   addRotation(rotation: Rotation): Promise<Rotation> {
+  
     return this._electronService.ipcRenderer.invoke('add-rotation', rotation)
   }
 

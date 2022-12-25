@@ -4,8 +4,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './Core/Modules/material.module';
 import { DateFnsModule } from 'ngx-date-fns';
-import { FlexLayoutModule } from '@angular/flex-layout';
-// import { DBConfig, NgxIndexedDBModule } from 'ngx-indexed-db';
+import { FlexLayoutModule } from '@angular/flex-layout'; 
 import { AppRoutingModule } from './app-routing.module';
 import { MyElectronService } from './Core/Services/electron.service';
 import { ElectronService } from 'ngx-electronify/node_modules/ngx-electronyzer';
@@ -35,11 +34,7 @@ import { PdfMaskComponent } from './Features/utility/pdf-mask/pdf-mask.component
 import { LoaderComponent } from './Features/utility/loader/loader.component';
 import { ImportDialogComponent } from './Features/utility/import-dialog/import-dialog.component';
 import { InstructionComponent } from './Features/utility/instruction/instruction.component';
-import { AboutComponent } from './Features/utility/about/about.component'; 
- 
- 
- 
- 
+import { AboutComponent } from './Features/utility/about/about.component';  
 
 @NgModule({
   declarations: [
@@ -70,6 +65,7 @@ import { AboutComponent } from './Features/utility/about/about.component';
     InstructionComponent,
     AboutComponent, 
   ],
+  
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
