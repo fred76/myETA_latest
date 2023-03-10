@@ -52,7 +52,7 @@
         "start": "ng serve",
         "ngbuild": "ng build  --c=production --base-href ./ ",
         "test": "ng build --base-href ./  && tsc --p electron && electron . --c=production",
-        "build:prod": "npm run build --base-href -- -c production",
+        "build:prod": "npm run ngbuild --base-href -- -c production",
         "electron:mac": "electron-builder build --mac",
         "electron:win": "yarn build:prod && npx electron-builder build -w ",
         "builder-mac": "electron-builder build --mac",
